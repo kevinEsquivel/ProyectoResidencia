@@ -1,0 +1,148 @@
+@import url("/css/root.css") all;
+
+@media only screen and (max-width: 1199px) and (min-width: 220px) {
+    body {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+      background-color: var(--fondo);
+    }
+    header {
+      grid-area: header;
+    }
+    main {
+      grid-area: main;
+    }
+    .footer {
+      grid-area: footer;
+      width: 100%;
+      height: 32em;
+    }
+    .logoNayarit {
+      height: 8.75rem;
+      width: 8rem;
+    }
+  
+    .nav-link {
+      color: var(--font-color-letter) !important;
+    }
+    .navbar-brand {
+      font-size: var(--font-size-subtitle);
+      color: var(--font-color-letter) !important;
+    }
+    .nav-item .nav-link,
+    .dropdown-menu {
+      font-size: var(--font-size-text);
+    }
+    .navbar-toggler {
+      margin-right: 2em !important;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    body {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+      background-color: var(--fondo);
+    }
+    header {
+      grid-area: header;
+      height: min-content;
+    }
+    main {
+      grid-area: main;
+    }
+    .footer {
+      grid-area: footer;
+      width: 100%;
+      height: 32em;
+    }
+  
+    .logoNayarit {
+      height: 8.75rem;
+      width: 8rem;
+    }
+    nav {
+      width: 100%;
+      /*Para poner por encima/arriba de todo*/
+      position: absolute !important;
+      top: 0;
+      left: 0;
+    }
+    .nav-link {
+      color: var(--font-color-letter) !important;
+    }
+    .navbar-brand {
+      font-size: var(--font-size-subtitle);
+      color: var(--font-color-letter) !important;
+    }
+    .nav-item .nav-link,
+    .dropdown-menu {
+      font-size: var(--font-size-text);
+    }
+  }
+
+  /*------------------------------------------MAIN------------------------------------------*/
+  .container{
+    margin-top: 13em;
+    padding: 1em;
+  }
+  .container .row{
+    margin-right: 0px; 
+    margin-left:  0px;
+  }
+  .titulo{
+    font-family: var(--font-family-Benne);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-title2);
+    line-height: 45px;
+  }
+  .row label{
+    margin-top: .5em;
+    font-size: var(--font-size-subtitle);
+  }
+  #btnBuscar{
+    justify-content: center;
+  }
+  .btn{
+    font-size: var(--font-size-subtitle);
+  }
+  .col-4{
+    background-color: var(--primary-color);
+  }
+
+
+  /*CARD SENTENCIAS*/
+  .container-main{
+    margin-top: 9em;
+    width: 100% !important;
+    padding: 5em;
+  }
+  .col-4{
+    padding: 0 3em 0 3em;
+  }
+  .card-body{
+    background-color: var(--primary-2option);
+    color: var(--font-color-letter);
+  }
+  .card-title{
+    font-size: var(--font-size-subtitle);
+  }
+  .img{
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var();
+  }
+  .card-col{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+  }

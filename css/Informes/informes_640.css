@@ -1,0 +1,88 @@
+@import url('/css/root.css') all;
+@media only screen and (max-width: 1199px) and (min-width: 220px) {
+  body{
+    display: grid;
+    grid-template-areas: 'header'
+                          'main'
+                          'footer';
+background-color: var(--fondo) !important;
+    
+  }
+  .header{
+    grid-area: header;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+   }
+   main{
+    grid-area: main;
+   }
+   .footer{
+    grid-area: footer;
+    width: 100%;
+    height: 32em;
+  }
+  .logoNayarit {
+    height: 8.75rem;
+    width: 8rem;
+  }
+  nav {
+    width: 100%;
+    /*Para poner por encima/arriba de todo*/
+  }
+  .nav-link{
+    color: var(--font-color-letter) !important;
+  }
+  .navbar-brand{
+    font-size: var(--font-size-subtitle);
+    color: var(--font-color-letter) !important;
+  }
+  .nav-item .nav-link,.dropdown-menu{
+    font-size: var(--font-size-text);
+  }
+  .navbar-toggler{
+    margin-right: 2em !important;
+  }
+ 
+  /*------------------------------------------MAIN------------------------------------------*/
+
+  .titulo {
+    font-size: var(--font-size-title2);
+    text-align: center;
+    margin-top: 1em;
+  }
+  section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  section .contenedor{
+    margin-top: 3em;
+    width: 80vw;
+    display: grid;
+    grid-gap:2em;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10em;
+  }
+  .contenedor .informe{
+   background-color: var(--secondary-color); 
+   display: inline-flex;  
+   flex-direction: column;
+   align-items: center;
+  }
+  
+  .contenedor .informe h4{
+    font-size: var(--font-size-subtitle2);
+  }
+  .contenedor .informe p{
+    font-size: var(--font-size-text);
+  }
+  .contenedor .informe span{
+    font-size: var(--font-size-subtitle);
+  }
+
+}

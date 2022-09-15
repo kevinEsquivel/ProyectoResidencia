@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+    <!-- BOOTSTRAP -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BOOTSTRAP -->
+
+    <!-- Place your kit's code here -->
+    <script
+      src="https://kit.fontawesome.com/38c18e8d87.js"
+      crossorigin="anonymous"
+    ></script>
+    <!------------------ CSS ----------->
+    <link rel="stylesheet" href="/css/calendario/calendario.css" />
+
+    <title>Calendario</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand p-3" href="/html/inicio.html">
+            <img
+              class="logoNayarit"
+              src="/assets/logoNayarit_Recortada.png"
+              alt="logo de Nayarit"
+            />
+            TEEN
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/html/administracion/calendario.html"
+                  >Calendario</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link active"
+                  href="/html/administracion/declaracion.html"
+                  >Declaracion</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  href="/html/administracion/administracion.html"
+                  >Administracion</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="/html/administracion/PDF.html"
+                  >Subir PDF's</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  href="/html/administracion/informacionPersonal.html"
+                  >Informacion Personal</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  href="/html/administracion/estadisticas.html"
+                  >Estadisticas</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" id="salir" href="/html/inicio.html"
+                  >SALIR</a
+                >
+              </li>
+            </ul>
+            <!-- Modal -->
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Buscar"
+              />
+              <button class="btn btn-outline-dark" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2>Calendario</h2>
+      <div class="contenedor">
+        <div class="row row-cols-auto">
+          <div class="col">
+            <div class="list-group" style="width: 300px" id="tareas">
+              <div
+                class="titulo list-group-item list-group-item-primary"
+                data-id="1"
+              >
+                <!-- data-id me permite cambiar el id que tiene por defecto -->
+                <h5>Pendientes</h5>
+              </div>
+<!-- Se debe agregar data-bs-toggle="modal"
+                data-bs-target="#exampleModal" en cada elemenento list-group-item -->
+              <div
+                class="list-group-item"
+                data-id="2"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <h5><i class="fa-solid fa-grip-lines mr-3"></i>Tarea 1</h5>
+                <p class="mb-0">
+                  <i class="fa-solid fa-users"></i>
+                  <a href="" id="User">@kevin</a>
+                  <a href="" id="User">@mariana</a>
+                  <a href="" id="User">@sayuri</a>
+                </p>
+                <span
+                  ><i class="fa-solid fa-calendar-day"></i>10 de jul.-20 de
+                  jul</span
+                >
+              </div>
+
+              <div class="list-group-item" data-id="3" 
+              data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                <h5><i class="fa-solid fa-grip-lines mr-3"></i>Tarea 2</h5>
+                <p class="mb-0">
+                  <i class="fa-solid fa-users"></i>
+                  <a href="" id="User">@kevin</a>
+                  <a href="" id="User">@mariana</a>
+                  <a href="" id="User">@sayuri</a>
+                </p>
+                <span
+                  ><i class="fa-solid fa-calendar-day"></i>10 de jul.-20 de
+                  jul</span
+                >
+              </div>
+              <div class="list-group-item" data-id="4" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+                <h5><i class="fa-solid fa-grip-lines mr-3"></i>Tarea 3</h5>
+                <p class="mb-0">
+                  <i class="fa-solid fa-users"></i>
+                  <a href="" id="User">@kevin</a>
+                  <a href="" id="User">@mariana</a>
+                  <a href="" id="User">@sayuri</a>
+                </p>
+                <span
+                  ><i class="fa-solid fa-calendar-day"></i>10 de jul.-20 de
+                  jul</span
+                >
+              </div>
+              <div class="list-group-item" data-id="5" >
+                <button class="btn" style="width: 100%;" id="agregarTarea"><i class="fa-solid fa-plus"></i> Agregar nueva Tarea</button>
+                <div class="list-group-item" id="Nombrar_Tarea">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Introduzca el nombre de la Tarea" style="border: 1px solid blue"/>
+                  <div class="nombreTareas p-2" style="
+                  display: inline-flex;
+                  align-items: center;">
+                    <button class="btn btn-primary mr-3">Añadir Tarea </button>                
+                    <button class="btn" id="cerrarTarea" style="color:black;"><i class="fa-light fa-x fa-xl"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade Light"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="nombreTarea"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <input
+                      type="text"
+                      class="modal-title"
+                      id="nombreTarea"
+                      autocomplete="off"
+                      style="font-family: Benne; font-size: 3em;width: 40%;"
+                      
+                      placeholder="Nombre Tarea"
+                    />
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label ml-2" for="flexCheckDefault">
+                        Realizada
+                      </label>
+                    </div>
+                    <h4><a href="">En proceso</a></h4>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      style="width: 25px; height: 25px; border: 0"
+                    >
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <div class="container-fluid" style="
+                    padding: 0px;">
+                      <div class="row">
+                        <div class="col-9" style="
+                        padding: 0px;">
+                        <!-- Miembros -->
+                        <div class="row mb-1 pl-4"style="align-items: center;">
+                        <label for="" class="mr-3">Miembros: </label>
+                        <div class="imgMiembros" id="imgMiembros">
+                          <!-- AQUI DEBERIAN IR LAS IMAGENES DE EL PERFIL DE LOS MIEMBROS -->
+                          <div class="div-img"></div>
+                        </div>
+                        </div>
+
+                          <!-- Fechas de Inicio y Final -->
+                    <div
+                    class="mb-3 row"
+                    style="align-items: center; padding: 1.5em"
+                  >
+                    <label for="exampleFormControldate1">Fecha Inicio</label>
+                    <input
+                      type="date"
+                      class="form-control col"
+                      id="exampleFormControldate1"
+                      value="2022-07-22"
+                      min="2018-01-01"
+                      max="2023-12-31"
+                      
+                    />
+                    <label for="exampleFormControldate2">Fecha Fin</label>
+                    <input
+                      type="date"
+                      class="form-control col"
+                      id="exampleFormControldate2"
+                      value="2018-07-22"
+                      min="2022-01-01"
+                      max="2023-12-31"
+                      
+                    />
+                  </div>
+
+                  <!-- DESCRIPCION  -->
+                  <div
+                    class="mb-3 row descripcion"
+                    style="align-items: center; padding: 1.5em"
+                  >
+                    <div class="row">
+                      <i class="fa-solid fa-align-left"></i>
+                    <label
+                      for="exampleFormControlTextarea1"
+                      class="form-label ml-2"
+                      >Descripcion</label
+                    >
+                    </div>
+                    <div class="row">
+                      <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                    </div>
+                  </div>
+                  <!-- COMENTARIOS -->
+                  <div
+                    class="mb-3 row comentarios"
+                    style="align-items: center; padding: 1.5em"
+                  >
+                    <div class="row-title">
+                      <i class="fa-solid fa-comments"></i>
+                    <label
+                      for="exampleFormControlTextarea1"
+                      class="form-label ml-2"
+                      >COMENTARIOS</label
+                    >
+                    </div>
+                    <div class="row" style="
+                    width: 100%;align-items: center;">
+                      <div class="div-img col-1">
+                        
+                      </div>
+                      <input
+                      type="text"
+                      class="form-control form-control-lg col-11 ml-2"
+                      id="comment1"
+                      placeholder="Escriba un comentario..."
+                      ></input>
+                    </div>
+                  </div>
+                        </div>
+                        <div class="col-3" style="
+                        padding: 0px;">
+                            <button type="button" class="btn btn-secondary btn-elementos" id="btn-miembros">
+                              <i class="fa-regular fa-user"></i>
+                              Miembros
+                            </button>
+                            <div class="ventana-popup" id="ventana-popup">
+                              <h5 class="tituloMiembros">Miembros</h5>
+                              <input type="text" class="form-control" id="inputMiembros" placeholder="Nombre del Miembro">
+                              <div class="usuariosAgregados"></div>
+                              <button class="btn btn-primary" id="agregarMiembro">Agregar miembro</button>
+                          </div>
+                            <button type="button" class="btn btn-secondary btn-elementos mt-3" id="btn-adjuntar">
+                              <i class="fa-solid fa-file-circle-plus"></i>
+                              Adjuntar
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                      Guardar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- INICIO SESION FIN -->
+
+          </div>
+          <div class="col">
+            <div
+              class="list-group"
+              style="width: 300px"
+              id="tareas_completadas"
+            >
+              <div
+                class="titulo list-group-item list-group-item-success"
+                data-id="11"
+              >
+                <h5>En proceso</h5>
+              </div>
+              <div class="list-group-item" data-id="12">
+                <h5><i class="fa-solid fa-grip-lines mr-3"></i>Tarea 1</h5>
+                <p class="mb-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                  facilis corrupti corporis fugiat beatae quis minima odit, nemo
+                  tenetur quod quia repudiandae eaque a eligendi dolore eum!
+                  Voluptate, nihil quam!
+                </p>
+              </div>
+              <div class="list-group-item" data-id="20">
+                <button class="btn" style="width: 100%;" id="agregarTarea2"><i class="fa-solid fa-plus"></i> Agregar nueva Tarea2</button>
+                <div class="list-group-item" id="Nombrar_Tarea2">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Introduzca el nombre de la Tarea" style="border: 1px solid blue"/>
+                  <div class="nombreTareas p-2" style="
+                  display: inline-flex;
+                  align-items: center;">
+                    <button class="btn btn-primary mr-3" id="añadirTarea">Añadir Tarea</button>                
+                    <button class="btn" id="cerrarTarea2" style="color:black;"><i class="fa-light fa-x fa-xl"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="list-group"
+              style="width: 300px"
+              id="tareas_completadas"
+            >
+              <div class="list-group-item" id="AgregarLista">
+                <button class="btn" style="width: 100%;"><i class="fa-solid fa-plus"></i> Agregar nueva lista</button>
+              </div>
+              <div class="list-group-item" id="NombrarLista">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Introduzca el titulo de la lista..." style="border: 1px solid blue"/>
+                <div class="nombreTareas p-2" style="
+                display: inline-flex;
+                align-items: center;">
+                  <button class="btn btn-primary mr-3">Añadir nueva lista </button>                
+                <button id="cerrarLista" style="color:black; border: none;"><i class="fa-light fa-x fa-xl"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      style="background-color: #406c68; height: 12em; margin-bottom: 0px"
+      width="100"
+    >
+      <h2>¡Ten un gran día!</h2>
+    </footer>
+    <!-- Suportable -->
+    <script src="/js/Sortable.min.js"></script>
+    <script src="/js/calendario.js"></script>
+  </body>
+</html>

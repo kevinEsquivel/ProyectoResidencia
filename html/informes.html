@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- BOOTSTRAP -->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous"
+   />
+   <script
+     src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+     crossorigin="anonymous"
+   ></script>
+   <!-- BOOTSTRAP -->
+    <!-- CSS  -->
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 1200px)"
+      href="../css/Informes/informes.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (max-width: 1199px) and (min-width: 320px)"
+      href="../css/Informes/informes_640.css"
+    />
+    <!-- FONTAWESOME -->
+    <script
+      src="https://kit.fontawesome.com/38c18e8d87.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- NOMBRE PAGINA -->
+    <title>Informes</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand p-3" href="/html/inicio.html">
+            <img
+              class="logoNayarit"
+              src="../assets/LogoNayarit_Recortada.png"
+              alt="logo de Nayarit"
+            />
+            TEEN
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item p-2 active">
+                <a class="nav-link" aria-current="page" href="/html/inicio.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link " href="/html/tribunal.html">Tribunal</a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="/html/Transparencia.html">Transparencia</a>
+              </li>
+              <li class="nav-item dropdown p-2">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Micrositios
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="/html/acuerdos.html"
+                      >Acuerdos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Organo interno de control</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/html/informes.html"
+                      >Informes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Avisos de privacidad</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown p-2">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sitios de Importancia
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Convenios</a></li>
+                  <li><a class="dropdown-item" href="/html/financieros.html">Financieros</a></li>
+                  <li><a class="dropdown-item" href="#">Demandas</a></li>
+                  <li><a class="dropdown-item" href="#">Denuncias</a></li>
+                </ul>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="/html/Sentencias.html">Sentencias</a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+              <!-- INICIO SESION INICIO -->
+                <!-- Button trigger modal -->
+                <li class="nav-item p-2">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    href="#"
+                    >Login</a
+                  >
+                </li>
+              </ul>
+  
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content" style="background-color: #8c9b92">
+                    <div class="modal-header">
+                      <h5
+                        class="modal-title"
+                        id="exampleModalLabel"
+                        style="font-family: Benne; font-size: 3em"
+                      >
+                        Inicio de Sesión
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style="width: 25px;
+                              height: 25px;"
+                      >X</button>
+                    </div>
+                    <div class="modal-body">
+                      <div
+                        class="mb-3 row"
+                        style="align-items: center; padding: 1.5em"
+                      >
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label col col-lg-5"
+                          >Correo electrónico</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control col"
+                          id="exampleFormControlInput1"
+                          placeholder="name@example.com"
+                        />
+                      </div>
+                      <div class="mb-3 row" style="align-items: center;padding: 1.5em;">
+                        <label for="inputPassword" class="form-label col col-lg-5"
+                          >Contraseña</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control col"
+                          id="inputPassword"
+                        />
+                      </div>
+                    </div>
+  
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        style="background-color: #406c68"
+                      >
+                        Inicio sesión
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- INICIO SESION FIN -->
+  
+            <form class="d-flex " role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Buscar"
+              />
+              <button class="btn btn-outline-dark" type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2 class="titulo">INFORME DE ACTIVIDAD</h2>
+      <section>
+        <article class="contenedor">
+          <div class="informe">
+            <h4>Primer informe de actividad</h4>
+            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <p>2022-2023</p>
+            <span>Lic. Rubén Flores Portillo</span>
+          </div>
+          <div class="informe">
+            <h4>Segudo informe de actividad<br />(NO DISPONIBLE)</h4>
+            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <p>2023-2024</p>
+            <span>Lic. Rubén Flores Portillo</span>
+          </div>
+          <div class="informe">
+            <h4>Primer informe de actividad</h4>
+            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <p>2020-2021</p>
+            <span>DRA. Irina Graciela Cervantes Bravo</span>
+          </div>
+          <div class="informe">
+            <h4>Segudo informe de actividad</h4>
+            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <p>2021-2022</p>
+            <span>DRA. Irina Graciela Cervantes Bravo</span>
+          </div>
+          <div class="informe">
+            <h4>Primer informe de actividad</h4>
+            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <p>2018-2019</p>
+            <span>DRA. ANÓNIMO</span>
+          </div>
+          <div class="informe">
+            <h4>Segudo informe de actividad</h4>
+            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <p>2019-2020</p>
+            <span>DRA. ANÓNIMO</span>
+          </div>
+        </article>
+      </section>
+    </main>
+    <iframe class="footer" src="/html/footer.html" frameborder="0" frameborder="0"hspace="0"vspace="0"marginheight="0"marginwidth="00"scrolling="no"></iframe>
+    <script src="/js/general.js"></script>
+  </body>
+</html>

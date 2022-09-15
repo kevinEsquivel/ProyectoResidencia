@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTRAP -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BOOTSTRAP -->
+
+    <!-- Place your kit's code here -->
+    <script
+      src="https://kit.fontawesome.com/38c18e8d87.js"
+      crossorigin="anonymous"
+    ></script>
+    <!------------------ CSS ----------->
+    <link
+      rel="stylesheet"
+      href="/css/informacionPersonal/informacionPersonal.css"
+    />
+
+    <title>informacion Personal</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand p-3" href="/html/inicio.html">
+            <img
+              class="logoNayarit"
+              src="/assets/logoNayarit_Recortada.png"
+              alt="logo de Nayarit"
+            />
+            TEEN
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/html/administracion/calendario.html"
+                  >Calendario</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link active"
+                  href="/html/administracion/declaracion.html"
+                  >Declaracion</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  href="/html/administracion/administracion.html"
+                  >Administracion</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="/html/administracion/PDF.html"
+                  >Subir PDF's</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  href="/html/administracion/informacionPersonal.html"
+                  >Informacion Personal</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link"
+                  href="/html/administracion/estadisticas.html"
+                  >Estadisticas</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" id="salir" href="/html/inicio.html"
+                  >SALIR</a
+                >
+              </li>
+            </ul>
+            <!-- Modal -->
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Buscar"
+              />
+              <button class="btn btn-outline-dark" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2 class="titulo">Informacion Personal</h2>
+      <p class="info">
+        Esta Informacion sera usada para rellenar las delcraciones que
+        corresponde
+      </p>
+      <section class="container-datosGenerales">
+        <h4 class="container_titulo">Datos Generales</h4>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="nombre" class="form-label">NOMBRE(S)</label>
+            <input type="text" id="nombre" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="Papellido" class="form-label">PRIMER APELLIDO</label>
+            <input type="text" id="Papellido" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="Sapellido" class="form-label">SEGUNDO APELLIDO</label>
+            <input type="text" id="Sapellido" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="curp" class="form-label">CURP</label>
+            <input type="text" id="curp" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="rfc" class="form-label">RFC</label>
+            <input type="text" id="rfc" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="homoclave" class="form-label">HOMOCLAVE</label>
+            <input type="text" id="homoclave" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="CInstitucional" class="form-label"
+              >CORREO ELECTRÓNICO INSTITUCIONAL</label
+            >
+            <input type="text" id="curp" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="CPersonal" class="form-label"
+              >CORREO ELECTRÓNICO PERSONAL / ALTERNO</label
+            >
+            <input type="text" id="CPersonal" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="numCasa" class="form-label"
+              >NÚMERO TELEFÓNICO DE CASA</label
+            >
+            <input type="text" id="numCasa" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="numPersonal" class="form-label"
+              >NÚMERO CELULAR PERSONAL</label
+            >
+            <input type="text" id="numPersonal" class="form-control" />
+          </div>
+          <div class="col-md-8 co">
+            <label for="estadoCivil" class="form-label"
+              >SITUACIÓN PERSONAL / ESTADO CIVIL</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineCheckbox1"
+                  >SOLTERO (A)</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="soltero"
+                  name="flexRadioDefault"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineCheckbox2"
+                  >CASADO (A)</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="casado"
+                  name="flexRadioDefault"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >DIVORCIADO (A)</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="divorciado"
+                  name="flexRadioDefault"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineCheckbox1"
+                  >VIUDO (A)</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="viudo"
+                  name="flexRadioDefault"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineCheckbox2"
+                  >CONCUBINA / CONCUBINARIO / UNIÓN LIBRE</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="unionLibre"
+                  name="flexRadioDefault"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >SOCIEDAD DE CONVIVENCIA</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="sConveniencia"
+                  name="flexRadioDefault"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 co">
+            <label for="regimenMatrimonial" class="form-label"
+              >RÉGIMEN MATRIMONIAL</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="sConyugal"
+                  >SOCIEDAD CONYUGAL</label
+                >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="sConyugal"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="sBienes"
+                  >SEPARACIÓN DE BIENES</label
+                >
+                <input class="form-check-input" type="checkbox" id="sBienes" />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="otro"
+                  >OTRO / ESPECIFIQUE</label
+                >
+                <input class="form-control" type="text" id="otro" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 co">
+            <label for="paisNacimiento" class="form-label"
+              >PAÍS DE NACIMIENTO</label
+            >
+            <input type="text" id="paisNacimiento" class="form-control" />
+          </div>
+          <div class="col-md-3 co">
+            <label for="nacionalidad" class="form-label">NACIONALIDAD</label>
+            <input type="text" id="nacionalidad" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <label for="observaciones" class="form-label"
+            >ACLARACIONES / OBSERVACIONES</label
+          >
+          <textarea id="observaciones" class="form-control" rows="3"></textarea>
+        </div>
+      </section>
+      <section class="container-domicilio">
+        <h4 class="container_titulo">Domicilio</h4>
+        <div class="row">
+          <div class="col-md-6 co">
+            <label for="mexico" class="form-label">EN MÉXICO</label>
+            <div class="row">
+              <div class="col-md-4 co">
+                <label for="calle" class="form-label">calle</label>
+                <input type="text" id="calle" class="form-control" />
+              </div>
+              <div class="col-md-4 co">
+                <label for="numExt" class="form-label">NÚMERO EXTERIOR</label>
+                <input type="text" id="numExt" class="form-control" />
+              </div>
+              <div class="col-md-4 co">
+                <label for="numInt" class="form-label">NÚMERO INTERIOR</label>
+                <input type="text" id="numInt" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 co">
+                  <label for="colonia" class="form-label">COLONIA / LOCALIDAD</label>
+                  <input type="text" id="colonia" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="municipio" class="form-label">MUNICIPIO / ALCALDÍA</label>
+                  <input type="text" id="municipio" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="entFed" class="form-label">ENTIDAD FEDERATIVA</label>
+                  <input type="text" id="entFed" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col co">
+                  <label for="CP" class="form-label">CÓDIGO POSTAL</label>
+                  <input type="text" id="CP" class="form-control" />
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6 co">
+            <label for="extranjero" class="form-label">EN EL EXTRANJERO</label>
+            <div class="row">
+                <div class="col-md-4 co">
+                  <label for="calleExtranj" class="form-label">calle</label>
+                  <input type="text" id="calleExtranj" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="numExtExtranj" class="form-label">NÚMERO EXTERIOR</label>
+                  <input type="text" id="numExtExtranj" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="numIntExtranj" class="form-label">NÚMERO INTERIOR</label>
+                  <input type="text" id="numIntExtranj" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 co">
+                  <label for="coloniaExtranj" class="form-label">COLONIA / LOCALIDAD</label>
+                  <input type="text" id="coloniaExtranj" class="form-control" />
+                </div>
+                <div class="col-md-6 co">
+                  <label for="municipioExtranj" class="form-label">ESTADO / ALCALDÍA</label>
+                  <input type="text" id="municipioExtranj" class="form-control" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 co">
+                    <label for="pais" class="form-label">PAÍS</label>
+                    <input type="text" id="pais" class="form-control" />
+                  </div>
+                <div class="col-md-6 co">
+                  <label for="CPExtranj" class="form-label">CÓDIGO POSTAL</label>
+                  <input type="text" id="CPExtranj" class="form-control" />
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <label for="observaciones" class="form-label"
+              >ACLARACIONES / OBSERVACIONES</label
+            >
+            <textarea id="observaciones" class="form-control" rows="3"></textarea>
+        </div>
+      </section>
+      <section class="container-escolaridad">
+        <h4 class="container_titulo">Escolaridad</h4>
+        <h2>NO SE SI AGREGAR ESTO,PREGUNTAR</h2>
+      </section>
+      <article><button class="btn btn-outline-dark" id="btnGuardar">GUARDAR</button></article>
+
+    </main>
+    <footer
+      style="background-color: #406c68; height: 12em; margin-bottom: 0px"
+      width="100"
+    >
+      <h2>¡Ten un gran día!</h2>
+    </footer>
+    <script src="/js/PDF.js"></script>
+  </body>
+</html>

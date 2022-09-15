@@ -1,0 +1,315 @@
+@import url("/css/root.css") all;
+@media only screen and (min-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    background-color: var(--fondo);
+  }
+  .header {
+    grid-area: header;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  main {
+    grid-area: main;
+  }
+  .footer {
+    grid-area: footer;
+    width: 100%;
+    height: 32em;
+  }
+
+  .logoNayarit {
+    height: 8.75rem;
+    width: 8rem;
+  }
+  nav {
+    width: 100%;
+    /*Para poner por encima/arriba de todo*/
+    position: absolute !important;
+    top: 0;
+    left: 0;
+  }
+  .nav-link {
+    color: var(--font-color-letter) !important;
+  }
+  .navbar-brand {
+    font-size: var(--font-size-subtitle);
+    color: var(--font-color-letter) !important;
+  }
+  .nav-item .nav-link,
+  .dropdown-menu {
+    font-size: var(--font-size-text);
+  }
+
+  /*------------------------------------------MAIN------------------------------------------*/
+  /*--------------------------------------parte de TITULO-----------------------------------*/
+  main .titulo {
+    min-width: 99vw;
+    min-height: 100vh;
+    text-align: center;
+    background-image: url(/assets/Inicio/Tribunal_EFO2.jpg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main .titulo h1 {
+    color: var(--font-color-letter);
+    font-family: var(--font-family-tittle);
+    font-weight: 500;
+    font-size: var(--font-size-title);
+    position: absolute;
+    width: 918.74px;
+    height: 113px;
+    top: 322px;
+  }
+  /*------------------------------------------SESIONES PUBLICAS------------------------------------------*/
+  .sesionesPublicas {
+    min-width: 100vw;
+    min-height: 284px;
+    display: inline-flex;
+    background-color: var(--secondary-color);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .sesionesPublicas h3,
+  button {
+    font-size: var(--font-size-title2);
+  }
+  .sesionesPublicas .sesiones-texto {
+    width: 609px;
+    height: 177px;
+    margin-left: 40px;
+    margin-top: 56px;
+  }
+  .sesionesPublicas h3 {
+    margin-bottom: 22px;
+    line-height: 40px;
+  }
+  .sesiones-texto .buttons {
+    display: inline-flex;
+  }
+  .sesionesPublicas .btnAviso {
+    width: 8em;
+
+    color: var(--font-color-letter);
+    background-color: var(--primary-2option);
+    border-radius: 5px;
+  }
+  .sesionesPublicas .btnCalendario {
+    width: min-content;
+    height: min-content;
+    padding: 0.5em;
+    margin-left: 75px;
+    font-size: var(--font-size-text);
+    color: var(--font-color-letter);
+    background-color: var(--primary-2option);
+    border-radius: 5px;
+  }
+  .videoYoutube {
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  /*------------------------------------------AVISOS------------------------------------------*/
+  .container {
+    width: 90%;
+    min-height: 50vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .slider {
+    background-color: var(--fondo);
+    padding: 40px0;
+  }
+
+  .slider_container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 7em;
+  }
+  .slider_body {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    background-color: var(--fondo);
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition:  1.5s;
+  }
+  .slider_body--show {
+    opacity: 1;
+    pointer-events: unset;
+  }
+  .slider_texts {
+    max-width: 600px;
+  }
+  .slider_texts .subtitle {
+    font-size: 2.5rem;
+    font-family: var(--font-family-Benne);
+    font-size: var(--font-size-title2);
+    color: var(--font-color-letter);
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 45px;
+    margin-bottom: 20px;
+  }
+  .slider_review {
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: var(--font-size-text);
+    color: var(--color-texto);
+  }
+  .slider_img {
+    width: 230px;
+    height: 230px;
+    border-radius: 5px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  #next {
+    -webkit-transform: rotate(90deg);
+  }
+  #before {
+    -webkit-transform: rotate(-90deg);
+  }
+
+  .slider_arrow {
+    cursor: pointer;
+    width: 90%;
+  }
+  .lineas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -25px;
+  }
+  .num1,
+  .num2,
+  .num3 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-left: 15px;
+    background-color: rgba(196, 196, 196, 0.7);
+  }
+
+  /*------------------------------------------CONTACTANOS------------------------------------------*/
+  .contactanos {
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+  .div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(48em, 1fr));
+    justify-items: center;
+    flex-wrap: wrap;
+  }
+  .contactanos .correos {
+    width: 784px;
+    height: 515px;
+    background-color: var(--option);
+    border-radius: 20px;
+    margin-left: 60px;
+    justify-self: flex-start;
+  }
+  .contactanos .correos > h4 {
+    font-family: var(--font-family-Benne);
+    font-weight: 400;
+    font-size: var(--font-size-subtitle);
+    line-height: 20px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: var(--font-color-letter);
+  }
+  .contactanos .correos > input {
+    width: 321px;
+    height: 52px;
+    background: #8c9b92;
+    border-radius: 5px;
+  }
+  .contactanos .correos .nombre,
+  .mensaje,
+  #intNombre {
+    margin-left: 32px;
+    margin-bottom: 6px;
+  }
+  #intMen {
+    margin-left: 32px;
+    margin-bottom: 6px;
+  }
+  .contactanos .correos .nombre {
+    margin-top: 45px;
+  }
+  .contactanos .correos .email,
+  #intEmail {
+    margin-left: 434px;
+  }
+  .email {
+    margin-top: -70px;
+  }
+  .contactanos .correos #intMen {
+    width: 717px;
+    height: 213px;
+  }
+  .btnCorreo {
+    width: 321px;
+    height: 52px;
+    margin-left: 236px;
+    margin-top: 44px;
+    background-color: var(--fondo);
+    font-size: var(--font-size-title2);
+    color: var(--font-color-letter);
+    border: none;
+  }
+  .direciones {
+    width: 30em;
+    height: 60em;
+    background: var(--primary-color);
+    border-radius: 20px;
+    display: grid;
+    margin-right: -23em;
+  }
+  .direciones div > h3 {
+    font-size: var(--font-size-title2);
+    font-weight: 400;
+    line-height: 45px;
+    color: var(--font-color-letter);
+    margin-top: 47px;
+    margin-left: 27px;
+  }
+  .direciones div > p {
+    font-size: var(--font-size-text);
+    color: var(--font-color-letter);
+    margin-left: 27px;
+  }
+  .contactanos .con {
+    width: 805px;
+    height: 45px;
+    font-weight: 400;
+    font-size: var(--font-size-title2);
+    line-height: 45px;
+    color: var(--font-color-letter);
+
+    display: flex;
+    position: relative;
+    left: 148px;
+    top: -20px;
+  }
+}

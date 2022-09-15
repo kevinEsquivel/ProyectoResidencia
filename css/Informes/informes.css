@@ -1,0 +1,105 @@
+@import url('/css/root.css');
+@media only screen and (min-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+      background-color: var(--fondo);
+  }
+  .header {
+    grid-area: header;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  main {
+    grid-area: main;
+  }
+  .footer {
+    grid-area: footer;
+    width: 100%;
+    height: 32em;
+  }
+  
+.logoNayarit {
+  height: 8.75rem;
+  width: 8rem;
+}
+nav {
+  width: 100%;
+  /*Para poner por encima/arriba de todo*/
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+.nav-link{
+  color: var(--font-color-letter) !important;
+}
+.navbar-brand{
+  font-size: var(--font-size-subtitle);
+  color: var(--font-color-letter) !important;
+}
+.nav-item .nav-link,.dropdown-menu{
+  font-size: var(--font-size-text);
+}
+   
+    /*------------------------------------------MAIN------------------------------------------*/
+    .titulo {
+        font-size: var(--font-size-title2);
+        text-align: center;
+        margin-top: 6em;
+      }
+      section{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        min-height: 80vh;
+      }
+      section .contenedor{
+        margin-top: 3em;
+        display: grid;
+        grid-gap:4em;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 24em;
+      }
+      .contenedor .informe{
+       background-color: var(--secondary-color); 
+       display: grid;
+       grid-template-columns: 130px 1fr;
+       grid-template-rows: 100px 50px 70px;
+       align-items: center;
+      justify-items: start;
+      }
+      .contenedor .informe h4{
+        font-size: var(--font-size-subtitle);
+        justify-self: flex-start;
+        margin-top: 5px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      .contenedor .informe a{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-self: center;
+      }
+    
+      .contenedor .informe p{
+        font-size: var(--font-size-text);
+        grid-column-start: 2;
+        grid-column-end: 3;
+        justify-self: flex-end;
+        font-style: italic;
+        margin-right: 3em;
+      }
+      .contenedor .informe span{
+        font-size: var(--font-size-subtitle);
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+
+
+  } 

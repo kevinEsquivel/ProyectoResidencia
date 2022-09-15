@@ -1,0 +1,392 @@
+@import url('/css/root.css') all;
+@media only screen and (max-width: 1199px) and (min-width: 220px) {
+  body{
+    display: grid;
+    grid-template-areas: 'header'
+                          'main'
+                          'footer';
+background-color: var(--fondo) !important;
+    
+  }
+  .header{
+    grid-area: header;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+   }
+   main{
+    grid-area: main;
+   }
+   .footer{
+    grid-area: footer;
+    width: 100%;
+    height: 32em;
+  }
+  .logoNayarit {
+    height: 8.75rem;
+    width: 8rem;
+  }
+  nav {
+    width: 100%;
+    /*Para poner por encima/arriba de todo*/
+  }
+  .nav-link{
+    color: var(--font-color-letter) !important;
+  }
+  .navbar-brand{
+    font-size: var(--font-size-subtitle);
+    color: var(--font-color-letter) !important;
+  }
+  .nav-item .nav-link,.dropdown-menu{
+    font-size: var(--font-size-text);
+  }
+  .navbar-toggler{
+    margin-right: 2em !important;
+  }
+  
+  /*******************IMG *****************/
+  main .titulo {
+    min-width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/html/recursos/Tribunal_EFO2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  main .titulo h1 {
+    color: var(--font-color-letter);
+    font-family: var(--font-family-tittle);
+    font-size: var(--font-size-title);
+    position: absolute;
+    top: 300px;
+    width: 450px;
+  }
+
+  /*SESIONES PUBLICAS*/
+  .sesionesPublicas {
+    width: 100vw;
+    height: 15em;
+    display: inline-flex;
+    background-color: var(--secondary-color);
+  }
+  .sesionesPublicas h3 {
+    font-size: var(--font-size-title2);
+    margin-bottom: 10px;
+    line-height: 0.8em;
+  }
+  .sesionesPublicas .sesiones-texto {
+    width: 70%;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  .sesiones-texto .buttons {
+    display: inline-flex;
+  }
+  .sesionesPublicas .btnAviso {
+    width: 8em;
+    height: 50px;
+    font-size: var(--font-size-subtitle);
+    color: var(--font-color-letter);
+    background-color: var(--primary-2option);
+    border-radius: 5px;
+  }
+  .sesionesPublicas .btnCalendario {
+    width: max-content;
+    padding: 0.5em;
+    margin-left: 75px;
+    font-size: var(--font-size-text);
+    color: var(--font-color-letter);
+    background-color: var(--primary-2option);
+    border-radius: 5px;
+  }
+  .videoYoutube {
+    padding: 10px;
+    width: 150px;
+    height: 130px;
+    position: absolute;
+    right: 10px;
+  }
+
+  /*Contenedor*/
+  .container {
+    width: 90%;
+    min-height: 60vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .slider {
+    background-color: var(--fondo);
+    padding: 40px;
+  }
+  
+  .slider_container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 4em;
+  }
+  .slider_body {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    background-color: var(--fondo);
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition: opacity 1.5s;
+  }
+  .slider_body--show {
+    opacity: 1;
+    pointer-events: unset;
+  }
+  .slider_texts{
+      max-width: 600px;
+  }
+  .subtittle{
+      font-size: 2.5em;
+      margin-bottom: 20px;
+  }
+  .slider_review{
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1.7;
+  }
+  .slider_img{
+      width: 230px;
+      height: 230px;
+      border-radius: 5px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+  }
+  #next{
+      -webkit-transform: rotate(90deg);
+  }
+  #before{
+      -webkit-transform: rotate(-90deg);
+  }
+  
+  .slider_arrow{
+      cursor: pointer;
+      width: 90%;
+  }
+  .lineas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -25px;
+  }
+  .num1,
+  .num2,
+  .num3 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-left: 15px;
+    background-color: rgba(196, 196, 196, 0.7);
+  }
+/*   .contenedor {
+    width: 100vw;
+    height: 80em;
+  }
+  .contenedor-Avisos {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "flechaI contenido flechaD";
+    grid-template-columns: 50px minmax(15em, 2fr) 50px;
+    grid-template-rows: 5em 45em;
+    grid-gap: 14px;
+  }
+  .central {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-Avisos h2 {
+    font-family: var(--font-family-Benne);
+    font-size: var(--font-size-title2);
+    color: var(--font-color-letter);
+    font-weight: 100;
+    line-height: 20px;
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+  }
+  .contenedor-avisos-texto {
+    position: relative;
+    height: 20vh;
+    width: 70vw;
+    background: var(--primary-color);
+    opacity: 0.7;
+    border-radius: 10px;
+    z-index: 1;
+    font-style: normal;
+    font-size: var(--font-size-text);
+    line-height: 19px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    color: var(--color-texto);
+  }
+  .contenedor-avisos-texto p {
+    padding: 20px;
+  }
+  .img {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 20vh;
+    width: 70vw;
+    border-radius: 10px;
+    background-image: url("/html/recursos/Persona2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  #flechaD {
+    width: 30px;
+    height: 30px;
+    background-image: url(/html/recursos/flecha-hacia-abajo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-transform: rotate(-90deg);
+    grid-area: flechaD;
+    justify-self: center;
+    align-self: center;
+  }
+  #flechaI {
+    width: 30px;
+    height: 30px;
+    background-image: url(/html/recursos/flecha-hacia-abajo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-transform: rotate(90deg);
+    grid-area: flechaI;
+    justify-self: center;
+    align-self: center;
+  } */
+
+  /******************** CONTACTANOS****************/
+  .contactanos {
+    margin-top: -180px;
+    margin-bottom: 40px;
+  }
+  .div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .contactanos .con {
+    width: 205px;
+    height: 45px;
+    font-size: var(--font-size-title2);
+    line-height: 45px;
+    color: var(--font-color-letter);
+
+    display: flex;
+    position: relative;
+    left: 28px;
+    top: -40px;
+  }
+  .contactanos .correos {
+    width: 370px;
+    height: 50em;
+    position: relative;
+    top: -40px;
+    background-color: var(--option);
+    border-radius: 20px;
+  }
+  .contactanos .correos > h4 {
+    font-family: var(--font-family-Benne);
+    font-size: var(--font-size-subtitle);
+    line-height: 20px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: var(--font-color-letter);
+  }
+  .contactanos .correos > input {
+    width: 321px;
+    height: 52px;
+    background: #8c9b92;
+    border-radius: 5px;
+  }
+  .contactanos .correos .nombre,
+  .mensaje,
+  #intMen,
+  #intNombre,
+  .email,
+  #intEmail {
+    margin-left: 25px;
+    margin-bottom: 5px;
+  }
+  .contactanos .correos .nombre {
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+  .contactanos .correos #intMen {
+    width: 370;
+    height: 213px;
+  }
+  .btnCorreo {
+    width: 140px;
+    height: 2em;
+    margin-left: 120px;
+    margin-top: 5px;
+    background-color: var(--fondo);
+    font-size: var(--font-size-subtitle);
+    color: var(--font-color-letter);
+    border: none;
+  }
+
+  .direciones {
+    position: relative;
+    width: 370px;
+    height: 40em;
+    background: var(--primary-color);
+    border-radius: 20px;
+    display: grid;
+  }
+  .direciones div > h3 {
+    font-size: var(--font-size-title2);
+    line-height: 40px;
+    color: var(--font-color-letter);
+    margin-top: 20px;
+    margin-left: 27px;
+  }
+  .direciones div > p {
+    font-size: var(--font-size-text);
+    color: var(--font-color-letter);
+    margin-left: 27px;
+  }
+
+  .icon_nayarit {
+    background: url("/html/recursos/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 1152px;
+    height: 1229px;
+    left: -570px;
+    top: 935px;
+    z-index: -1;
+    opacity: 0.8;
+  }
+ 
+}

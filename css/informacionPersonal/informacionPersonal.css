@@ -1,0 +1,143 @@
+@import url("/css/root.css") all;
+
+@media only screen and (max-width: 1199px) and (min-width: 220px) {
+    body {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+      background-color: var(--fondo);
+    }
+    header {
+      grid-area: header;
+    }
+    main {
+      grid-area: main;
+    }
+    .footer {
+      grid-area: footer;
+      width: 100%;
+      height: 32em;
+    }
+    .logoNayarit {
+      height: 8.75rem;
+      width: 8rem;
+    }
+  
+    .nav-link {
+      color: var(--font-color-letter) !important;
+    }
+    .navbar-brand {
+      font-size: var(--font-size-subtitle);
+      color: var(--font-color-letter) !important;
+    }
+    .nav-item .nav-link,
+    .dropdown-menu {
+      font-size: var(--font-size-text);
+    }
+    .navbar-toggler {
+      margin-right: 2em !important;
+    }
+    main {
+        margin-bottom: 3em;
+      }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    body {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+      background-color: var(--fondo);
+    }
+    header {
+      grid-area: header;
+      height: min-content;
+    }
+    main {
+      grid-area: main;
+      margin-bottom: 2em;
+    }
+    .footer {
+      grid-area: footer;
+      width: 100%;
+      height: 32em;
+    }
+  
+    .logoNayarit {
+      height: 8.75rem;
+      width: 8rem;
+    }
+    nav {
+      width: 100%;
+      /*Para poner por encima/arriba de todo*/
+      position: absolute !important;
+      top: 0;
+      left: 0;
+    }
+    .nav-link {
+      color: var(--font-color-letter) !important;
+    }
+    .navbar-brand {
+      font-size: var(--font-size-subtitle);
+      color: var(--font-color-letter) !important;
+    }
+    .nav-item .nav-link,
+    .dropdown-menu {
+      font-size: var(--font-size-text);
+    }
+    main {
+    margin-top: 13em;
+  }
+  }
+
+  h2{
+    font-family: var(--font-family-Benne);
+    font-weight: 400;
+    font-size: var(--font-size-title2);
+    line-height: 45px;
+    text-align: center;
+  }
+  .info{
+    font-family: var(--font-family-Benne);
+    font-style: italic;
+    font-size: var(--font-size-text);
+    color: rgb(18, 83, 136);
+    text-align: center;
+    
+  }
+  section{
+    margin: 3em;
+    border: 1px solid black;
+  }
+  .container_titulo{
+    background-color: #7A4664;
+    font-family: var(--font-family-Benne);
+    font-weight: bold;
+    font-size: var(--font-size-subtitle2);
+    line-height: 45px;
+  }
+  .co{
+    border: 1px solid black;
+    padding: 0.5em;
+    
+    text-align: center;
+  }
+  .row{
+    margin-top: 1em;
+    margin-right: 0px; 
+    margin-left:0px;
+  }
+  article{
+    text-align: center;
+  }
+  #btnGuardar{
+    width: 7em;
+    height: 2em;
+    font-family: var(--font-family-Benne);
+    font-weight: bold;
+    font-size: var(--font-size-text);
+  }
