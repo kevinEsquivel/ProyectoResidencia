@@ -1,4 +1,4 @@
-@import url("/css/root.css") all;
+@import url("../root.css") all;
 @media only screen and (min-width: 1200px) {
   body {
     display: grid;

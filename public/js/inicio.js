@@ -1,8 +1,8 @@
 /* CARRUSEL DE IMAGENES DE TITULO */
 var imagenes = [
-  "/assets/Inicio/Tribunal_EFO2.jpg",
-  "/assets/Inicio/Tribunal2.jpg",
-  "/assets/Inicio/N1.jpg",
+  "../assets/Inicio/Tribunal_EFO2.jpg",
+  "../assets/Inicio/Tribunal2.jpg",
+  "../assets/Inicio/N1.jpg",
 ];
 var pos = 0;
 window.setInterval(function () {
@@ -24,18 +24,18 @@ var imagenes2 = [
 ];
 var pos = 0;
 window.setInterval(function () {
-  document.getElementById("i1").src =imagenes2[pos];
-  
+  document.getElementById("i1").src = imagenes2[pos];
+
   if (pos == 0) lineas("num1");
   if (pos == 1) lineas("num2");
   if (pos == 2) lineas("num3");
 }, 2000);
 
-var imagenes3 = ["/assets/N2.jpg", "/assets/N3.jpg", "/assets/Tribunal_EF.jpg"];
+var imagenes3 = ["../assets/N2.jpg", "../assets/N3.jpg", "../assets/Tribunal_EF.jpg"];
 var pos = 0;
 window.setInterval(function () {
-  document.getElementById("i2").src =imagenes3[pos];
-  
+  document.getElementById("i2").src = imagenes3[pos];
+
   if (pos == 0) lineas("num1");
   if (pos == 1) lineas("num2");
   if (pos == 2) lineas("num3");
@@ -49,7 +49,7 @@ function lineas(id) {
         "rgba(196, 196, 196, 0.7)";
       document.getElementById("num3").style.backgroundColor =
         "rgba(196, 196, 196, 0.7)";
-        document.getElementById("i1").src =imagenes[0];
+      document.getElementById("i1").src = imagenes[0];
 
       break;
     case "num2":
@@ -58,7 +58,7 @@ function lineas(id) {
         "rgba(196, 196, 196, 0.7)";
       document.getElementById("num3").style.backgroundColor =
         "rgba(196, 196, 196, 0.7)";
-        document.getElementById("i1").src =imagenes[1];
+      document.getElementById("i1").src = imagenes[1];
 
       break;
     case "num3":
@@ -67,7 +67,7 @@ function lineas(id) {
         "rgba(196, 196, 196, 0.7)";
       document.getElementById("num1").style.backgroundColor =
         "rgba(196, 196, 196, 0.7)";
-        document.getElementById("i1").src =imagenes[2];
+      document.getElementById("i1").src = imagenes[2];
       break;
   }
 }
@@ -94,4 +94,3 @@ function lineas(id) {
     sliders[value - 1].classList.toggle("slider_body--show");
   }
 })();
-
