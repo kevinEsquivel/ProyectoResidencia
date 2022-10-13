@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=images,executable
 /node_modules
 /public/assets
+.env
 ### Executable ###
 *.app
 *.bat
