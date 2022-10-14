@@ -20,11 +20,12 @@ btnLogin.addEventListener("click", (e) => {
   })
   .then(async (response)=>{
     const x = await response.json();
-    //console.log(x);
+    console.log(x);
     if(x.errors){
       return window.alert("Favor de ingresar un correo y contraseña correctos");
     } 
-    //window.open("../html/administracion/PDF.html", "_self");
+    console.log("FIN");
+    return window.open("../html/administracion/calendario.html", "_self");
     
   })
   .catch((error)=>{console.log("ESTO ES UN ERROr",error);})

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- BOOTSTRAP -->
     <link
       rel="stylesheet"
@@ -24,9 +25,9 @@
       crossorigin="anonymous"
     ></script>
     <!------------------ CSS ----------->
-    <link rel="stylesheet" href="/public/css/declaracion/declaracion.css" />
+    <link rel="stylesheet" href="/public/css/calendario/calendario.css" />
 
-    <title>Declaración</title>
+    <title>Usuarios</title>
   </head>
   <body>
     <header>
@@ -65,17 +66,8 @@
                 >
               </li>
               <li class="nav-item p-2">
-                <a
-                  class="nav-link active"
-                  href="../administracion/declaracion.html"
-                  >Declaracion</a
-                >
-              </li>
-              <li class="nav-item p-2">
-                <a
-                  class="nav-link"
-                  href="../administracion/administracion.html"
-                  >Administracion</a
+                <a class="nav-link" href="../administracion/usuarios.html"
+                  >Usuarios</a
                 >
               </li>
               <li class="nav-item p-2">
@@ -85,22 +77,31 @@
               </li>
               <li class="nav-item p-2">
                 <a
+                  class="nav-link active"
+                  href="../administracion/declaracion.html"
+                  >Declaracion</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="../administracion/administracion.html"
+                  >Administracion</a
+                >
+              </li>
+
+              <li class="nav-item p-2">
+                <a
                   class="nav-link"
                   href="../administracion/informacionPersonal.html"
                   >Informacion Personal</a
                 >
               </li>
               <li class="nav-item p-2">
-                <a
-                  class="nav-link"
-                  href="../administracion/estadisticas.html"
+                <a class="nav-link" href="../administracion/estadisticas.html"
                   >Estadisticas</a
                 >
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" id="salir" href="../inicio.html"
-                  >SALIR</a
-                >
+                <a class="nav-link" id="salir" href="../inicio.html">SALIR</a>
               </li>
             </ul>
             <!-- Modal -->
@@ -118,7 +119,60 @@
       </nav>
     </header>
     <main>
-      <h2>Declaración</h2>
+      
+      <div class="container">
+        <h2 class="ml-5">Usuarios</h2>
+        <div class="container d-flex justify-content-end">
+            <button type="button" class="btn btn-light m-3 ">
+                Nuevo usuario
+              </button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre(s)</th>
+              <th scope="col">Apellido(s)</th>
+              <th scope="col">Puesto(s)</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Contraseña</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td></td>
+              <td>test1@gmail.com</td>
+              <td>************</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>Secretario</td>
+              <td>test2@gmail.com</td>
+              <td>************</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>Secretario</td>
+              <td>test3@gmail.com</td>
+              <td>************</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>Secretario</td>
+              <td>test4@gmail.com</td>
+              <td>************</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
     <footer
       style="background-color: #406c68; height: 12em; margin-bottom: 0px"
@@ -126,6 +180,6 @@
     >
       <h2>¡Ten un gran día!</h2>
     </footer>
-    <script src="/js/PDF.js"></script>
+    <script src="/public/js/infoPersonal.js"></script>
   </body>
 </html>

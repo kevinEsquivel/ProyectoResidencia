@@ -1,4 +1,4 @@
-@import url("../root.css");
+@import url("/public/css/root.css");
 @media only screen and (min-width: 1200px) {
   body {
     display: grid;
@@ -128,13 +128,13 @@
     justify-self: center;
   }
   .magistrados div .card .img1 {
-    background-image: url(/assets/Tribunal/Magistrado_-removebg-preview.png);
+    background-image: url(/public/assets/Tribunal/Magistrado_-removebg-preview.png);
   }
   .magistrados div .img2 {
-    background-image: url(/assets/Tribunal/MAgistrada_Irina-removebg-preview.png);
+    background-image: url(/public/assets/Tribunal/MAgistrada_Irina-removebg-preview.png);
   }
   .magistrados div .img3 {
-    background-image: url(/assets/Tribunal/MAgistrada_MArtha-removebg-preview.png);
+    background-image: url(/public/assets/Tribunal/MAgistrada_MArtha-removebg-preview.png);
   }
   .magistrados div .icons {
     display: inline-flex;
@@ -177,7 +177,7 @@
   }
 
   .icon_nayarit {
-    background: url("/assets/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
+    background: url("/public/assets/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

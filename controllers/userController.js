@@ -26,7 +26,7 @@ const userGetEmailPass = async (req, res) => {
   const vPass = await matchPassword(pass, user.password);
 
   if (!vPass) return res.json({ errors: "No match" });
-  
+  res.json({msg:"TODO BIEN"})
   //console.log("TODO CORRECTO", matchPassword);
 };
 const userPost = async (req = request, res = response) => {

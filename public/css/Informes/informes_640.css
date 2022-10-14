@@ -1,12 +1,11 @@
-@import url('/css/root.css') all;
+@import url('/public/css/root.css') all;
 @media only screen and (max-width: 1199px) and (min-width: 220px) {
   body{
     display: grid;
     grid-template-areas: 'header'
                           'main'
                           'footer';
-background-color: var(--fondo) !important;
-    
+    background-color: var(--fondo) !important;    
   }
   .header{
     grid-area: header;

@@ -1,4 +1,4 @@
-@import url("../css/root.css") all;
+@import url("/public/css/root.css") all;
 @media only screen and (max-width: 1199px) and (min-width: 220px) {
   body {
     display: grid;
@@ -8,7 +8,7 @@
       "footer";
     background-color: var(--fondo);
   }
-  
+
   main {
     grid-area: main;
   }
@@ -21,18 +21,19 @@
     height: 8.75rem;
     width: 8rem;
   }
-  
-  .nav-link{
+
+  .nav-link {
     color: var(--font-color-letter) !important;
   }
-  .navbar-brand{
+  .navbar-brand {
     font-size: var(--font-size-subtitle);
     color: var(--font-color-letter) !important;
   }
-  .nav-item .nav-link,.dropdown-menu{
+  .nav-item .nav-link,
+  .dropdown-menu {
     font-size: var(--font-size-text);
   }
-  .navbar-toggler{
+  .navbar-toggler {
     margin-right: 2em !important;
   }
   /*------------------------------------------MAIN------------------------------------------*/
@@ -101,13 +102,13 @@
     height: 300px;
   }
   .magistrados div .card .img1 {
-    background-image: url(/assets/Tribunal/Magistrado_-removebg-preview.png);
+    background-image: url(/public/assets/Tribunal/Magistrado_-removebg-preview.png);
   }
   .magistrados div .img2 {
-    background-image: url(/assets/Tribunal/MAgistrada_Irina-removebg-preview.png);
+    background-image: url(/public/assets/Tribunal/MAgistrada_Irina-removebg-preview.png);
   }
   .magistrados div .img3 {
-    background-image: url(/assets/Tribunal/MAgistrada_MArtha-removebg-preview.png);
+    background-image: url(/public/assets/Tribunal/MAgistrada_MArtha-removebg-preview.png);
   }
   .magistrados div .icons {
     display: inline-flex;
@@ -122,18 +123,18 @@
     height: 60px;
   }
   .magistrados div div .correo {
-    background-image: url("/html/recursos/gmail.png");
+    background-image: url("/public/assets/gmail.png");
   }
   .magistrados div div .Curriculum {
-    background-image: url("/html/recursos/curriculum-vitae.png");
+    background-image: url("/public/assets/curriculum-vitae.png");
   }
   .magistrados div .textoMagistrado {
     font-size: var(--font-size-text);
     font-weight: 400;
     line-height: 20px;
   }
+    line-height: 20px;
 
-  /*SECCION ORGANIGRAMA*/
   .organigrama h3 {
     margin-top: 40px;
     justify-content: center;
@@ -141,7 +142,7 @@
     font-size: var(--font-size-title);
   }
   .icon_nayarit {
-    background: url("/html/recursos/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
+    background: url("/public/assets/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -153,7 +154,10 @@
     z-index: -1;
     opacity: 0.8;
   }
-  /*TARJETAS CON HOVER QUE MUESTRA INFORMACION*/
+    z-index: -1;
+    opacity: 0.8;
+  }
+  /*TARJE
   .card {
     justify-self: center;
     height: 300px;

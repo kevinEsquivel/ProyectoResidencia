@@ -26,7 +26,7 @@
       crossorigin="anonymous"
     ></script>
     <!------------------ CSS ----------->
-    <link rel="stylesheet" href="/css/calendario/calendario.css" />
+    <link rel="stylesheet" href="/public/css/calendario/calendario.css"/>
 
     <title>Calendario</title>
   </head>
@@ -34,10 +34,10 @@
     <header>
       <nav class="navbar navbar-expand-xl navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand p-3" href="/html/inicio.html">
+          <a class="navbar-brand p-3" href="../inicio.html">
             <img
               class="logoNayarit"
-              src="/assets/logoNayarit_Recortada.png"
+              src="/public/assets/logoNayarit_Recortada.png"
               alt="logo de Nayarit"
             />
             TEEN
@@ -62,45 +62,51 @@
                 <a
                   class="nav-link"
                   aria-current="page"
-                  href="/html/administracion/calendario.html"
+                  href="../administracion/calendario.html"
                   >Calendario</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="../administracion/usuarios.html"
+                  >Usuarios</a
+                >
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="../administracion/PDF.html"
+                  >Subir PDF's</a
                 >
               </li>
               <li class="nav-item p-2">
                 <a
                   class="nav-link active"
-                  href="/html/administracion/declaracion.html"
+                  href="../administracion/declaracion.html"
                   >Declaracion</a
                 >
               </li>
               <li class="nav-item p-2">
                 <a
                   class="nav-link"
-                  href="/html/administracion/administracion.html"
+                  href="../administracion/administracion.html"
                   >Administracion</a
                 >
               </li>
-              <li class="nav-item p-2">
-                <a class="nav-link" href="/html/administracion/PDF.html"
-                  >Subir PDF's</a
-                >
-              </li>
+              
               <li class="nav-item p-2">
                 <a
                   class="nav-link"
-                  href="/html/administracion/informacionPersonal.html"
+                  href="../administracion/informacionPersonal.html"
                   >Informacion Personal</a
                 >
               </li>
               <li class="nav-item p-2">
                 <a
                   class="nav-link"
-                  href="/html/administracion/estadisticas.html"
+                  href="../administracion/estadisticas.html"
                   >Estadisticas</a
                 >
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" id="salir" href="/html/inicio.html"
+                <a class="nav-link" id="salir" href="../inicio.html"
                   >SALIR</a
                 >
               </li>
@@ -421,7 +427,7 @@
       <h2>¡Ten un gran día!</h2>
     </footer>
     <!-- Suportable -->
-    <script src="/js/Sortable.min.js"></script>
-    <script src="/js/calendario.js"></script>
+    <script src="/public/js/Sortable.min.js"></script>
+    <script src="/public/js/calendario.js"></script>
   </body>
 </html>
