@@ -28,7 +28,7 @@ btnLogin.addEventListener("click", (e) => {
     return window.open("../html/administracion/calendario.html", "_self");
     
   })
-  .catch((error)=>{console.log("ESTO ES UN ERROr",error);})
+  .catch((error)=>{console.log("Esto es un error en GENERAL",error);})
 
   //  
 });

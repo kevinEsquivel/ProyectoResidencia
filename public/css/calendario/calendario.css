@@ -1,4 +1,4 @@
-@import url("/public/css/root.css") all;
+@import url("../root.css") all;
 
 @media only screen and (max-width: 1199px) and (min-width: 220px) {
   body {
@@ -134,7 +134,7 @@ h2 {
   width: 100%;
 }
 .div-img {
-  background-image: url(/assets/User.png);
+  background-image: url(/public/assets/User.png);
   background-color: black;
   background-position: center;
   background-repeat: no-repeat;

@@ -5,6 +5,13 @@ const UsuarioSchema= Schema({
         type: String,
         required:[true,'El nombre es obligatorio'], //primero es si es requerido y el segundo mensaje de error
     },
+    apellido:{
+        type: String,
+        required:[true,'El apellido es obligatorio'], 
+    },
+    puesto:{
+        type: String
+    },
     correo:{ //el esquema tendra un nombre con los valores
         type: String,
         required:[true,'El correo es obligatorio'], //primero es si es requerido y el segundo mensaje de error

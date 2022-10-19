@@ -30,9 +30,9 @@ const userGetEmailPass = async (req, res) => {
   //console.log("TODO CORRECTO", matchPassword);
 };
 const userPost = async (req = request, res = response) => {
-  const { nombre, password, correo, rol } = req.body;
+  const { nombre,apellido,puesto,password, correo, rol } = req.body;
 
-  const usuario = new User({ nombre, password, correo, rol }); //
+  const usuario = new User({ nombre,apellido,puesto, password, correo, rol }); //
 
   //ENCRIPTAR LA CONTRASEÑA
   const salt = bcrypt.genSaltSync(10); //?son los saltos de encriptacion entre mas grande mas dificil de decifrar

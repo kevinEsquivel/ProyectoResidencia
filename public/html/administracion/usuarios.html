@@ -25,7 +25,7 @@
       crossorigin="anonymous"
     ></script>
     <!------------------ CSS ----------->
-    <link rel="stylesheet" href="/public/css/calendario/calendario.css" />
+    <link rel="stylesheet" href="../../css/usuarios/usuarios.css" />
 
     <title>Usuarios</title>
   </head>
@@ -36,7 +36,7 @@
           <a class="navbar-brand p-3" href="../inicio.html">
             <img
               class="logoNayarit"
-              src="/public/assets/logoNayarit_Recortada.png"
+              src="../../assets/logoNayarit_Recortada.png"
               alt="logo de Nayarit"
             />
             TEEN
@@ -119,13 +119,138 @@
       </nav>
     </header>
     <main>
-      
       <div class="container">
         <h2 class="ml-5">Usuarios</h2>
         <div class="container d-flex justify-content-end">
-            <button type="button" class="btn btn-light m-3 ">
-                Nuevo usuario
-              </button>
+          <button
+            type="button"
+            class="btn btn-light m-3"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Nuevo usuario
+          </button>
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <div class="row">
+                      <div class="col">
+                        <label for="recipient-name" class="col-form-label"
+                          >Nombre(s):</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputNombre"
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="recipient-name" class="col-form-label"
+                          >Apellido(s):</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputApellidos"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <label for="recipient-name" class="col-form-label"
+                          >Puesto:
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPuesto"
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="recipient-name" class="col-form-label"
+                          >Correo</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputCorreo"
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col">
+                        <select
+                          class="form-select"
+                          aria-label="select form-select-lg"
+                          onchange="ShowSelected();"
+                        >
+                          <option Select value="NULL">Seleccione un rol</option>
+                          <option value="USER_ROL">Rol Usuario</option>
+                          <option value="ADMIN_ROL">Rol Administracion</option>
+                          <option value="DEVELOMENT_ROL">Rol Desarrollo</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="recipient-name" class="col-form-label"
+                          >Contraseña:
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputContra"
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="recipient-name" class="col-form-label"
+                          >Repetir Contraseña:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputContraRep"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary" id="btnGuardar">
+                  Guardar Usuario
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <table class="table">
           <thead>
@@ -146,6 +271,8 @@
               <td></td>
               <td>test1@gmail.com</td>
               <td>************</td>
+              <th><i class="fa-solid fa-pen-to-square fa-2x"></i></th>
+              <th><i class="fa-solid fa-trash fa-2x"></i></th>
             </tr>
             <tr>
               <th scope="row">2</th>
@@ -154,6 +281,8 @@
               <td>Secretario</td>
               <td>test2@gmail.com</td>
               <td>************</td>
+              <th><i class="fa-solid fa-pen-to-square fa-2x"></i></th>
+              <th><i class="fa-solid fa-trash fa-2x"></i></th>
             </tr>
             <tr>
               <th scope="row">3</th>
@@ -161,6 +290,8 @@
               <td>Secretario</td>
               <td>test3@gmail.com</td>
               <td>************</td>
+              <th><i class="fa-solid fa-pen-to-square fa-2x"></i></th>
+              <th><i class="fa-solid fa-trash fa-2x"></i></th>
             </tr>
             <tr>
               <th scope="row">4</th>
@@ -169,6 +300,8 @@
               <td>Secretario</td>
               <td>test4@gmail.com</td>
               <td>************</td>
+              <th><i class="fa-solid fa-pen-to-square fa-2x"></i></th>
+              <th><i class="fa-solid fa-trash fa-2x"></i></th>
             </tr>
           </tbody>
         </table>
@@ -180,6 +313,6 @@
     >
       <h2>¡Ten un gran día!</h2>
     </footer>
-    <script src="/public/js/infoPersonal.js"></script>
+    <script src="../../js/usuarios.js"></script>
   </body>
 </html>
