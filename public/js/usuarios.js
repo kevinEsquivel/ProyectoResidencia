@@ -1,3 +1,6 @@
+//*Referencias a PAQUETES
+const socket = io();
+//*Referencias a HTML
 const btnGuardar = document.querySelector("#btnGuardar");
 const nombres = document.querySelector("#inputNombre");
 const apellidos = document.querySelector("#inputApellidos");
@@ -6,6 +9,8 @@ const correo = document.querySelector("#inputCorreo");
 const contra = document.querySelector("#inputContra");
 const contraRep = document.querySelector("#inputContraRep");
 
+//?para la tabla
+const tBody = document.getElementById("tBody"); //
 
 function ShowSelected() {
   let combo = document.querySelector(".form-select");
@@ -15,16 +20,16 @@ function ShowSelected() {
 
 btnGuardar.addEventListener("click", (e) => {
   //*contraRep: contraRep.value,
-  const rol=ShowSelected();
+  const rol = ShowSelected();
 
-console.log(rol);
+  console.log(rol);
   data = {
     nombre: nombres.value,
     apellido: apellidos.value,
     puesto: puesto.value,
     password: contra.value,
     correo: correo.value,
-    rol
+    rol,
   };
 
   console.log(data);
@@ -50,22 +55,43 @@ console.log(rol);
     });
 });
 //!Sockets
-fetch(`http://localhost:8080/api/user/`, {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(data),
-})
-  .then(async (response) => {
-    const x = await response.json();
-    console.log(x);
-    if (x.errors) {
-      return window.alert("Se a generado un problema, revisar el código");
-    }
+socket.on("connect", () => {
+  console.log("conectado");
+  fetch(`http://localhost:8080/api/user/`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
   })
-  .catch((error) => {
-    console.log("Ha resultado un error: ", error);
-  });
+    .then(async (response) => {
+      const { user, total } = await response.json();
+      console.log(user[0]); //user[0]
+      if (response.json().errors) {
+        return window.alert("Error en la tabla, verificar codigo de usuarios");
+      }
+
+      let valores = [...Array(total).keys()];
+      let datos = ["nombre", "apellido", "puesto", "correo"];
+
+      for (let i = 0; i <total; i++) {
+        let row = document.createElement("tr");
+
+        for (let j = 0; j < 5; j++) {
+          let col = document.createElement("td");
+          let textoCol = document.createTextNode(user[i].nombre);
+          if (j === 0 && valores.includes(i)) {
+            textoCol = document.createTextNode(i + 1);
+          }
+          col.appendChild(textoCol);
+          row.appendChild(col);
+        }
+        //6 columnas
+        tBody.appendChild(row);
+      }
+    })
+    .catch((error) => {
+      console.log("Ha resultado un error: ", error);
+    });
+});
 
 //
