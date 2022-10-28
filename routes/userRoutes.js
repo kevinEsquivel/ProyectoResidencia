@@ -7,6 +7,7 @@ const {
   userPost,
   userPut,
   userDelete,
+  userGetUser,
   
 } = require("../controllers/userController");
 const {
@@ -20,13 +21,13 @@ const { validarCampos } = require("../middlewares/validar-campos");
 
 const router = Router();
 router.get("/", userGet);
+router.get("/:correo", userGetUser);
 router.post("/:correo",
   [
     check("correo", "El correo no esta con la sintaxis correcta").isEmail(), //esta crando los errores que los midelwers pueden hacerse
     validarCampos,
   ],
-  userGetEmailPass
-);
+  userGetEmailPass);
 router.post(
   "/",
   [

@@ -15,6 +15,15 @@ const userGet = async (req, res) => {
     total,
   });
 };
+const userGetUser = async (req, res) => {
+  const correo = req.params.correo;
+  const user = await User.findOne({ correo });
+
+  if (!user) return res.json({ msg: "Error en Email" });
+  res.json({
+    id: user.id,
+  })
+};
 const userGetEmailPass = async (req, res) => {
   const email = req.body.email;
   const pass = req.body.password;
@@ -46,7 +55,7 @@ const userPost = async (req = request, res = response) => {
 };
 const userPut = async (req = request, res = response) => {
   const { id } = req.params; //recupero el valor del url el id
-  const { _id, password, google, ...resto } = req.body;
+  const { _id, google, ...resto } = req.body;
 
   //TODO validar contra base de datos
   const rol = await User.findOne({ id: req.params.id });
@@ -82,6 +91,7 @@ const userDelete = async (req = request, res = response) => {
 };
 module.exports = {
   userGet,
+  userGetUser,
   userGetEmailPass,
   userPost,
   userPut,

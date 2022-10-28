@@ -54,6 +54,34 @@ btnGuardar.addEventListener("click", (e) => {
       console.log("Esto es un error en USUARIOS", error);
     });
 });
+
+//*Funcion para actualizar a el usuario
+const Update = async (correo) => {
+  const id = await fetch(`http://localhost:8080/api/user/${correo}`).then((res) => res.json());
+  
+  //!COSAS PARA ACTUALIZAR
+  fetch(`http://localhost:8080/api/user/${id.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+};
+const Delete= async (correo) => {
+  const id = await fetch(`http://localhost:8080/api/user/${correo}`).then((res) => res.json());
+
+  const mensaje = confirm("Seguro de borrar el usuario con el correo: "+correo);
+  if(mensaje){
+    alert("esta todo bien"+id)
+  }
+
+
+  
+}
+//const Delete =
+//
+
 //!Sockets
 socket.on("connect", () => {
   console.log("conectado");
@@ -64,30 +92,40 @@ socket.on("connect", () => {
     },
   })
     .then(async (response) => {
-      const { user, total } = await response.json();
-      console.log(user[0]); //user[0]
-      if (response.json().errors) {
+      const res = await response.json();
+      const { user, total } = res;
+      const x = res;
+      if (x.errors) {
         return window.alert("Error en la tabla, verificar codigo de usuarios");
       }
 
-      let valores = [...Array(total).keys()];
-      let datos = ["nombre", "apellido", "puesto", "correo"];
-
-      for (let i = 0; i <total; i++) {
-        let row = document.createElement("tr");
-
-        for (let j = 0; j < 5; j++) {
-          let col = document.createElement("td");
-          let textoCol = document.createTextNode(user[i].nombre);
-          if (j === 0 && valores.includes(i)) {
-            textoCol = document.createTextNode(i + 1);
-          }
-          col.appendChild(textoCol);
-          row.appendChild(col);
-        }
-        //6 columnas
-        tBody.appendChild(row);
+      for (let i = 0; i < total; i++) {
+        tBody.innerHTML +=
+          `<tr>
+          <td>` +
+          (i + 1) +
+          `</td>
+          <td>` +
+          user[i].nombre +
+          `</td>
+          <td>` +
+          user[i].apellido +
+          `</td>
+          <td>` +
+          user[i].puesto +
+          `</td>
+          <td>` +
+          user[i].correo +
+          `</td>
+          <td><i id="` +
+          user[i].correo +
+          `" class="fa-solid fa-pen-to-square fa-2x" onclick="Update(this.id);"></i></td>
+          <td><i id="` +
+          user[i].correo +
+          `" class="fa-solid fa-trash fa-2x" onclick="Delete(this.id);"></i></td>
+        </tr>`;
       }
+      return console.log("TODO BIEN");
     })
     .catch((error) => {
       console.log("Ha resultado un error: ", error);
