@@ -22,6 +22,7 @@ const userGetUser = async (req, res) => {
   if (!user) return res.json({ msg: "Error en Email" });
   res.json({
     id: user.id,
+    user
   })
 };
 const userGetEmailPass = async (req, res) => {
@@ -55,35 +56,36 @@ const userPost = async (req = request, res = response) => {
 };
 const userPut = async (req = request, res = response) => {
   const { id } = req.params; //recupero el valor del url el id
-  const { _id, google, ...resto } = req.body;
+  const {password}=req.body
+  const {...resto } = req.body;
 
-  //TODO validar contra base de datos
-  const rol = await User.findOne({ id: req.params.id });
+  //TODO validar contra base de datos 
+  /* const rol = await User.findOne({ id: req.params.id });
   if (rol !== "DEVELOMENT_ROL") {
     res.json({
       msg: "No cuentas con el rol permitido para esto",
     });
     return;
-  }
-  if (password) {
+  } */
+  console.log(password);
     //*ENCRIPTAR LA CONTRASEÑA
     const salt = bcrypt.genSaltSync(10); //?son los saltos de encriptacion entre mas grande mas dificil de decifrar
-    resto.password = bcrypt.hashSync(password, salt); //? es para generar el hash que se asociara a la contraseña y se guardara con ella
-  }
+    resto.password = bcrypt.hashSync(password , salt); //? es para generar el hash que se asociara a la contraseña y se guardara con ella
+    
 
   const usuario = await User.findByIdAndUpdate(id, resto); //*1param, el id a buscar, 1param lo que se actualizara
-
+  console.log(usuario,resto);
   res.json({ usuario });
 };
 const userDelete = async (req = request, res = response) => {
   const { id } = req.params;
-  const rol = await User.findOne({ id: req.params.id });
+  /* const rol = await User.findOne({ id: req.params.id }); 
   if (rol !== "DEVELOMENT_ROL") {
     res.json({
       msg: "No cuentas con el rol permitido para esto",
     });
     return;
-  }
+  } */
   const usuario = await User.findByIdAndUpdate(id, { estado: false }); //*el segundo elemento cambia el estado a false de ese id
   res.json({
     usuario,

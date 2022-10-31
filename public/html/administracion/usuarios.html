@@ -188,14 +188,23 @@
                         />
                       </div>
                       <div class="col">
-                        <label for="recipient-name" class="col-form-label"
-                          >Correo</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputCorreo"
-                        />
+                        <div class="row">
+                          <button type="button" class="btn btn-light m-2" id="btnGenerar">
+                            Generar Correo
+                          </button>
+                        </div>
+                        <div class="row">
+                          <label for="recipient-name" class="col-form-label"
+                            >Correo</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputCorreo"
+                            
+                            readonly
+                          />
+                        </div>
                       </div>
                     </div>
                     <div class="row mt-3">
@@ -218,7 +227,7 @@
                           >Contraseña:
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           class="form-control"
                           id="inputContra"
                         />
@@ -228,7 +237,7 @@
                           >Repetir Contraseña:</label
                         >
                         <input
-                          type="text"
+                          type="password"
                           class="form-control"
                           id="inputContraRep"
                         />
@@ -237,11 +246,13 @@
                   </div>
                 </form>
               </div>
+
               <div class="modal-footer">
                 <button
                   type="button"
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
+                  id="btnClose"
                 >
                   Close
                 </button>
@@ -266,6 +277,124 @@
             <!-- !AQUI INTRODUSCO LA TABLA CON EL -->
           </tbody>
         </table>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel2"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <div class="row">
+                    <div class="col">
+                      <label for="recipient-name" class="col-form-label"
+                        >Nombre(s):</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputNombre2"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="recipient-name" class="col-form-label"
+                        >Apellido(s):</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputApellidos2"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <label for="recipient-name" class="col-form-label"
+                        >Puesto:
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputPuesto2"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="recipient-name" class="col-form-label"
+                        >Correo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputCorreo2"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col">
+                      <select
+                        class="form-select2"
+                        aria-label="select form-select-lg"
+                        onchange="ShowSelected();"
+                      >
+                        <option Select value="NULL">Seleccione un rol</option>
+                        <option value="USER_ROL">Rol Usuario</option>
+                        <option value="ADMIN_ROL">Rol Administracion</option>
+                        <option value="DEVELOMENT_ROL">Rol Desarrollo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="recipient-name" class="col-form-label"
+                        >Contraseña:
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputContra2"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btnGuardar"
+                onclick="Update();"
+              >
+                Actualizar Usuario
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer
