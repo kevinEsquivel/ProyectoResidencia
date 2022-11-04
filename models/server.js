@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const fileUpload = require("express-fileupload");
 const { dbConection } = require("../database/config");
 
 class server {
@@ -8,6 +9,7 @@ class server {
     this.port = process.env.PORT;
     this.paths = {
       user: "/api/user",
+      pdf: "/api/pdf",
     };
 
     //!ESTO ES PARA LOS SOCKETS
@@ -45,12 +47,16 @@ class server {
     //directorio publico que se accedera con la ruta /
     this.app.use(express.static("public"));
     this.app.use(cors());
+
+    //*Para subir archivos
+    this.app.use(fileUpload());
     //Lecura y parseo del body en postman
     this.app.use(express.json()); // intentara serealizar la informacion a un json
   }
 
   routes() {
     this.app.use(this.paths.user, require("../routes/userRoutes"));
+    this.app.use(this.paths.pdf, require("../routes/pdfRoutes"));
   }
   start() {
     this.server.listen(this.port, () => { //!modificado por el cserver socket
