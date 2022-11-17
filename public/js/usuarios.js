@@ -65,6 +65,7 @@ btnGuardar.addEventListener("click", (e) => {
   fetch(`http://localhost:8080/api/user/`, {
     method: "POST",
     headers: {
+      
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
@@ -175,8 +176,9 @@ socket.on("connect", () => {
   })
     .then(async (response) => {
       const res = await response.json();
-      const { user, total } = res;
+      const { user, total ,email} = res;
       const x = res;
+      console.log(res);
       if (x.errors) {
         return window.alert("Error en la tabla, verificar codigo de usuarios");
       }
@@ -207,7 +209,7 @@ socket.on("connect", () => {
           `" class="fa-solid fa-trash fa-2x" onclick="Delete(this.id);"></i></td>
         </tr>`;
       }
-      return console.log("TODO BIEN");
+      return console.log("TODO BIEN",email);
     })
     .catch((error) => {
       console.log("Ha resultado un error: ", error);

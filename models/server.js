@@ -1,6 +1,9 @@
 const express = require("express");
+const session = require("express-session");
+const MongoStore = require('connect-mongo');
+const fileupload = require("express-fileupload")
 const cors = require("cors");
-const fileUpload = require("express-fileupload");
+
 const { dbConection } = require("../database/config");
 
 class server {
@@ -28,7 +31,7 @@ class server {
   }
   //!SOCKETS
   sockets() {
-    this.io.on("connection",  socket=> {
+    this.io.on("connection", (socket) => {
       console.log("Socket conectado");
 
       socket.on("disconnect", () => {
@@ -47,9 +50,19 @@ class server {
     //directorio publico que se accedera con la ruta /
     this.app.use(express.static("public"));
     this.app.use(cors());
+    this.app.use(fileupload());
+    this.app.use(
+      session({
+        secret: process.env.SESSION_SECRET || "some-secret",
+        resave: false, // investigar mas -> https://www.npmjs.com/package/express-session
+        saveUninitialized: false,
+        store: MongoStore.create({
+          mongoUrl: process.env.MONGODB,
+        }),
+      })
+    );
+    //!Para las sessiones
 
-    //*Para subir archivos
-    this.app.use(fileUpload());
     //Lecura y parseo del body en postman
     this.app.use(express.json()); // intentara serealizar la informacion a un json
   }
@@ -59,7 +72,8 @@ class server {
     this.app.use(this.paths.pdf, require("../routes/pdfRoutes"));
   }
   start() {
-    this.server.listen(this.port, () => { //!modificado por el cserver socket
+    this.server.listen(this.port, () => {
+      //!modificado por el cserver socket
       console.log("servidor en puerto ", this.port);
     }); //port 8080
   }

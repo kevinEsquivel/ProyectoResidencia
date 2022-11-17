@@ -16,6 +16,9 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <!-- !PARA EL DATE PICKER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- BOOTSTRAP -->
 
     <!-- Place your kit's code here -->
@@ -121,61 +124,42 @@
               <select
                 class="form-select form-control form-select-lg mb-3"
                 aria-placeholder="Seleccionar"
+                id="magistrado"
               >
-                <option value="1">Dra. Irina Cervates Bravo</option>
-                <option value="2">Lic. Martha Marín García</option>
-                <option value="3">Lic. Rubén Flores Portillo</option>
+                <option value="Dra. Irina Cervates Bravo">Dra. Irina Cervates Bravo</option>
+                <option value="Lic. Martha Marín García">Lic. Martha Marín García</option>
+                <option value="Lic. Rubén Flores Portillo">Lic. Rubén Flores Portillo</option>
               </select>
             </div>
 
-            <div class="row">
-              <label class="form-label">Año</label>
-              <select class="form-select form-control form-select-lg mb-3">
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-              </select>
-            </div>
-            <div class="row">
-              <label class="form-label">Mes</label>
-              <select class="form-select form-control form-select-lg mb-3">
-                <option value="Enero">Enero</option>
-                <option value="Febrero">Febrero</option>
-                <option value="Marzo">Marzo</option>
-                <option value="Abril">Abril</option>
-                <option value="Mayo">Mayo</option>
-                <option value="Junio">Junio</option>
-                <option value="Julio">Julio</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Septiembre">Septiembre</option>
-                <option value="Octubre">Octubre</option>
-                <option value="Noviembre">Noviembre</option>
-                <option value="Diciembre">Diciembre</option>
-              </select>
+            <div class="row">                
+              <form>
+                <label class="form-label">Seleccionar fecha del archivo:</label>
+                <input type="date" class="form-control ml-3" placeholder="Select" id="fecha">
+              </form>
             </div>
 
             <div class="row">
               <label class="form-label">El archivo pertenece a:</label>
-              <select class="form-select form-control form-select-lg mb-3">
-                <option value="1">Acuerdo</option>
-                <option value="2">Avisos de privacidad</option>
-                <option value="3">Sentencias</option>
-                <option value="3">Informes</option>
-                <option value="3">Financiero</option>
-                <option value="3">Convenios</option>
-                <option value="3">Demandas</option>
-                <option value="3">Denuncias</option>
+              <select id="slctArchivo" class="form-select form-control form-select-lg mb-3"  >
+                <option id="Acuerdo" value="Acuerdo">Acuerdo</option>
+                <option id="privacidad" value="privacidad">Avisos de privacidad</option>
+                <option id="Sentencias" value="Sentencias">Sentencias</option>
+                <option id="Informes" value="Informes">Informes</option>
+                <option id="Financiero" value="Financiero">Financiero</option>
+                <option id="Convenios" value="Convenios">Convenios</option>
+                <option id="Demandas" value="Demandas">Demandas</option>
+                <option id="Denuncias" value="Denuncias">Denuncias</option>
               </select>
             </div>
-            <div class="row" id="Depende">
+            <div class="row" id="Depende"  style="visibility:hidden">
               <label class="form-label">Tipo de archivo:</label>
               <select
+                id="selectT"
                 class="form-select form-control form-select-lg mb-3"
-                disabled
+                
               >
-                <option value="1">Acuerdo</option>
+                
               </select>
             </div>
             <div class="row row-btn">

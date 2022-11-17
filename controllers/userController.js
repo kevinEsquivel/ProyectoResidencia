@@ -9,10 +9,11 @@ const { matchPassword } = require("../helpers/user-validations");
 const userGet = async (req, res) => {
   const user = await User.find({ estado: true });
   const total = await User.countDocuments({ estado: true });
-
+  const email =req.session.correo;
   res.json({
     user,
     total,
+    email
   });
 };
 const userGetUser = async (req, res) => {

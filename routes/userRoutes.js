@@ -21,6 +21,8 @@ const { validarCampos } = require("../middlewares/validar-campos");
 
 const router = Router();
 router.get("/", userGet);
+//!Esto se trendria que guardar desde los Login
+
 router.get("/:correo", userGetUser);
 router.post("/:correo",
   [
@@ -42,6 +44,13 @@ router.post(
   ],
   userPost
 );
+router.post("/users",(req,res) =>{
+  
+  req.session.correo = req.body.email;
+  // Cuenta es el nombre que le damos y lo agregamos al object session 
+  //req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1 
+  //res.status(200).send(`Hola has visto esta página ${req.session.cuenta}`); 
+});
 router.put(
   "/:id",
   [
