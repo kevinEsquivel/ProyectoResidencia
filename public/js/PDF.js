@@ -1,4 +1,5 @@
 
+
 const drop = document.querySelector(".drop");
 const btn = drop.querySelector("#button");
 const btnGuardar = document.querySelector("#btnGuardar");
@@ -64,15 +65,23 @@ function addOptions(array) {
 }
 btnGuardar.addEventListener("click", async (e) => {
   //!esto se tendria que determinar automaticamente
-  let id_user = "634b470f4c0af45eb9ca6344";
+  let id_user = "";
 
-  const id = await fetch(`http://localhost:8080/api/user/`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(res=> res.json())
-    console.log(id);
+   fetch(`http://localhost:8080/api/user/`).then(async(response) => {
+    const res = await response.json();
+    const { email} = res;
+    console.log(email);
+    const id = await fetch(`http://localhost:8080/api/user/${email}`).then(res=>res.json())
+    console.log(id.id,typeof(id.id));
+    id_user=id.id;
+    console.log(id_user,typeof(id_user));
+  })
+  .catch((error) => {
+    console.log("Esto es un error en al Al obtener el id de session", error);
+  });
+    
+  
+    //console.log(id);
 
 
   let tipo =selectT.selectedIndex !== -1 ? selectT[selectT.selectedIndex].value : "";

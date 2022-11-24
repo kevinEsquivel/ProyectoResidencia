@@ -51,6 +51,7 @@ class server {
     this.app.use(express.static("public"));
     this.app.use(cors());
     this.app.use(fileupload());
+    //!Para las sessiones
     this.app.use(
       session({
         secret: process.env.SESSION_SECRET || "some-secret",
@@ -61,7 +62,7 @@ class server {
         }),
       })
     );
-    //!Para las sessiones
+    
 
     //Lecura y parseo del body en postman
     this.app.use(express.json()); // intentara serealizar la informacion a un json

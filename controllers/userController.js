@@ -6,6 +6,7 @@ const bcrypt = require("bcryptjs"); //!para encriptar la contraseña
 const User = require("../models/user");
 const { matchPassword } = require("../helpers/user-validations");
 
+//*Obtener todos los usuarios
 const userGet = async (req, res) => {
   const user = await User.find({ estado: true });
   const total = await User.countDocuments({ estado: true });
@@ -16,6 +17,8 @@ const userGet = async (req, res) => {
     email
   });
 };
+
+//*Obtener un usuario
 const userGetUser = async (req, res) => {
   const correo = req.params.correo;
   const user = await User.findOne({ correo });
