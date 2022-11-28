@@ -13,6 +13,7 @@ class server {
     this.paths = {
       user: "/api/user",
       pdf: "/api/pdf",
+      calendario: "/api/calendario",
     };
 
     //!ESTO ES PARA LOS SOCKETS
@@ -51,26 +52,14 @@ class server {
     this.app.use(express.static("public"));
     this.app.use(cors());
     this.app.use(fileupload());
-    //!Para las sessiones
-    this.app.use(
-      session({
-        secret: process.env.SESSION_SECRET || "some-secret",
-        resave: false, // investigar mas -> https://www.npmjs.com/package/express-session
-        saveUninitialized: false,
-        store: MongoStore.create({
-          mongoUrl: process.env.MONGODB,
-        }),
-      })
-    );
-    
-
     //Lecura y parseo del body en postman
     this.app.use(express.json()); // intentara serealizar la informacion a un json
   }
 
   routes() {
-    this.app.use(this.paths.user, require("../routes/userRoutes"));
-    this.app.use(this.paths.pdf, require("../routes/pdfRoutes"));
+    this.app.use(this.paths.user,       require("../routes/userRoutes"));
+    this.app.use(this.paths.pdf,        require("../routes/pdfRoutes"));
+    this.app.use(this.paths.calendario, require("../routes/calendarioRoutes"));
   }
   start() {
     this.server.listen(this.port, () => {

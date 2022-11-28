@@ -48,6 +48,7 @@ var appData = {
   },
   currentBoard: 0, // The index of the currently open board.
   identifier: 0,
+  id_user:"",
 };
 
 function currentCards() {
@@ -325,25 +326,25 @@ class Card {
 
       _newItemEditButton.addEventListener("click", () => {
 
-        
-        
-        
         _modalTitle.value        = _item.title;
         _modal_description.value = _item.description;
         _modal_dateStart.value   = _item.date_start;
         _modal_dateEnd.value     = _item.date_end;
 
+        
         btn_guardar.addEventListener("click", () => {
+
           _item.title       = _modalTitle.value;
           _item.date_start  = _modal_dateStart.value;
           _item.date_end    = _modal_dateEnd.value;
           _item.description = _modal_description.value;
+          window.location.reload();
 
-          
-          setInterval("window.location.reload()",1000);
         });
-        saveData();
-          createAlert("Data successfully saved.");
+        appData.id_user="idDelUsuario";
+
+        console.log("Guardo Info");
+        createAlert("Data successfully saved.");
         console.log(window.localStorage.getItem("kards-appData"));
       });
 
@@ -753,6 +754,7 @@ e_cardContextMenuDuplicate.addEventListener(
 );
 /*//! <=================================== Guardar en MongoDB ===================================> */
 function saveDataMongo(){
+  //!Modificacion
   //fetch()
     
 }
@@ -813,6 +815,7 @@ function getDataFromMongo() {
 /*//! <=================================== Persistent Data Storage ===================================> */
 function saveData() {
   window.localStorage.setItem("kards-appData", JSON.stringify(appData));
+  
 }
 
 function getDataFromLocalStorage() {
