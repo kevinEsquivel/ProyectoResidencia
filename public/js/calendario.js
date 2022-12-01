@@ -36,8 +36,10 @@ const btn_guardar = document.querySelector("#btnGuardarModal");
 
 // Auto save enabled as default
 let autoSaveInternalId = setInterval(function () {
-  saveData();
-}, 5000);
+  //saveData();
+  saveDataMongo();
+  //console.log("Guardando");
+}, 2000);
 
 //!MODIFICAR EL ID DEL USER
 
@@ -50,7 +52,7 @@ var appData = {
   },
   currentBoard: 0, // The index of the currently open board.
   identifier: 0,
-  id_user:"634b470f4c0af45eb9ca6344",
+  id_user:"634b470f4c0af45eb9ca6344", //!Este tiene que ser proporsionado 
 };
 
 function currentCards() {
@@ -334,7 +336,8 @@ class Card {
         _modal_description.value = _item.description;
         _modal_dateStart.value   = _item.date_start;
         _modal_dateEnd.value     = _item.date_end;
-        console.log(_item);
+        
+        //console.log(_item);
         
         btn_guardar.addEventListener("click", () => {
 
@@ -343,13 +346,13 @@ class Card {
           _item.date_end    = _modal_dateEnd.value;
           _item.description = _modal_description.value;
           saveDataMongo();
+          alert("Guardando informacion")
           window.location.reload();
 
         });
         //!Modificando
-        //appData.id_user="idDelUsuario";
         createAlert("Data successfully saved.");
-        //console.log(window.localStorage.getItem("kards-appData"));
+        
       });
 
       // Delete button. ALlows the user to delete the item from the card.
@@ -762,7 +765,7 @@ e_cardContextMenuDuplicate.addEventListener(
 function saveDataMongo(){
   //alert("Guardando en Mongo")
   //!Modificacion
-  let idCalendario='6386dd2f6035f17c56c2b710';
+  let idCalendario='6388280779e2d063f686d958';
   fetch(`http://localhost:8080/api/calendario/${idCalendario}`, {
     method: "PUT",
     headers: {
@@ -773,7 +776,7 @@ function saveDataMongo(){
   })
   .then(async (response) => {
     const x = await response.json();
-    console.log(x);
+    //console.log(x);
   })
   .catch((error) => {
     console.log("Esto es un error en USUARIOS", error);
@@ -849,7 +852,7 @@ function saveDataMongo(){
   }
   loadDataFromMongo();
 /*//! <=================================== Persistent Data Storage ===================================> */
-function saveData() {
+/* function saveData() {
   window.localStorage.setItem("kards-appData", JSON.stringify(appData));
   
 }
@@ -860,7 +863,7 @@ function getDataFromLocalStorage() {
 
 function loadData() {
   let _data = window.localStorage.getItem("kards-appData");
-  console.log(_data,typeof(_data));
+  //console.log(_data,typeof(_data));
   if (_data) {
     let _appData = JSON.parse(_data);
 
@@ -915,7 +918,7 @@ function clearData() {
 }
 
 //loadData();
-//clearData();
+//clearData(); */
 
 
 
@@ -936,8 +939,8 @@ e_autoSaveButton.addEventListener("change", function (event) {
   if (this.checked) {
     autoSaveInternalId = setInterval(function () {
       //!No funciona aqui no se porque
-      saveData();
-      console.log("Guardando");
+      //saveData();
+      //console.log("Guardando");
       saveDataMongo();
     }, 1000);
   } else {
@@ -948,7 +951,7 @@ e_autoSaveButton.addEventListener("change", function (event) {
 e_saveButton.addEventListener("click", () => {
   //*QUITAR EL SAVEDATA
   saveData();
-  console.log("Guardando");
+  //console.log("Guardando");
   createAlert("Data successfully saved.");
   
       saveDataMongo();
