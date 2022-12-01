@@ -25,22 +25,15 @@ btnLogin.addEventListener("click", (e) => {
       return window.alert("Favor de ingresar un correo y contraseña correctos");
     } 
 
-    fetch(`http://localhost:8080/api/user/users`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).catch((error)=>{return console.log("Esto es un error en SESSION-General",error);})
-    console.log("FIN");
+    window.localStorage.setItem("E", data.email);
+  
+    
     
     return window.open("../html/administracion/calendario.html", "_self");
     
   })
   .catch((error)=>{ return console.log("Esto es un error en GENERAL",error);})
 
-
-  
-
   //  
 });
+function logOut(){localStorage.removeItem('E');}
