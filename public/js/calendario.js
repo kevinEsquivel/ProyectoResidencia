@@ -39,6 +39,8 @@ let autoSaveInternalId = setInterval(function () {
   saveData();
 }, 5000);
 
+//!MODIFICAR EL ID DEL USER
+
 var appData = {
   boards: [],
   settings: {
@@ -48,7 +50,7 @@ var appData = {
   },
   currentBoard: 0, // The index of the currently open board.
   identifier: 0,
-  id_user:"",
+  id_user:"634b470f4c0af45eb9ca6344",
 };
 
 function currentCards() {
@@ -233,11 +235,13 @@ class Item {
     title,
     description = null,
     id,
-    parentCardId,
-    members = null,
     date_start = null,
     date_end = null,
-    url_document=null
+    members = null,
+    url_document=null,
+    parentCardId,
+    
+    
   ) {
     this.title = title;
     this.id = id;
@@ -330,7 +334,7 @@ class Card {
         _modal_description.value = _item.description;
         _modal_dateStart.value   = _item.date_start;
         _modal_dateEnd.value     = _item.date_end;
-
+        console.log(_item);
         
         btn_guardar.addEventListener("click", () => {
 
@@ -338,14 +342,14 @@ class Card {
           _item.date_start  = _modal_dateStart.value;
           _item.date_end    = _modal_dateEnd.value;
           _item.description = _modal_description.value;
+          saveDataMongo();
           window.location.reload();
 
         });
-        appData.id_user="idDelUsuario";
-
-        console.log("Guardo Info");
+        //!Modificando
+        //appData.id_user="idDelUsuario";
         createAlert("Data successfully saved.");
-        console.log(window.localStorage.getItem("kards-appData"));
+        //console.log(window.localStorage.getItem("kards-appData"));
       });
 
       // Delete button. ALlows the user to delete the item from the card.
@@ -737,8 +741,10 @@ const cardContextMenu_duplicateCard = () => {
   let _currentCardObject = getCardFromElement(cardContextMenu_currentCard);
 
   currentBoard().addCard();
+//currentBoard().cards.length - 1
 
-  let _cIndex = currentBoard().cards.length - 1;
+//!MODIFICADO
+  let _cIndex = currentBoard().cards.length === 0?currentBoard().cards.length:currentBoard().cards.length - 1;
   currentBoard().cards[_cIndex].items = _currentCardObject.items;
   currentBoard().cards[_cIndex].name = _currentCardObject.name + " Copy";
 
@@ -754,18 +760,34 @@ e_cardContextMenuDuplicate.addEventListener(
 );
 /*//! <=================================== Guardar en MongoDB ===================================> */
 function saveDataMongo(){
+  //alert("Guardando en Mongo")
   //!Modificacion
-  //fetch()
+  let idCalendario='6386dd2f6035f17c56c2b710';
+  fetch(`http://localhost:8080/api/calendario/${idCalendario}`, {
+    method: "PUT",
+    headers: {
+      
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(appData),
+  })
+  .then(async (response) => {
+    const x = await response.json();
+    console.log(x);
+  })
+  .catch((error) => {
+    console.log("Esto es un error en USUARIOS", error);
+  });
     
 }
-function getDataFromMongo() {
-    return window.localStorage.getItem("kards-appData");
-  }
-  function loadDataFromMongo(){
-    let _data = window.localStorage.getItem("kards-appData");
-    
+  async function  loadDataFromMongo(){
+    let idUser = '634b470f4c0af45eb9ca6344';
+    let _data = await fetch(`http://localhost:8080/api/calendario/${idUser}`)
+      .then((res) => res.json());
+    //console.log(_data.calendarioU,typeof(_data.calendarioU));
     if (_data) {
-      let _appData = JSON.parse(_data);
+      
+      let _appData = _data.calendarioU;
   
       // Since JSON doesn't store functions and such.
       // We'll have to reinitailize the classes with the loaded data.
@@ -787,11 +809,24 @@ function getDataFromMongo() {
           let _newCard = new Card(_card.name, _card.id, _board.id);
   
           // Fill the cards with items.
+          /*  
+          title,
+    description = null,
+    id,
+    date_start = null,
+    date_end = null,
+    members = null,
+    url_document=null,
+    parentCardId, */
           for (let _item of _card.items) {
             let _newItem = new Item(
               _item.title,
               _item.description,
               _item.id,
+              _item.date_start,
+              _item.date_end,
+              _item.members,
+              _item.url_document,              
               _card.id
             );
             // Push the item into the card.
@@ -812,6 +847,7 @@ function getDataFromMongo() {
     }
     listBoards();
   }
+  loadDataFromMongo();
 /*//! <=================================== Persistent Data Storage ===================================> */
 function saveData() {
   window.localStorage.setItem("kards-appData", JSON.stringify(appData));
@@ -824,7 +860,7 @@ function getDataFromLocalStorage() {
 
 function loadData() {
   let _data = window.localStorage.getItem("kards-appData");
-  
+  console.log(_data,typeof(_data));
   if (_data) {
     let _appData = JSON.parse(_data);
 
@@ -868,7 +904,7 @@ function loadData() {
     // Generate the board.
     renderBoard(appData.boards[appData.currentBoard]);
   } else {
-    let _defaultBoard = new Board("Untitled Board", "b0", { theme: null });
+    let _defaultBoard = new Board("Tablero", "b0", { theme: null });
     appData.boards.push(_defaultBoard);
   }
   listBoards();
@@ -878,7 +914,10 @@ function clearData() {
   window.localStorage.clear();
 }
 
-loadData();
+//loadData();
+//clearData();
+
+
 
 /* <=================================== Other Events ===================================> */
 e_addCardText.addEventListener("keyup", (e) => {
@@ -896,16 +935,23 @@ e_addBoardButton.addEventListener("click", addBoard);
 e_autoSaveButton.addEventListener("change", function (event) {
   if (this.checked) {
     autoSaveInternalId = setInterval(function () {
+      //!No funciona aqui no se porque
       saveData();
-    }, 5000);
+      console.log("Guardando");
+      saveDataMongo();
+    }, 1000);
   } else {
     window.clearInterval(autoSaveInternalId);
   }
 });
 //e_saveButton.addEventListener('click', saveData);
 e_saveButton.addEventListener("click", () => {
+  //*QUITAR EL SAVEDATA
   saveData();
+  console.log("Guardando");
   createAlert("Data successfully saved.");
+  
+      saveDataMongo();
 });
 
 window.onbeforeunload = function () {
