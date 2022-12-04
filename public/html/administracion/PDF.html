@@ -17,7 +17,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- !PARA EL DATE PICKER -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- BOOTSTRAP -->
 
@@ -80,9 +83,7 @@
                 >
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="../administracion/PDF.html"
-                  >Subir PDF's</a
-                >
+                <a class="nav-link" href="../administracion/PDF.html">PDF's</a>
               </li>
               <li class="nav-item p-2">
                 <a
@@ -116,82 +117,165 @@
     </header>
     <main>
       <section class="container">
-        <h2>Subir PDF's</h2>
-        <div class="row" id="r">
-          <div class="col-lg" style="background-color: #406c68">
-            <div class="row">
-              <label class="form-label">Magistrado Presidente</label>
-              <select
-                class="form-select form-control form-select-lg mb-3"
-                aria-placeholder="Seleccionar"
-                id="magistrado"
-              >
-                <option value="Dra. Irina Cervates Bravo">Dra. Irina Cervates Bravo</option>
-                <option value="Lic. Martha Marín García">Lic. Martha Marín García</option>
-                <option value="Lic. Rubén Flores Portillo">Lic. Rubén Flores Portillo</option>
-              </select>
-            </div>
-
-            <div class="row">                
-              <form>
-                <label class="form-label">Seleccionar fecha del archivo:</label>
-                <input type="date" class="form-control ml-3" placeholder="Select" id="fecha">
-              </form>
-            </div>
-
-            <div class="row">
-              <label class="form-label">El archivo pertenece a:</label>
-              <select id="slctArchivo" class="form-select form-control form-select-lg mb-3"  >
-                <option id="Acuerdo" value="Acuerdo">Acuerdo</option>
-                <option id="privacidad" value="privacidad">Avisos de privacidad</option>
-                <option id="Sentencias" value="Sentencias">Sentencias</option>
-                <option id="Informes" value="Informes">Informes</option>
-                <option id="Financiero" value="Financiero">Financiero</option>
-                <option id="Convenios" value="Convenios">Convenios</option>
-                <option id="Demandas" value="Demandas">Demandas</option>
-                <option id="Denuncias" value="Denuncias">Denuncias</option>
-              </select>
-            </div>
-            <div class="row" id="Depende"  style="visibility:hidden">
-              <label class="form-label">Tipo de archivo:</label>
-              <select
-                id="selectT"
-                class="form-select form-control form-select-lg mb-3"
-                
-              >
-                
-              </select>
-            </div>
-            <div class="row row-btn">
-              <button
-              type="submit"
-              class="btn btn-outline-dark"
-              style="width: 15em; height: 5em"
-              id="btnGuardar"
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="subirPdf-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#subirPdf"
+              type="button"
+              role="tab"
+              aria-controls="subirPdf"
+              aria-selected="true"
             >
-              GUARDAR
+              Subir Pdf
             </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="mostrarPdf-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#mostrarPdf"
+              type="button"
+              role="tab"
+              aria-controls="mostrarPdf"
+              aria-selected="false"
+            >
+              Mostrar Pdf
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="subirPdf"
+            role="tabpanel"
+            aria-labelledby="subirPdf-tab"
+          >
+            <h2>Subir Pdf's</h2>
+            <div class="row" id="r" aria-current="page">
+              <div class="col-lg" style="background-color: #406c68">
+                <div class="row">
+                  <label class="form-label">Magistrado Presidente</label>
+                  <select
+                    class="form-select form-control form-select-lg mb-3"
+                    aria-placeholder="Seleccionar"
+                    id="magistrado"
+                  >
+                    <option value="Dra. Irina Cervates Bravo">
+                      Dra. Irina Cervates Bravo
+                    </option>
+                    <option value="Lic. Martha Marín García">
+                      Lic. Martha Marín García
+                    </option>
+                    <option value="Lic. Rubén Flores Portillo">
+                      Lic. Rubén Flores Portillo
+                    </option>
+                  </select>
+                </div>
+
+                <div class="row">
+                  <form>
+                    <label class="form-label"
+                      >Seleccionar fecha del archivo:</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control ml-3"
+                      placeholder="Select"
+                      id="fecha"
+                    />
+                  </form>
+                </div>
+
+                <div class="row">
+                  <label class="form-label">El archivo pertenece a:</label>
+                  <select
+                    id="slctArchivo"
+                    class="form-select form-control form-select-lg mb-3"
+                  >
+                    <option id="Acuerdo" value="Acuerdo">Acuerdo</option>
+                    <option id="privacidad" value="privacidad">
+                      Avisos de privacidad
+                    </option>
+                    <option id="Sentencias" value="Sentencias">
+                      Sentencias
+                    </option>
+                    <option id="Informes" value="Informes">Informes</option>
+                    <option id="Financiero" value="Financiero">
+                      Financiero
+                    </option>
+                    <option id="Convenios" value="Convenios">Convenios</option>
+                    <option id="Demandas" value="Demandas">Demandas</option>
+                    <option id="Denuncias" value="Denuncias">Denuncias</option>
+                  </select>
+                </div>
+                <div class="row" id="Depende" style="visibility: hidden">
+                  <label class="form-label">Tipo de archivo:</label>
+                  <select
+                    id="selectT"
+                    class="form-select form-control form-select-lg mb-3"
+                  ></select>
+                </div>
+                <div class="row row-btn">
+                  <button
+                    type="submit"
+                    class="btn btn-outline-dark"
+                    style="width: 15em; height: 5em"
+                    id="btnGuardar"
+                  >
+                    GUARDAR
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-lg col-pdf drop" style="padding: 2em">
+                <div class="div-pdf">
+                  <span class="drag-text">Arrastra archivos a cualquier </span>
+                  <span>lugar para subirlos</span>
+                  <span>ó</span>
+                  <button class="btn btn-secondary" id="button">
+                    Selecciona Archivos
+                  </button>
+                  <input
+                    type="file"
+                    name="avatar"
+                    id="input-file"
+                    hidden
+                    multiple
+                  />
+                  <span class="note">Tamaño maximo de archivo: 10MB</span>
+                  <div id="preview"></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="col-lg col-pdf drop" style="padding: 2em">
-            <div class="div-pdf">
-                <span class="drag-text">Arrastra archivos a cualquier </span>
-                <span>lugar para subirlos</span>
-                <span>ó</span>
-                <button class="btn btn-secondary" id="button">
-                  Selecciona Archivos
-                </button>
-                <input
-                  type="file"
-                  name="avatar"
-                  id="input-file"
-                  hidden
-                  multiple
-                />
-                <span class="note">Tamaño maximo de archivo: 10MB</span>
-                <div id="preview"></div>
-            </div>
+          <div
+            class="tab-pane fade"
+            id="mostrarPdf"
+            role="tabpanel"
+            aria-labelledby="mostrarPdf-tab"
+          >
+            <h2>Tabla de Pdf's Guardados</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Seccion</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Magistrado</th>
+                  <th scope="col">Usuario que lo subió</th>
+                  <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody id="tBody">
+                <!-- !AQUI INTRODUSCO LA TABLA CON EL -->
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

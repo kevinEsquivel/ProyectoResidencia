@@ -1,5 +1,3 @@
-
-
 const drop = document.querySelector(".drop");
 const btn = drop.querySelector("#button");
 const btnGuardar = document.querySelector("#btnGuardar");
@@ -66,57 +64,44 @@ function addOptions(array) {
 btnGuardar.addEventListener("click", async (e) => {
   //!esto se tendria que determinar automaticamente
   let id_user = "";
-
-   fetch(`http://localhost:8080/api/user/`).then(async(response) => {
-    const res = await response.json();
-    const { email} = res;
-    console.log(email);
-    const id = await fetch(`http://localhost:8080/api/user/${email}`).then(res=>res.json())
-    console.log(id.id,typeof(id.id));
-    id_user=id.id;
-    console.log(id_user,typeof(id_user));
-  })
-  .catch((error) => {
-    console.log("Esto es un error en al Al obtener el id de session", error);
-  });
-    
-  
-    //console.log(id);
-
-
-  let tipo =selectT.selectedIndex !== -1 ? selectT[selectT.selectedIndex].value : "";
+  let email = window.localStorage.getItem("E");
+  const id = await fetch(`http://localhost:8080/api/user/${email}`).then(
+    (res) => res.json()
+  ).catch(error => console.log("error en obtener el id con el email"))
+  id_user = id.id;
+  //console.log(id_user,email);
+  let tipo =
+    selectT.selectedIndex !== -1 ? selectT[selectT.selectedIndex].value : "";
   if (files !== null) {
-    for (const file of files) {
-      
-      const uploadPath = await uploadFile(file);
+    if (!fecha.value) return alert("Seleccionar una fecha");
+    else {
+      for (const file of files) {
+        const uploadPath = await uploadFile(file);
 
-      //nombre, ruta, magistrado, seccion, tipo
-      if (!fecha.value) alert("Seleccionar una fecha");
-      data = {
-        nombre: file.name,
-        ruta: uploadPath,
-        fecha: fecha.value,
-        magistrado: selectM[selectM.selectedIndex].value,
-        seccion: selectP[selectP.selectedIndex].value,
-        tipo,
-        id_user,
-      };
+        //nombre, ruta, magistrado, seccion, tipo
 
-      await fetch(`http://localhost:8080/api/pdf/upload/${id_user}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => {
-          alert("Documento Guardado");
-          return window.open("PDF.html", "_self");
-        })
-        .catch((error) => {
+        data = {
+          nombre: file.name,
+          ruta: uploadPath,
+          fecha: fecha.value,
+          magistrado: selectM[selectM.selectedIndex].value,
+          seccion: selectP[selectP.selectedIndex].value,
+          tipo,
+          id_user,
+        };
+        
+        await fetch(`http://localhost:8080/api/pdf/upload/${id_user}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }).catch((error) => {
           console.log("Esto es un error en al guardar PDFs", error);
         });
-      console.log(data);
+      }
+      alert("Documento Guardado");
+      return window.open("PDF.html", "_self");
     }
   } else {
     alert("Agregar Documentos");
@@ -208,10 +193,13 @@ https://www.youtube.com/watch?v=qWFwYLUGWrc&ab_channel=VidaMRR-Diseñoydesarroll
 */
 const uploadFile = async (file) => {
   var formData = new FormData();
+  
+  console.log(file);
   formData.append("file", file);
-
+  let seccion = selectP[selectP.selectedIndex].value;
+  
   let x;
-  await fetch("http://localhost:8080/api/pdf/upload", {
+  await fetch(`http://localhost:8080/api/pdf/uploadF/${seccion}/${file.name}`, {
     method: "POST",
     body: formData,
   })
@@ -221,7 +209,7 @@ const uploadFile = async (file) => {
     .catch((error) => {
       console.log("Esto es un error en Subir PDFs", error);
     });
-  console.log(x.uploadPath);
+  //console.log(x.uploadPath);
   return x.uploadPath;
   //document.querySelector(`#${id}`).innerHTML=`<span class = "success">Archivo subido correctamente</span>`;
 };
@@ -232,4 +220,80 @@ function onClick(id) {
   //const newFiles = files.filter((file) => file.name !== doc.textContent)
   //Para borrar un Elemento por su ID
   document.querySelector("#file-container" + id).remove();
+}
+
+//!======================= PARA LA TABLA DE PDFS Y MOSTRARLOS ========================!//
+const btnMostar = document.querySelector("#mostrarPdf-tab");
+//* Cargar la tabla para los pdf y se puedan eliminar
+btnMostar.addEventListener("click", () => {
+  console.log("cargando");
+  fetch(`http://localhost:8080/api/pdf/`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(async (response) => {
+      const res = await response.json();
+      const { pdfs, total } = res;
+      const x = res;
+      //console.log(res);
+      if (x.errors) {
+        return window.alert("Error en la tabla, verificar codigo de usuarios");
+      }
+
+      for (let i = 0; i < total; i++) {
+        const num = await fetch(`http://localhost:8080/api/user/id/${pdfs[i].id_user}`)
+        .then((res) => res.json());
+        //console.log(num.nombre, typeof(num));
+        tBody.innerHTML +=
+          `<tr>
+          <td>` +
+          (i + 1) +
+          `</td>
+          <td>` +
+          pdfs[i].nombre +
+          `</td>
+          <td>` +
+          pdfs[i].fecha +
+          `</td>
+          <td>` +
+          pdfs[i].seccion +
+          `</td>
+          <td>` +
+          pdfs[i].tipo +
+          `</td>
+          <td>` +
+          pdfs[i].magistrado +
+          `</td>
+          <td>` +
+          num.nombre+
+          `</td>
+          <td><i id="` +
+          pdfs[i].uid +
+          `" class="fa-solid fa-trash fa-2x" onclick="Delete(this.id);"></i></td>
+        </tr>`;
+      }
+      return console.log("TODO BIEN");
+    })
+    .catch((error) => {
+      console.log("Ha resultado un error: ", error);
+    });
+});
+
+function Delete(id){
+  const mensaje = confirm("Seguro de borrar el PDF");
+  
+  if (mensaje) {
+     fetch(`http://localhost:8080/api/pdf/upload/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res)=> {
+      alert("Archivo Pdf borrado")
+      return window.open("PDF.html", "_self");
+    });
+    
+  }
 }

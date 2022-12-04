@@ -1,15 +1,26 @@
 const { request, response } = require("express");
-
+const { escape } = require("querystring");
+const fs = require('fs').promises
 //*modelo Requerido
 const Pdf = require("../models/pdf");
 const User = require("../models/user");
-
+//const { mkdir } = require('fs/promises');
+const getPdfs = async  (req = request, res = response) => {
+  const { seccion = '', tipo = '',magistrado='',año='',mes=''} = req.query;
+  
+    const pdfs = await Pdf.find({estado: true });
+    const total = await Pdf.countDocuments({ estado: true });
+  
+  res.json({pdfs,total})
+  //const user = await User.findById(id_user);
+}
 const pdfPost = async (req = request, res = response) => {
   //subir archivo y movero a una carpeta
-  console.log(req.files.file);
+  let {seccion,nombre} = req.params;
   let archivo = req.files.file;
-  let uploadPath = `${__dirname}/../archivos/${archivo.name}`;
-
+  archivo.name=nombre;
+  let uploadPath = `${__dirname}/../archivos/${seccion}/${archivo.name}`;
+  
   archivo.mv(uploadPath, (err) => {
     if (err) {
       return res.status(400).json({ err });
@@ -52,12 +63,16 @@ const putPdf = async (req = request, res = response) => {
   res.json({ msg: "Actualizado ", pdf });
 }
 const deletePdf = async (req = request, res = response) => {
-  const id = req.params.id;
+  const {id} = req.params;
+  
   const pdf = await Pdf.findByIdAndUpdate(id, { estado: false });
-
-  res.json({ msg: "Borrado ", pdf });
+  let direccion ='archivos/'+pdf.seccion+'/'+pdf.nombre;
+  console.log(direccion);
+  fs.unlink(direccion,function (err) {if(err) throw err; console.log('file delete');});
+  res.json({ msg: "Borrado ",pdf});
 };
 module.exports = {
+  getPdfs,
   pdfPost,
   postSubir,
   putPdf,

@@ -8,7 +8,7 @@ const {
   userPut,
   userDelete,
   userGetUser,
-  
+  getUser,
 } = require("../controllers/userController");
 const {
   esRolValido,
@@ -22,15 +22,23 @@ const { validarCampos } = require("../middlewares/validar-campos");
 const router = Router();
 router.get("/", userGet);
 //!Esto se trendria que guardar desde los Login
-
+router.get("/id/:_id",
+  [
+    check("_id", "No es un id valido de Mongo").isMongoId(), validarCampos
+  ],
+  getUser
+);
 router.get("/:correo", userGetUser);
+
 //router.post("/users",);
-router.post("/:correo",
+router.post(
+  "/:correo",
   [
     check("correo", "El correo no esta con la sintaxis correcta").isEmail(), //esta crando los errores que los midelwers pueden hacerse
     validarCampos,
   ],
-  userGetEmailPass);
+  userGetEmailPass
+);
 router.post(
   "/",
   [

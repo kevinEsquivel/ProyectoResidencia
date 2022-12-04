@@ -850,6 +850,8 @@ function saveDataMongo(){
     }
     listBoards();
   }
+  //?Antes de cargar tengo que verificar si el usuario cuenta con un calendario, 
+  //?si no iniciar un calendario básico
   loadDataFromMongo();
 /*//! <=================================== Persistent Data Storage ===================================> */
 /* function saveData() {

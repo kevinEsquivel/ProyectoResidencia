@@ -10,14 +10,20 @@ const { matchPassword } = require("../helpers/user-validations");
 const userGet = async (req, res) => {
   const user = await User.find({ estado: true });
   const total = await User.countDocuments({ estado: true });
-  const email =req.session.correo;
   res.json({
     user,
     total,
-    email
   });
 };
+const getUser = async (req, res) => {
+  const {_id} = req.params;
+  const user = await User.findOne({ _id });
 
+  if (!user) return res.json({ msg: "Error en Email" });
+  res.json({
+    nombre:user.nombre
+  })
+}
 //*Obtener un usuario
 const userGetUser = async (req, res) => {
   const correo = req.params.correo;
@@ -97,6 +103,7 @@ const userDelete = async (req = request, res = response) => {
 };
 module.exports = {
   userGet,
+  getUser,
   userGetUser,
   userGetEmailPass,
   userPost,
