@@ -243,6 +243,8 @@ btnMostar.addEventListener("click", () => {
       }
 
       for (let i = 0; i < total; i++) {
+        console.log(pdfs);
+
         const num = await fetch(`http://localhost:8080/api/user/id/${pdfs[i].id_user}`)
         .then((res) => res.json());
         //console.log(num.nombre, typeof(num));
