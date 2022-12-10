@@ -20,7 +20,7 @@ const getPdfSeccion = async (req = request, res = response) => {
   const { tipo, magistrado, año, mes } = req.query;
 
   let pdfs = await Pdf.find({ seccion, estado: true });
-  if (tipo) pdfs = await Pdf.find({ tipo, seccion, estado: true });
+  if (tipo) pdfs = await Pdf.find({ tipo, seccion, estado: true }).sort({nombre:1});
   if (magistrado) pdfs = await Pdf.find({ magistrado, seccion, estado: true });
   if (tipo && magistrado)
     pdfs = await Pdf.find({ tipo, magistrado, seccion, estado: true });
@@ -40,8 +40,8 @@ const pdfPost = async (req = request, res = response) => {
   let { seccion, nombre } = req.params;
   let archivo = req.files.file;
   archivo.name = nombre;
-  let uploadPath = `${__dirname}/../archivos/${seccion}/${archivo.name}`;
-
+  let uploadPath = `${__dirname}/../public/archivos/${seccion}/${archivo.name}`;
+  //console.log(uploadPath);
   archivo.mv(uploadPath, (err) => {
     if (err) {
       return res.status(400).json({ err });

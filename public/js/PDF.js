@@ -44,6 +44,13 @@ selectP.addEventListener("change", () => {
       addOptions(array);
       Depende.style.visibility = "visible";
       break;
+      case "Financiero":
+        limpiar(); //Para limpiar el select y no se acumulen las opciones
+        array = ["Primer Trimestre", "Segundo Trimestre", "Tercer Trimestre","Cuarto Trimestre"];
+        array.sort();
+        addOptions(array);
+        Depende.style.visibility = "visible";
+        break;  
     default:
       Depende.style.visibility = "hidden";
       break;

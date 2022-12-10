@@ -233,52 +233,147 @@
       <div class="container">
         <h2>FINANCIEROS</h2>
 
-        <div class="general"><div class="container-year">
+        <div class="general">
+        <div class="container-year">
           <div
             class="btn-group row"
             role="group"
             aria-label="Basic outlined example"
           >
-            <button type="button" class="col btn btn-outline-light active">
+            <button type="button" class="col btn btn-outline-light active"  id="btn2022" >
               2022
             </button>
-            <button type="button" class="col btn btn-outline-light">
+            <button type="button" class="col btn btn-outline-light" id="btn2021" >
               2021
             </button>
-            <button type="button" class="col btn btn-outline-light">
+            <button type="button" class="col btn btn-outline-light" id="btn2020" >
               2020
             </button>
-            <button type="button" class="col btn btn-outline-light" >
+            <button type="button" class="col btn btn-outline-light"  id="btn2019" >
               2019
             </button>
-            <button type="button" class="col btn btn-outline-light">
+            <button type="button" class="col btn btn-outline-light" id="btn2018" >
               2018
+            </button>
+            <button type="button" class="col btn btn-outline-light" id="btn2017" >
+              2017
             </button>
           </div>
         </div>
+        
         <div class="container-pdf shadow-lg mb-5 bg-body rounded">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <a href="#">01. Estado de Actividades.pdf</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#">02. Estado de Situación Financiera.pdf</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#"
-                >03. Estado de Cambios en la Situación Financiera.pdf</a
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="primerTrimestre-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#primerTrimestre"
+                type="button"
+                role="tab"
+                aria-controls="primerTrimestre"
+                aria-selected="true"
               >
+              Primer Trimestre
+              </button>
             </li>
-            <li class="list-group-item">
-              <a href="#">04. Estado Analítico del Activo Acumulado.pdf</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#"
-                >05. Estado Analítico de la Deuda y Otros Pasivos.pdf</a
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="segundoTrimestre-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#segundoTrimestre"
+                type="button"
+                role="tab"
+                aria-controls="segundoTrimestre"
+                aria-selected="false"
               >
+              Segundo Trimestre
+              </button>
             </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="tercerTrimestre-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#tercerTrimestre"
+                  type="button"
+                  role="tab"
+                  aria-controls="tercerTrimestre"
+                  aria-selected="false"
+                >
+                Tercer Trimestre
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="cuartoTrimestre-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#cuartoTrimestre"
+                  type="button"
+                  role="tab"
+                  aria-controls="cuartoTrimestre"
+                  aria-selected="false"
+                >
+                Cuarto Trimestre
+                </button>
+              </li>
+            
           </ul>
-        </div></div>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="primerTrimestre"
+              role="tabpanel"
+              aria-labelledby="primerTrimestre-tab"
+            >
+              <ul class="list-group list-group-flush" id="list-group-1">
+               <!-- <li class="list-group-item">
+                  <a href="#">01. Estado de Actividades.pdf</a>
+                </li> -->
+               </ul>
+            </div>
+            <div
+              class="tab-pane fade show active"
+              id="segundoTrimestre"
+              role="tabpanel"
+              aria-labelledby="segundoTrimestre-tab"
+            >
+            <ul class="list-group list-group-flush" id="list-group-2">
+              <!-- <li class="list-group-item">
+                 <a href="#">01. Estado de Actividades.pdf</a>
+               </li> -->
+              </ul>
+            </div>
+            <div
+              class="tab-pane fade show active"
+              id="tercerTrimestre"
+              role="tabpanel"
+              aria-labelledby="tercerTrimestre-tab"
+            >
+            <ul class="list-group list-group-flush" id="list-group-3">
+              <!-- <li class="list-group-item">
+                 <a href="#">01. Estado de Actividades.pdf</a>
+               </li> -->
+              </ul>
+            </div>
+            <div
+              class="tab-pane fade show active"
+              id="cuartoTrimestre"
+              role="tabpanel"
+              aria-labelledby="cuartoTrimestre-tab"
+            >
+            <ul class="list-group list-group-flush" id="list-group-4">
+              <!-- <li class="list-group-item">
+                 <a href="#">01. Estado de Actividades.pdf</a>
+               </li> -->
+              </ul>
+            </div>
+          </div>
+         
+          </div>
+        
       </div>
     </main>
     <iframe
@@ -293,6 +388,7 @@
       scrolling="no"
     ></iframe>
     <script src="../js/general.js"></script>
+    <script src="../js/financieros.js"></script>
   </body>
   
 </html>

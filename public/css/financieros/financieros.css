@@ -17,6 +17,7 @@ body {
 }
 main {
   grid-area: main;
+  min-width: min-content;
 }
 .footer {
   grid-area: footer;
@@ -54,7 +55,7 @@ nav {
 
 .container {
   width: 100vw;
-  height: 90vh;
+  min-height: 120vh;
   margin-top: 15em;
 }
 .container h2 {
