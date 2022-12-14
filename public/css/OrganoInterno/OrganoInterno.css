@@ -1,0 +1,102 @@
+@import url("../root.css") all;
+:root{
+    --shadow-color: 0deg 0% 0%;
+    --shadow-elevation-high:
+    0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+    2.6px 5.2px 8.7px hsl(var(--shadow-color) / 0.03),
+    4.7px 9.3px 15.6px hsl(var(--shadow-color) / 0.05),
+    6.8px 13.6px 22.8px hsl(var(--shadow-color) / 0.08),
+    9.5px 19px 31.9px hsl(var(--shadow-color) / 0.1),
+    13.2px 26.4px 44.3px hsl(var(--shadow-color) / 0.13),
+    18.3px 36.6px 61.4px hsl(var(--shadow-color) / 0.15),
+    25.3px 50.5px 84.7px hsl(var(--shadow-color) / 0.18);
+}
+
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+      background-color: var(--fondo);
+  }
+  .header {
+    grid-area: header;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  main {
+    grid-area: main;
+  }
+  .footer {
+    grid-area: footer;
+    width: 100%;
+    height: 32em;
+  }
+  
+.logoNayarit {
+  height: 8.75rem;
+  width: 8rem;
+}
+nav {
+  width: 100%;
+  /*Para poner por encima/arriba de todo*/
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+.nav-link{
+  color: var(--font-color-letter) !important;
+}
+.navbar-brand{
+  font-size: var(--font-size-subtitle);
+  color: var(--font-color-letter) !important;
+}
+.nav-item .nav-link,.dropdown-menu{
+  font-size: var(--font-size-text);
+}
+   
+    /*------------------------------------------MAIN------------------------------------------*/
+    .seccion{
+        box-shadow: var(--shadow-elevation-high);
+        border-radius:22px;
+    }
+    .row{
+        gap: 15px;
+    }
+    .titulo {
+        font-size: var(--font-size-title2);
+        text-align: center;
+        margin-top: 6em;
+      }
+      .Subtitulo{
+        font-size: var(--font-size-subtitle);
+        text-align: center;
+        margin-top: 2em;
+      }
+      h3{
+        margin-bottom: 1.5em;
+      }
+      .auto-col{
+        gap: 1.5em;
+        margin-bottom: 2rem;
+      }
+      .row-archivos{
+        width: 150px;
+        max-height: min-content;
+
+    }
+    .nombre{
+        font-size:var(--font-size-text);
+    }
+    .pdf{
+        min-height: 60px;
+        background-image: url('../../assets/PDF_file_icon.svg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+    }
+  

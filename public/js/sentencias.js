@@ -58,9 +58,6 @@ btnBuscar.addEventListener("click", () => {
 
 //*======================FUNCIONES DE USO PUBLICO ================================== */
 function llenarTarjetas(x) {
-  
-  
-
   contenedor.style.overflowY="scroll";
 
     let divCol = document.createElement("a");
