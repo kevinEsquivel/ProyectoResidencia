@@ -33,6 +33,10 @@
       src="https://kit.fontawesome.com/38c18e8d87.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Para el calendario -->
+    <link rel="stylesheet" href="../lib/main.css">
+    <script src="../lib/main.js"></script>
+
     <!-- NOMBRE PAGINA -->
     <title>Informes</title>
   </head>
@@ -95,9 +99,7 @@
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="../html/informes.html"
-                      >Informes</a
-                    >
+                    <a class="dropdown-item" href="../html/informes.html">Informes y Sesiones Publicas</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">Avisos de privacidad</a>
@@ -118,7 +120,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Convenios</a></li>
                   <li><a class="dropdown-item" href="../html/financieros.html">Financieros</a></li>
-                  <li><a class="dropdown-item" href="#">Demandas</a></li>
+                  <li><a class="dropdown-item" href="./CTA-Publica.html">CTA Publica</a></li>
                   <li><a class="dropdown-item" href="#">Denuncias</a></li>
                 </ul>
               </li>
@@ -229,49 +231,43 @@
       </nav>
     </header>
     <main>
+      <h1 class="titulo">Sessiones Publicas</h1>
+      <section>
+        <div style="width: 80vw;" id='calendar'></div>
+      </section>
       <h2 class="titulo">INFORME DE ACTIVIDAD</h2>
       <section>
         <article class="contenedor">
           <div class="informe">
             <h4>Primer informe de actividad</h4>
-            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <a href="https://www.youtube.com/watch?v=27tKmiAzsaQ"><i class="fa-brands fa-youtube fa-7x"></i></a>
             <p>2022-2023</p>
             <span>Lic. Rubén Flores Portillo</span>
           </div>
           <div class="informe">
             <h4>Segudo informe de actividad<br />(NO DISPONIBLE)</h4>
-            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-youtube fa-7x"></i></a>
             <p>2023-2024</p>
             <span>Lic. Rubén Flores Portillo</span>
           </div>
           <div class="informe">
             <h4>Primer informe de actividad</h4>
-            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <a href="https://www.youtube.com/watch?v=cnU6-aJXEK8&t=1s" target="_blank"><i class="fa-brands fa-youtube fa-7x"></i></a>
             <p>2020-2021</p>
             <span>DRA. Irina Graciela Cervantes Bravo</span>
           </div>
           <div class="informe">
             <h4>Segudo informe de actividad</h4>
-            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
+            <a href="https://www.youtube.com/watch?v=27tKmiAzsaQ" target="_blank"><i class="fa-brands fa-youtube fa-7x"></i></a>
             <p>2021-2022</p>
             <span>DRA. Irina Graciela Cervantes Bravo</span>
           </div>
-          <div class="informe">
-            <h4>Primer informe de actividad</h4>
-            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
-            <p>2018-2019</p>
-            <span>DRA. ANÓNIMO</span>
-          </div>
-          <div class="informe">
-            <h4>Segudo informe de actividad</h4>
-            <a href="#"><i class="fa-brands fa-youtube fa-7x"></i></a>
-            <p>2019-2020</p>
-            <span>DRA. ANÓNIMO</span>
-          </div>
         </article>
       </section>
+      
     </main>
     <iframe class="footer" src="../html/footer.html" frameborder="0" frameborder="0"hspace="0"vspace="0"marginheight="0"marginwidth="00"scrolling="no"></iframe>
     <script src="../js/general.js"></script>
+    <script src="../js/informes.js"></script>
   </body>
 </html>

@@ -29,57 +29,27 @@ const btn2018 = document.querySelector(`#btn2018`);
 const btn2017 = document.querySelector(`#btn2017`);
 
 btn2022.addEventListener("click", () => {
-  btn2022.classList.add("active");
-  btn2021.classList.remove("active");
-  btn2020.classList.remove("active");
-  btn2019.classList.remove("active");
-  btn2018.classList.remove("active");
-  btn2017.classList.remove("active");
-
+  desactivarBotones(btn2022);
 });
 
 btn2021.addEventListener("click", () => {
-    btn2022.classList.remove("active");
-    btn2021.classList.add("active");
-    btn2020.classList.remove("active");
-    btn2019.classList.remove("active");
-    btn2018.classList.remove("active");
-    btn2017.classList.remove("active");
+    desactivarBotones(btn2021);
 
   });
   btn2020.addEventListener("click", () => {
-    btn2022.classList.remove("active");
-    btn2021.classList.remove("active");
-    btn2020.classList.add("active");
-    btn2019.classList.remove("active");
-    btn2018.classList.remove("active");
-    btn2017.classList.remove("active");
+    desactivarBotones(btn2020);
 
   });
   btn2019.addEventListener("click", () => {
-    btn2022.classList.remove("active");
-    btn2021.classList.remove("active");
-    btn2020.classList.remove("active");
-    btn2019.classList.add("active");
-    btn2018.classList.remove("active");
-    btn2017.classList.remove("active");
+    desactivarBotones(btn2019);
   });
   btn2018.addEventListener("click", () => {
-    btn2022.classList.remove("active");
-    btn2021.classList.remove("active");
-    btn2020.classList.remove("active");
-    btn2019.classList.remove("active");
-    btn2018.classList.add("active");
-    btn2017.classList.remove("active");
+    desactivarBotones(btn2018);
   });
   btn2017.addEventListener("click", () => {
-    btn2022.classList.remove("active");
-    btn2021.classList.remove("active");
-    btn2020.classList.remove("active");
-    btn2019.classList.remove("active");
-    btn2018.classList.remove("active");
-    btn2017.classList.add("active");
+    desactivarBotones(btn2017);
   });
+  
   
 primerTrimestreLista.addEventListener("click", async () => {
   list_group1.innerHTML = "";
@@ -153,3 +123,14 @@ function cargarLinks(x, list_group) {
 
   _listGroupItem.appendChild(_aRef);
 }
+function desactivarBotones(boton) {
+    btn2017.classList.remove("active");
+    btn2018.classList.remove("active");
+    btn2019.classList.remove("active");
+    btn2020.classList.remove("active");
+    btn2021.classList.remove("active");
+    btn2022.classList.remove("active");
+  
+    boton.classList.add("active");
+  }
+  

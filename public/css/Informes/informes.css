@@ -54,17 +54,16 @@ nav {
       }
       section{
         width: 100%;
-        height: 100%;
         display: flex;
         justify-content: center;
-        min-height: 80vh;
+        margin-bottom: 5em;
       }
       section .contenedor{
         margin-top: 3em;
         display: grid;
         grid-gap:4em;
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 24em;
+        
       }
       .contenedor .informe{
        background-color: var(--secondary-color); 

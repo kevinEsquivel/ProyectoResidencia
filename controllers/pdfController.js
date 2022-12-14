@@ -26,10 +26,11 @@ const getPdfSeccion = async (req = request, res = response) => {
     pdfs = await Pdf.find({ tipo, magistrado, seccion, estado: true });
   if (mes) 
     pdfs = pdfs.filter(item => item.fecha.getMonth() === Number(mes))
-  if (año) 
+  if (año)
     pdfs = pdfs.filter(item => item.fecha.getFullYear() === Number(año))
-
   const total = await pdfs.length;
+
+  if(seccion==="CTA-Publica") pdfs= pdfs.reverse();
 
   res.json({ pdfs, total });
   
