@@ -31,6 +31,7 @@ const getPdfSeccion = async (req = request, res = response) => {
   const total = await pdfs.length;
 
   if(seccion==="CTA-Publica") pdfs= pdfs.reverse();
+  if(seccion ==="Transparencia") pdfs=pdfs.sort((a, b) => a.fecha - b.fecha).reverse();
 
   res.json({ pdfs, total });
   

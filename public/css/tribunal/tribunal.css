@@ -128,14 +128,15 @@
     justify-self: center;
   }
   .magistrados div .card .img1 {
-    background-image: url(/public/assets/Tribunal/Magistrado_-removebg-preview.png);
+    background-image: url("../../assets/Tribunal/Magistrado_-removebg-preview.png");
   }
   .magistrados div .img2 {
-    background-image: url(/public/assets/Tribunal/MAgistrada_Irina-removebg-preview.png);
+    background-image: url('../../assets/Tribunal/MAgistrada_Irina-removebg-preview.png');
   }
   .magistrados div .img3 {
-    background-image: url(/public/assets/Tribunal/MAgistrada_MArtha-removebg-preview.png);
+    background-image: url('../../assets/Tribunal/MAgistrada_MArtha-removebg-preview.png');
   }
+  
   .magistrados div .icons {
     display: inline-flex;
     justify-content: space-evenly;
@@ -164,7 +165,9 @@
   .organigrama {
     display: inline-flex;
     width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4em;
   }
   .organigrama h3 {
     font-style: normal;
@@ -175,9 +178,17 @@
     margin-top: 1.5em;
     margin-bottom: 2em;
   }
-
+  .organigrama_2022{
+    background-image: url('../../assets/Organigrama-2022.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #ffffff;
+    width: 70em;
+    height: 55em;
+  }
   .icon_nayarit {
-    background: url("/public/assets/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
+    background: url("../../assets/escudo-nayarit-ok-mesa-de-trabajo-1-2.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -236,5 +247,35 @@
     display: flex;
     width: 70%;
     justify-content: space-between;
+  }
+
+  #alert-container {
+    position: relative;
+  }
+  
+  #alerts {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  .alert {
+    background-color: white;
+    font-size: var(--font-size-text);
+    color: black;
+    padding-block: 0.2rem;
+    padding-inline: 2rem;
+    border-left: 5px solid red;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 5px rgba(107, 107, 107, 0.63);
+  }
+  .animate-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.35s, opacity 0.35s linear;
   }
 }

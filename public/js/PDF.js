@@ -44,13 +44,76 @@ selectP.addEventListener("change", () => {
       addOptions(array);
       Depende.style.visibility = "visible";
       break;
-      case "Financiero":
-        limpiar(); //Para limpiar el select y no se acumulen las opciones
-        array = ["Primer Trimestre", "Segundo Trimestre", "Tercer Trimestre","Cuarto Trimestre"];
-        array.sort();
-        addOptions(array);
-        Depende.style.visibility = "visible";
-        break;  
+    case "Financiero":
+      limpiar(); //Para limpiar el select y no se acumulen las opciones
+      array = [
+        "Primer Trimestre",
+        "Segundo Trimestre",
+        "Tercer Trimestre",
+        "Cuarto Trimestre",
+      ];
+      array.sort();
+      addOptions(array);
+      Depende.style.visibility = "visible";
+      break;
+    case "Transparencia":
+      limpiar(); //Para limpiar el select y no se acumulen las opciones
+      array = [
+        "I. El marco normativo aplicable al sujeto obligado",
+        "II. Su estructura orgánica completa",
+        "III. Las facultades de cada Área",
+        "IV. Las metas y objetivos de las Áreas de conformidad con sus programas operativos",
+        "V. Los indicadores relacionados con temas de interés público o trascendencia social",
+        "VI. Los indicadores que permitan rendir cuenta de sus objetivos y resultados",
+        "VII. El directorio de todos los Servidores Públicos.",
+        "VIII. La remuneración bruta y neta de todos los Servidores Públicos",
+        "IX. Los gastos de representación y viáticos",
+        "X. El número total de las plazas y del personal de base y confianza",
+        "XI. Las contrataciones de servicios profesionales por honorarios",
+        "XII. La información en Versión Pública de las declaraciones patrimoniales",
+        "XIII. El nombre, domicilio de la Unidad de Transparencia y de los servidores públicos encargados del Comité de Transparencia",
+        "XIV. Las convocatorias a concursos para ocupar cargos públicos y los resultados de los mismos",
+        "XV. La información de los programas de subsidios, estímulos, aportaciones y apoyos",
+        "XVI. Las condiciones generales de trabajo",
+        "XVII. La información curricular",
+        "XVIII. El listado de Servidores Públicos con sanciones administrativas definitivas",
+        "XIX. Los servicios que ofrecen y los programas que administra",
+        "XX. Los trámites, requisitos y formatos que ofrecen",
+        "XXI. La información financiera en términos de la Ley General de Contabilidad Gubernamental",
+        "XXII. La información relativa a la deuda pública",
+        "XXIII. Los montos destinados a gastos relativos a comunicación social y publicidad oficial",
+        "XXIV. Los informes de resultados de las auditorías al ejercicio presupuestal de cada sujeto obligado que se realicen",
+        "XXV. El resultado de la dictaminación de los estados financieros",
+        "XXVI. Los montos, criterios, convocatorias y listado de personas físicas o morales",
+        "XXVII. Las concesiones, contratos, convenios, permisos, licencias o autorizaciones otorgados",
+        "XXVIII. La información de los resultados sobre procedimientos de adjudicación directa",
+        "XXIX. Los informes que por disposición legal generen los sujetos obligados",
+        "XXX. Las estadísticas que generen en cumplimiento de sus facultades, competencias o funciones",
+        "XXXI. Informe de avances programáticos o presupuestales, balances generales y su estado financiero",
+        "XXXII. Padrón de proveedores y contratistas",
+        "XXXIII. Los convenios de coordinación que celebren con la federación, otros estados o municipios, partidos políticos, instituciones de enseñanza o cualquier organización",
+        "XXXIV. El inventario de bienes muebles e inmuebles en posesión y propiedad",
+        "XXXV. Las recomendaciones emitidas por los órganos públicos del Estado mexicano u organismos internacionales garantes de los derechos humanos",
+        "XXXVI. Las resoluciones y laudos que se emitan en procesos o procedimientos seguidos en forma de juicio",
+        "XXXVII. Los mecanismos de participación ciudadana",
+        "XXXVIII. Los programas que ofrecen, incluyendo información sobre la población, objetivo y destino, así como los trámites",
+        "XXXIX. Las actas y resoluciones del Comité de Transparencia de los sujetos obligados",
+        "XL. Todas las evaluaciones y encuestas que hagan los sujetos obligados a programas financiados con recursos públicos",
+        "XLI. Los estudios financiados con recursos públicos",
+        "XLII. El listado de jubilados y pensionados y el monto que reciben",
+        "XLIII. Los ingresos recibidos por cualquier concepto",
+        "XLIV. Donaciones hechas a terceros en dinero o en especie",
+        "XLV. El catálogo de disposición y guía de archivo documental",
+        "XLVI. Las actas de sesiones ordinarias y extraordinarias, así como las opiniones y recomendaciones que emitan",
+        "XLVII. Para efectos estadísticos, el listado de solicitudes a las empresas concesionarias de telecomunicaciones y proveedores de servicios o aplicaciones de Internet",
+        "XLVIII. El seguimiento de las obligaciones de responsabilidad hacendaria",
+        "XLIX. Cualquier otra información que sea de utilidad o se considere relevante",
+        "Último Párrafo",
+      ];
+      array.sort();
+      addOptions(array);
+      Depende.style.visibility = "visible";
+      break;
     default:
       Depende.style.visibility = "hidden";
       break;
@@ -72,9 +135,9 @@ btnGuardar.addEventListener("click", async (e) => {
   //!esto se tendria que determinar automaticamente
   let id_user = "";
   let email = window.localStorage.getItem("E");
-  const id = await fetch(`http://localhost:8080/api/user/${email}`).then(
-    (res) => res.json()
-  ).catch(error => console.log("error en obtener el id con el email"))
+  const id = await fetch(`http://localhost:8080/api/user/${email}`)
+    .then((res) => res.json())
+    .catch((error) => console.log("error en obtener el id con el email"));
   id_user = id.id;
   //console.log(id_user,email);
   let tipo =
@@ -96,7 +159,7 @@ btnGuardar.addEventListener("click", async (e) => {
           tipo,
           id_user,
         };
-        
+
         await fetch(`http://localhost:8080/api/pdf/upload/${id_user}`, {
           method: "POST",
           headers: {
@@ -200,11 +263,11 @@ https://www.youtube.com/watch?v=qWFwYLUGWrc&ab_channel=VidaMRR-Diseñoydesarroll
 */
 const uploadFile = async (file) => {
   var formData = new FormData();
-  
+
   console.log(file);
   formData.append("file", file);
   let seccion = selectP[selectP.selectedIndex].value;
-  
+
   let x;
   await fetch(`http://localhost:8080/api/pdf/uploadF/${seccion}/${file.name}`, {
     method: "POST",
@@ -252,8 +315,9 @@ btnMostar.addEventListener("click", () => {
       for (let i = 0; i < total; i++) {
         console.log(pdfs);
 
-        const num = await fetch(`http://localhost:8080/api/user/id/${pdfs[i].id_user}`)
-        .then((res) => res.json());
+        const num = await fetch(
+          `http://localhost:8080/api/user/id/${pdfs[i].id_user}`
+        ).then((res) => res.json());
         //console.log(num.nombre, typeof(num));
         tBody.innerHTML +=
           `<tr>
@@ -276,7 +340,7 @@ btnMostar.addEventListener("click", () => {
           pdfs[i].magistrado +
           `</td>
           <td>` +
-          num.nombre+
+          num.nombre +
           `</td>
           <td><i id="` +
           pdfs[i].uid +
@@ -290,19 +354,18 @@ btnMostar.addEventListener("click", () => {
     });
 });
 
-function Delete(id){
+function Delete(id) {
   const mensaje = confirm("Seguro de borrar el PDF");
-  
+
   if (mensaje) {
-     fetch(`http://localhost:8080/api/pdf/upload/${id}`, {
+    fetch(`http://localhost:8080/api/pdf/upload/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res)=> {
-      alert("Archivo Pdf borrado")
+    }).then((res) => {
+      alert("Archivo Pdf borrado");
       return window.open("PDF.html", "_self");
     });
-    
   }
 }

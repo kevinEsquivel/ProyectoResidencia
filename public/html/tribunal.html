@@ -60,20 +60,30 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item p-2">
-                <a class="nav-link" aria-current="page" href="../html/inicio.html"
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../html/inicio.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link active" href="../html/tribunal.html">Tribunal</a>
+                <a class="nav-link active" href="../html/tribunal.html"
+                  >Tribunal</a
+                >
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="../html/Transparencia.html">Transparencia</a>
+                <a class="nav-link" href="../html/Transparencia.html"
+                  >Transparencia</a
+                >
               </li>
- 
+
               <li class="nav-item dropdown p-2">
                 <a
                   class="nav-link dropdown-toggle"
@@ -86,16 +96,32 @@
                   Sitios de Importancia
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                   <li>
-                    <a class="dropdown-item" href="../html/informes.html">Informes y Sesiones Publicas</a>
+                  <li>
+                    <a class="dropdown-item" href="../html/informes.html"
+                      >Informes y Sesiones Publicas</a
+                    >
                   </li>
-                  <li><a class="dropdown-item" href="../html/financieros.html">Financieros</a></li>
-                  <li><a class="dropdown-item" href="./CTA-Publica.html">CTA Publica</a></li>
-                 <li><a class="dropdown-item" href="./OrganoInternoControl.html">Organo interno de control</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../html/financieros.html"
+                      >Financieros</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./CTA-Publica.html"
+                      >CTA Publica</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./OrganoInternoControl.html"
+                      >Organo interno de control</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="../html/Sentencias.html">Sentencias</a>
+                <a class="nav-link" href="../html/Sentencias.html"
+                  >Sentencias</a
+                >
               </li>
               <li class="nav-item p-2">
                 <a class="nav-link" href="#">Contacto</a>
@@ -137,7 +163,7 @@
                       data-bs-dismiss="modal"
                       aria-label="Close"
                       style="width: 25px; height: 25px"
-                    >  </button>
+                    ></button>
                   </div>
                   <div class="modal-body">
                     <div
@@ -160,7 +186,7 @@
                       class="mb-3 row"
                       style="align-items: center; padding: 1.5em"
                     >
-                      <label for="inputPassword" class="form-label col col-lg-5" 
+                      <label for="inputPassword" class="form-label col col-lg-5"
                         >Contraseña</label
                       >
                       <input
@@ -184,24 +210,21 @@
               </div>
             </div>
             <!-- INICIO SESION FIN -->
-  
-            <form class="d-flex " role="search">
+
+            <form class="d-flex" role="search">
               <input
                 class="form-control me-2"
                 type="search"
                 placeholder="Buscar"
                 aria-label="Buscar"
               />
-              <button class="btn btn-outline-dark" type="submit">
-                Buscar
-              </button>
+              <button class="btn btn-outline-dark" type="submit">Buscar</button>
             </form>
           </div>
         </div>
       </nav>
     </header>
     <main>
-      
       <section class="titulo">
         <h3 class="principal">
           “Artículo 281. El Tribunal Electoral del Estado funcionará de forma
@@ -225,10 +248,16 @@
               <p>Comunicate a su correo o Descarga su CV</p>
               <ul class="social-icons">
                 <li>
-                  <a href="#"><i class="fa-solid fa-envelope fa-5x"></i></a>
+                  <div
+                    href=""
+                    onclick="copyToClipboard('mgdo.tribunal.electoral@gmail.com')"
+                    ><i class="fa-solid fa-envelope fa-5x"></i
+                  ></div>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-solid fa-file fa-5x"></i></a>
+                  <div onclick="link('../archivos/CV/Ruben Flores Portillo - Curriculum.pdf')"
+                    ><i class="fa-solid fa-file fa-5x"></i
+                  ></div>
                 </li>
               </ul>
             </div>
@@ -259,10 +288,16 @@
               <p>Comunicate a su correo o Descarga su CV</p>
               <ul class="social-icons">
                 <li>
-                  <a href="#"><i class="fa-solid fa-envelope fa-5x"></i></a>
+                  <div
+                    href=""
+                    onclick="copyToClipboard('irinagraciela@hotmail.com')"
+                    ><i class="fa-solid fa-envelope fa-5x"></i
+                  ></div>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-solid fa-file fa-5x"></i></a>
+                  <div onclick="link('../archivos/CV/Irina Cervantes - Curriculum.pdf')"
+                    ><i class="fa-solid fa-file fa-5x"></i
+                  ></div>
                 </li>
               </ul>
             </div>
@@ -290,10 +325,15 @@
               <p>Comunicate a su correo o Descarga su CV</p>
               <ul class="social-icons">
                 <li>
-                  <a href="#"><i class="fa-solid fa-envelope fa-5x"></i></a>
+                  <div
+                    onclick="copyToClipboard('tribunal.1803@gmail.com')"
+                    ><i class="fa-solid fa-envelope fa-5x"></i
+                  ></div>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-solid fa-file fa-5x"></i></a>
+                  <div onclick="link('../archivos/CV/Martha Marín García - Curriculum.pdf')"
+                    ><i class="fa-solid fa-file fa-5x"></i
+                  ></div>
                 </li>
               </ul>
             </div>
@@ -313,9 +353,18 @@
           </p>
         </div>
       </section>
-      <section class="organigrama">
+      <section
+        class="organigrama"
+        style="flex-direction: column; justity-content: center"
+      >
         <h3>ORGANIGRAMA</h3>
+        <div class="organigrama_2022"></div>
       </section>
+      <div id="alert-container">
+        <div id="alerts">
+          <!-- alerts go here -->
+        </div>
+      </div>
     </main>
     <iframe
       class="footer"
@@ -328,6 +377,43 @@
       marginwidth="00"
       scrolling="no"
     ></iframe>
+    <script>
+      const e_alerts = document.getElementById("alerts");
+      function copyToClipboard(text) {
+        // Crea un elemento de entrada de texto
+        var input = document.createElement("input");
+        // Asigna el valor del texto que se quiere copiar al elemento de entrada
+        input.setAttribute("value", text);
+        // Añade el elemento a la página
+        document.body.appendChild(input);
+        // Selecciona todo el texto del elemento
+        input.select();
+        // Copia el texto seleccionado al portapapeles
+        document.execCommand("copy");
+        // Elimina el elemento de entrada de la página
+        document.body.removeChild(input);
+        createAlert("Correo copiado al portapapeles");
+      }
+      
+      function createAlert(text) {
+        let _e = document.createElement("div");
+        let _p = document.createElement("p");
+        _p.innerText = text;
+        _e.classList.add("alert");
+        _e.appendChild(_p);
+
+        e_alerts.appendChild(_e);
+        setTimeout(function () {
+          _e.classList.add("animate-hidden");
+        }, 3500);
+        setTimeout(function () {
+          _e.parentNode.removeChild(_e);
+        }, 4500);
+      }
+      function link(link){
+        window.open(link);
+      }
+    </script>
     <script src="../js/general.js"></script>
   </body>
 </html>
