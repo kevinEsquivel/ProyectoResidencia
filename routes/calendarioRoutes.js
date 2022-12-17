@@ -1,8 +1,8 @@
-const { Router } = require("express");
-const { check } = require("express-validator");
-const { calendarioPost, calendarioGet, calendarioPut } = require("../controllers/calendarioController");
-const { userExists } = require("../helpers/user-validations");
-const { validarCampos } = require("../middlewares/validar-campos");
+import { Router } from"express";
+import { check } from"express-validator";
+import { calendarioPost, calendarioGet, calendarioPut } from"../controllers/calendarioController.js";
+import { userExists } from"../helpers/user-validations.js";
+import { validarCampos } from"../middlewares/validar-campos.js";
 
 const router = Router();
 
@@ -27,4 +27,4 @@ router.put('/:_id',[
   validarCampos
 ],calendarioPut)
 
-module.exports = router;
+export default router;

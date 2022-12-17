@@ -1,7 +1,7 @@
-const nodemailer = require('nodemailer');
-const { response, request } = require("express");
+import nodemailer from'nodemailer';
+import { response, request } from"express";
 
-const enviarEmail = async (req=request,res=response) => {
+export const enviarEmail = async (req=request,res=response) => {
 
     const {correo} = req.params;
     const {nombre,mensaje} = req.body;
@@ -46,8 +46,3 @@ const enviarEmail = async (req=request,res=response) => {
     res.json({msg:`Todo bien:${info.messageId}`})
     }catch(err){console.log(err); res.json({errors:err})}
   }
-
-
-module.exports={
-    enviarEmail
-}

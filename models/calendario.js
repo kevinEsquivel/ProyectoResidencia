@@ -1,4 +1,4 @@
-const {Schema,model} = require('mongoose');
+import {Schema,model} from 'mongoose';
 
 const calendarioSchema= Schema({
     
@@ -18,4 +18,4 @@ const calendarioSchema= Schema({
     
 })
 
-module.exports= model('Calendario',calendarioSchema)
+export default model('Calendario', calendarioSchema);

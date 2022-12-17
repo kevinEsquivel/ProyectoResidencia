@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from'mongoose';
 
 mongoose.Promise = global.Promise; 
 
-const dbConection = async () => {
+export const dbConection = async () => {
     try {
         await mongoose.connect(process.env.MONGODB,{
             useNewUrlParser:true,
@@ -13,8 +13,4 @@ const dbConection = async () => {
     } catch (error) {
         console.log('error al inicir la bd',error);
     }
-}
-
-module.exports = {
-    dbConection
 }

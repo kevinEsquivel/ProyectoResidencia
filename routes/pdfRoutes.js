@@ -1,16 +1,16 @@
-const { Router } = require("express");
-const { check } = require("express-validator");
+import { Router } from "express";
+import { check } from "express-validator";
 
-const {
+import {
   pdfPost,
   postSubir,
   deletePdf,
   putPdf,
   getPdfs,
   getPdfSeccion,
-} = require("../controllers/pdfController");
-const { existeIdPdf } = require("../helpers/pdf-validations");
-const { validarCampos } = require("../middlewares/validar-campos");
+} from "../controllers/pdfController.js";
+import { existeIdPdf } from "../helpers/pdf-validations.js";
+import { validarCampos } from "../middlewares/validar-campos.js";
 
 const router = Router();
 
@@ -48,4 +48,4 @@ router.delete(
   deletePdf
 );
 
-module.exports = router;
+export default router;

@@ -1,9 +1,9 @@
-const { response, request } = require("express");
-const Calendario = require("../models/calendario");
+import { response, request } from "express";
+import Calendario from"../models/calendario.js";
 
 
 
-const calendarioGet = async (req = request, res = response) => {
+export const calendarioGet = async (req = request, res = response) => {
     const {id_user} = req.params;
   const calendarioU = await Calendario.findOne({ id_user });
 
@@ -14,7 +14,7 @@ const calendarioGet = async (req = request, res = response) => {
   })
 };
 
-const calendarioPost = async (req = request, res = response) => {
+export const calendarioPost = async (req = request, res = response) => {
     const { boards,settings,currentBoard,identifier } = req.body;
     const {id_user} = req.params;
     
@@ -27,7 +27,7 @@ const calendarioPost = async (req = request, res = response) => {
     });
   };
 
-  const calendarioPut = async (req = request, res = response) => {
+export const calendarioPut = async (req = request, res = response) => {
     const { _id } = req.params; //recupero el valor del url el id
     const {...resto } = req.body;
     const calendario = await Calendario.findByIdAndUpdate(_id, resto); //*1param, el id a buscar, 1param lo que se actualizara
@@ -35,9 +35,4 @@ const calendarioPost = async (req = request, res = response) => {
     res.json({msg:"Calendario actualizado"})
   };
 
-  module.exports={
-    calendarioGet,
-    calendarioPost,
-    calendarioPut
-
-  }
+ 

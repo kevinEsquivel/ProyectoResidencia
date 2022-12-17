@@ -1,7 +1,7 @@
-const { Router } = require("express");
-const { check } = require("express-validator");
+import { Router }  from "express";
+import { check }  from "express-validator";
 
-const {
+import {
   userGet,
   userGetEmailPass,
   userPost,
@@ -9,13 +9,13 @@ const {
   userDelete,
   userGetUser,
   getUser,
-} = require("../controllers/userController");
-const {
+}  from "../controllers/userController.js";
+import {
   esRolValido,
   emailValidation,
   existeId,
-} = require("../helpers/db-validations");
-const { validarCampos } = require("../middlewares/validar-campos");
+}  from "../helpers/db-validations.js";
+import { validarCampos }  from "../middlewares/validar-campos.js";
 
 //const { check } = require("express-validator");
 
@@ -73,4 +73,4 @@ router.delete(
   ],
   userDelete
 );
-module.exports = router;
+export default router;

@@ -1,13 +1,13 @@
 //paquetes requieridos
-const { response, request } = require("express");
-const bcrypt = require("bcryptjs"); //!para encriptar la contraseña
+import { response, request } from "express";
+import bcrypt from "bcryptjs"; //!para encriptar la contraseña
 
 //*modelo Requerido
-const User = require("../models/user");
-const { matchPassword } = require("../helpers/user-validations");
+import User from "../models/user.js";
+import { matchPassword } from "../helpers/user-validations.js";
 
 //*Obtener todos los usuarios
-const userGet = async (req, res) => {
+export const userGet = async (req, res) => {
   const user = await User.find({ estado: true });
   const total = await User.countDocuments({ estado: true });
   res.json({
@@ -15,7 +15,7 @@ const userGet = async (req, res) => {
     total,
   });
 };
-const getUser = async (req, res) => {
+export const getUser = async (req, res) => {
   const {_id} = req.params;
   const user = await User.findOne({ _id });
 
@@ -25,7 +25,7 @@ const getUser = async (req, res) => {
   })
 }
 //*Obtener un usuario
-const userGetUser = async (req, res) => {
+export const userGetUser = async (req, res) => {
   const correo = req.params.correo;
   const user = await User.findOne({ correo });
 
@@ -35,7 +35,7 @@ const userGetUser = async (req, res) => {
     user
   })
 };
-const userGetEmailPass = async (req, res) => {
+export const userGetEmailPass = async (req, res) => {
   const email = req.body.email;
   const pass = req.body.password;
   
@@ -49,7 +49,7 @@ const userGetEmailPass = async (req, res) => {
   res.json({msg:"TODO BIEN"})
   //console.log("TODO CORRECTO", matchPassword);
 };
-const userPost = async (req = request, res = response) => {
+export const userPost = async (req = request, res = response) => {
   const { nombre,apellido,puesto,password, correo, rol } = req.body;
 
   const usuario = new User({ nombre,apellido,puesto, password, correo, rol }); //
@@ -64,7 +64,7 @@ const userPost = async (req = request, res = response) => {
     usuario,
   });
 };
-const userPut = async (req = request, res = response) => {
+export const userPut = async (req = request, res = response) => {
   const { id } = req.params; //recupero el valor del url el id
   const {password}=req.body
   const {...resto } = req.body;
@@ -87,7 +87,7 @@ const userPut = async (req = request, res = response) => {
   console.log(usuario,resto);
   res.json({ usuario });
 };
-const userDelete = async (req = request, res = response) => {
+export const userDelete = async (req = request, res = response) => {
   const { id } = req.params;
   /* const rol = await User.findOne({ id: req.params.id }); 
   if (rol !== "DEVELOMENT_ROL") {
@@ -101,12 +101,4 @@ const userDelete = async (req = request, res = response) => {
     usuario,
   });
 };
-module.exports = {
-  userGet,
-  getUser,
-  userGetUser,
-  userGetEmailPass,
-  userPost,
-  userPut,
-  userDelete,
-};
+

@@ -1,8 +1,8 @@
-const { response, request } = require("express");
-const bcrypt = require("bcryptjs"); //!para encriptar la contraseña
-const User = require("../models/user");
+import { response, request } from "express";
+import bcrypt from "bcryptjs"; //!para encriptar la contraseña
+import User from "../models/user.js";
 
-const matchPassword = function (password, savedPassword) {
+export const matchPassword = function (password, savedPassword) {
   return new Promise((resolve, reject) => {
     bcrypt.compare(password, savedPassword, (err, matches) => {
       if (err) {
@@ -15,7 +15,7 @@ const matchPassword = function (password, savedPassword) {
     });
   });
 };
-const userExists = function (_id) {
+export const userExists = function (_id) {
 return new Promise( async(resolve, reject) => {
     let u = await User.findOne({_id});
     if(!u) reject("Usuario no existe");
@@ -23,7 +23,4 @@ return new Promise( async(resolve, reject) => {
 });
 };
 
-module.exports = {
-  matchPassword,
-  userExists
-};
+

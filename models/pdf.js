@@ -1,4 +1,4 @@
-const {Schema,model} = require('mongoose');
+import {Schema,model} from 'mongoose';
 
 const PdfSchema= Schema({
     nombre:{
@@ -45,4 +45,5 @@ PdfSchema.methods.toJSON = function(){//debe ser de este tipo de funciones
     return pdf; // es lo que estaba despues de los puntos
     }
 
-module.exports = model('Pdf', PdfSchema);
+
+export default model('Pdf', PdfSchema);

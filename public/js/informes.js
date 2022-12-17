@@ -109,4 +109,4 @@ document.addEventListener('DOMContentLoaded',async function () {
   await calendar.render();
   });
 
-module.exports={SesionesPublicas}
+export{SesionesPublicas}

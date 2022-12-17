@@ -1,11 +1,21 @@
-const express = require("express");
-const session = require("express-session");
-const MongoStore = require('connect-mongo');
-const fileupload = require("express-fileupload")
-const cors = require("cors");
 
-const { dbConection } = require("../database/config");
+import express from 'express';
 
+import MongoStore from 'connect-mongo';
+import fileupload from 'express-fileupload';
+import cors from 'cors';
+
+import { dbConection } from"../database/config.js";
+
+
+import userRoutes from "../routes/userRoutes.js";
+import pdfRoutes from "../routes/pdfRoutes.js";
+import calendarioRoutes from "../routes/calendarioRoutes.js";
+import emailRoutes from "../routes/emailRoutes.js";
+
+
+import http from 'http';
+import { Server } from "socket.io";
 class server {
   constructor() {
     this.app = express();
@@ -18,8 +28,8 @@ class server {
     };
 
     //!ESTO ES PARA LOS SOCKETS
-    this.server = require("http").createServer(this.app); //!para el socket
-    this.io = require("socket.io")(this.server);
+    this.server = http.createServer(this.app); //!para el socket
+    this.io = new Server(this.server);
 
     this.sockets();
     //***************************************** */
@@ -58,10 +68,11 @@ class server {
   }
 
   routes() {
-    this.app.use(this.paths.user,       require("../routes/userRoutes"));
-    this.app.use(this.paths.pdf,        require("../routes/pdfRoutes"));
-    this.app.use(this.paths.calendario, require("../routes/calendarioRoutes"));
-    this.app.use(this.paths.email, require("../routes/emailRoutes"));
+
+    this.app.use(this.paths.user,       userRoutes);
+    this.app.use(this.paths.pdf,        pdfRoutes);
+    this.app.use(this.paths.calendario, calendarioRoutes);
+    this.app.use(this.paths.email,      emailRoutes);
   }
   start() {
     this.server.listen(this.port, () => {
@@ -71,4 +82,4 @@ class server {
   }
 }
 
-module.exports = server;
+export default  server;
