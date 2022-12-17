@@ -14,6 +14,7 @@ class server {
       user: "/api/user",
       pdf: "/api/pdf",
       calendario: "/api/calendario",
+      email: "/api/email",
     };
 
     //!ESTO ES PARA LOS SOCKETS
@@ -60,6 +61,7 @@ class server {
     this.app.use(this.paths.user,       require("../routes/userRoutes"));
     this.app.use(this.paths.pdf,        require("../routes/pdfRoutes"));
     this.app.use(this.paths.calendario, require("../routes/calendarioRoutes"));
+    this.app.use(this.paths.email, require("../routes/emailRoutes"));
   }
   start() {
     this.server.listen(this.port, () => {

@@ -21,7 +21,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
       rel="stylesheet"
     />
-
+    <!-- Estilos personales -->
     <link
       rel="stylesheet"
       media="only screen and (min-width: 1200px)"
@@ -32,6 +32,10 @@
       media="only screen and (max-width: 1199px) and (min-width: 320px)"
       href="../css/inicio/inicio_640px.css"
     />
+
+    <!--! Para el calendario -->
+    <link rel="stylesheet" href="../lib/main.css">
+    <script src="../lib/main.js"></script>
 
     <title>Inicio</title>
   </head>
@@ -65,7 +69,10 @@
           >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item p-2 active">
-                <a class="nav-link" aria-current="page" href="../html/inicio.html"
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../html/inicio.html"
                   >Inicio</a
                 >
               </li>
@@ -77,7 +84,7 @@
                   >Transparencia</a
                 >
               </li>
- 
+
               <li class="nav-item dropdown p-2">
                 <a
                   class="nav-link dropdown-toggle"
@@ -90,20 +97,32 @@
                   Sitios de Importancia
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                   <li>
-                    <a class="dropdown-item" href="../html/informes.html">Informes y Sesiones Publicas</a>
+                  <li>
+                    <a class="dropdown-item" href="../html/informes.html"
+                      >Informes y Sesiones Publicas</a
+                    >
                   </li>
                   <li>
                     <a class="dropdown-item" href="../html/financieros.html"
                       >Financieros</a
                     >
                   </li>
-                  <li><a class="dropdown-item" href="./CTA-Publica.html">CTA Publica</a></li>
-                 <li><a class="dropdown-item" href="./OrganoInternoControl.html">Organo interno de control</a></li>
+                  <li>
+                    <a class="dropdown-item" href="./CTA-Publica.html"
+                      >CTA Publica</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./OrganoInternoControl.html"
+                      >Organo interno de control</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="../html/Sentencias.html">Sentencias</a>
+                <a class="nav-link" href="../html/Sentencias.html"
+                  >Sentencias</a
+                >
               </li>
               <li class="nav-item p-2">
                 <a class="nav-link" href="#">Contacto</a>
@@ -145,7 +164,7 @@
                       data-bs-dismiss="modal"
                       aria-label="Close"
                       style="width: 25px; height: 25px"
-                    >  </button>
+                    ></button>
                   </div>
                   <div class="modal-body">
                     <div
@@ -168,7 +187,7 @@
                       class="mb-3 row"
                       style="align-items: center; padding: 1.5em"
                     >
-                      <label for="inputPassword" class="form-label col col-lg-5" 
+                      <label for="inputPassword" class="form-label col col-lg-5"
                         >Contraseña</label
                       >
                       <input
@@ -216,9 +235,7 @@
           <h3>Sesión Publica de 26 de mayo 2022 <br />a las 13:00hr</h3>
           <div class="buttons">
             <button class="btnAviso">Aviso de sesión</button>
-            <button class="btnCalendario">
-              Calendario de sesiones públicas
-            </button>
+            <div style="width: 30vw; height: 200px;" id='calendarInicio'></div>
           </div>
         </div>
         <iframe
@@ -243,16 +260,22 @@
 
           <section class="slider_body slider_body--show" data-id="1">
             <div class="slider_texts">
-              <h2 class="subtitle">El Diablo En La Pared</h2>
+              <h2 class="subtitle">Tribunal Electoral Infantil 2022</h2>
               <p class="slider_review">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-                explicabo blanditiis id quas! Ad dolorum esse soluta
-                necessitatibus? Commodi odit fugit consequatur ad nisi
-                necessitatibus nihil blanditiis praesentium aperiam voluptate!
+                El día de hoy en el TEPJF se llevó acabo la #EtapaDeInstalación
+                del Tribunal Electoral Infantil 2022, quien “Brianna Fernanda
+                Ruíz Mota” de Xalisco, Nayarit, fue ganadora en la etapa
+                regional y quien ahora está participando en la I
+                Circunscripción. Puedes visualizar la sesión de resolución
+                mediante el siguiente enlace:
+                <a href="https://fb.watch/hjrgZgoTln/"
+                  >https://fb.watch/hjrgZgoTln/</a
+                >
+                ¡Enhorabuena, Brianna!
               </p>
             </div>
             <figure class="slider_picture">
-              <img src="" class="slider_img img1" id="i1" />
+              <img src="" class="slider_img" id="i1" />
               <div class="lineas">
                 <div class="num1" id="num1" onclick="lineas(this.id)"></div>
                 <div class="num2" id="num2" onclick="lineas(this.id)"></div>
@@ -263,24 +286,22 @@
 
           <section class="slider_body" data-id="2">
             <div class="slider_texts">
-              <h2 class="subtitle">Dia De La Mujer</h2>
+              <h2 class="subtitle">
+                Observatorio de Participación Política de las Mujeres en Nayarit
+              </h2>
               <p class="slider_review">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores quasi hic odio cupiditate sit possimus voluptatem
-                facilis, atque earum blanditiis vitae mollitia deleniti repellat
-                error ad praesentium. Ducimus, asperiores similique! Aspernatur
-                est mollitia ducimus, nulla hic fugiat excepturi vero repellat
-                incidunt. Fugit porro repellendus ab possimus in. Ratione cum
-                exercitationem totam! Consequuntur mollitia quae doloribus rem
-                non, at labore tempore!
+                El día de hoy el Presidente del Tribunal Estatal Electoral de
+                Nayarit, Rubén Flores Portillo, asistió a la suscripción de la
+                modificación del convenio del Observatorio de Participación
+                Política de las Mujeres en Nayarit y emisión de su anexo y
+                lineamientos, además de la conferencia "Potesta sancionadora en
+                materia electoral ¿instrumento para combatir la VPcMRG?"
+                impartida por la Mtra. Beatriz Claudia Zavala Pérez, Consejera
+                Electoral del instituto Nacional Electoral.
               </p>
             </div>
             <figure class="slider_picture">
-              <img
-                src="../assets/Inicio/Persona2.jpg"
-                class="slider_img"
-                id="i2"
-              />
+              <img src="" class="slider_img" id="i2" />
               <div class="lineas">
                 <div class="num1" id="num1" onclick="lineas(this.id)"></div>
                 <div class="num2" id="num2" onclick="lineas(this.id)"></div>
@@ -291,18 +312,17 @@
 
           <section class="slider_body" data-id="3">
             <div class="slider_texts">
-              <h2 class="subtitle">¡Hola!Mi nombre es 3</h2>
+              <h2 class="subtitle">Primera sesión ordinaria 2022 
+                Consejo Local de Archivos del Estado de Nayarit</h2>
               <p class="slider_review">
-                Lorem ipsum dolor sit amet,consectetur adipisicing elit.Sed
-                atque officiis totam modi,non maiores.
+                En representación del Tribunal Electoral de Nayarit el Magistrado 
+                Presidente Rubén Flores Portillo asistió a la primera sesión ordinaria 2022 
+                Consejo Local de Archivos del Estado de Nayarit 
+                y firma de convenio de colaboración con la Universidad Autónoma de Nayarit
               </p>
             </div>
             <figure class="slider_picture">
-              <img
-                src="../assets/Inicio/Persona3.jpg"
-                class="slider_img"
-                id="i3"
-              />
+              <img src="" class="slider_img" id="i3" />
               <div class="lineas">
                 <div class="num1" id="num1" onclick="lineas(this.id)"></div>
                 <div class="num2" id="num2" onclick="lineas(this.id)"></div>
@@ -362,7 +382,7 @@
       marginwidth="00"
       scrolling="no"
     ></iframe>
-    <script src="../js/inicio.js""></script>
+    <script src="../js/inicio.js"></script>
     <script src="../js/general.js"></script>
   </body>
 </html>
