@@ -1,6 +1,6 @@
 //! AGregar la sesion publica para poder visualizarce,
 //!IMPORTANTE SEGUIR LA MISMO ESTRUCTURA
-const SesionesPublicas=[
+ const SesionesPublicas=[
   {
     title  : 'DECIMA OCTAVA SESIÓN PÚBLICA', //!Nombre de el VIDEO
     start  : '2022-12-01',                   //!Fecha de subida a youtube
@@ -91,7 +91,7 @@ const SesionesPublicas=[
     start  : '2022-01-20',
     url  : 'https://www.youtube.com/watch?v=rQEwztdvz-A',
   },
-]
+];
 
 
 document.addEventListener('DOMContentLoaded',async function () {
@@ -109,4 +109,4 @@ document.addEventListener('DOMContentLoaded',async function () {
   await calendar.render();
   });
 
-export{SesionesPublicas}
+

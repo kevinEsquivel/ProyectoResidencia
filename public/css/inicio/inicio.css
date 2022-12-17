@@ -75,7 +75,7 @@
   /*------------------------------------------SESIONES PUBLICAS------------------------------------------*/
   .sesionesPublicas {
     min-width: 100vw;
-    min-height: 284px;
+    min-height: 430px;
     display: inline-flex;
     background-color: var(--secondary-color);
     flex-wrap: wrap;
@@ -87,9 +87,7 @@
   }
   .sesionesPublicas .sesiones-texto {
     width: 609px;
-    height: 177px;
-    margin-left: 40px;
-    margin-top: 56px;
+    margin-top: 10px;
   }
   .sesionesPublicas h3 {
     margin-bottom: 22px;
@@ -97,6 +95,10 @@
   }
   .sesiones-texto .buttons {
     display: inline-flex;
+    
+  }
+  #calendarInicio{
+    width: 30vw;
   }
   .sesionesPublicas .btnAviso {
     width: 8em;
@@ -211,7 +213,30 @@
     margin-left: 15px;
     background-color: rgba(196, 196, 196, 0.7);
   }
-
+/*---------------------------------------------------------FORMATOS DE INTERES              */
+.interes{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.formatos{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.iconPdf{
+  background-image: url('../../assets/PDF_file_icon.svg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    height: 73px;
+    width: 60px;
+}
   /*------------------------------------------CONTACTANOS------------------------------------------*/
   .contactanos {
     margin-top: 100px;
