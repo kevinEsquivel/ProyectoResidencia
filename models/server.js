@@ -12,6 +12,7 @@ import userRoutes from "../routes/userRoutes.js";
 import pdfRoutes from "../routes/pdfRoutes.js";
 import calendarioRoutes from "../routes/calendarioRoutes.js";
 import emailRoutes from "../routes/emailRoutes.js";
+import personalRoutes from "../routes/personalRoutes.js";
 
 
 import http from 'http';
@@ -25,6 +26,7 @@ class server {
       pdf: "/api/pdf",
       calendario: "/api/calendario",
       email: "/api/email",
+      personal: "/api/personal",
     };
 
     //!ESTO ES PARA LOS SOCKETS
@@ -73,6 +75,7 @@ class server {
     this.app.use(this.paths.pdf,        pdfRoutes);
     this.app.use(this.paths.calendario, calendarioRoutes);
     this.app.use(this.paths.email,      emailRoutes);
+    this.app.use(this.paths.personal,   personalRoutes);
   }
   start() {
     this.server.listen(this.port, () => {

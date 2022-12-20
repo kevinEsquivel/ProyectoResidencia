@@ -11,6 +11,7 @@
     --option: #70928e;
     --color-texto: #d4d5d9;
     --fondo: #8c9b92;
+    --font-color-letter: #ffffff;
     --font-size-title: 5vw;
     --font-size-title2: 2vw;
     --font-size-subtitle2: 1.7vw;
@@ -20,7 +21,7 @@
     --font-family-Benne: Benne;
     --font-family-tittle: "Big Shoulders Inline Display", cursive;
     --font-family-tittle2: "Teko", sans-serif;
-    --font-color-letter: #ffffff;
+    
   }
   * {
     box-sizing: border-box;

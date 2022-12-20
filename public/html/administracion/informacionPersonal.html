@@ -38,7 +38,7 @@
           <a class="navbar-brand p-3" href="../inicio.html">
             <img
               class="logoNayarit"
-              src="/public/assets/logoNayarit_Recortada.png"
+              src="../../assets/logoNayarit_Recortada.png"
               alt="logo de Nayarit"
             />
             TEEN
@@ -135,11 +135,11 @@
           </div>
           <div class="col-md-4 co">
             <label for="Papellido" class="form-label">PRIMER APELLIDO</label>
-            <input type="text" id="Papellido" class="form-control" />
+            <input type="text" id="apellidoP" class="form-control" />
           </div>
           <div class="col-md-4 co">
             <label for="Sapellido" class="form-label">SEGUNDO APELLIDO</label>
-            <input type="text" id="Sapellido" class="form-control" />
+            <input type="text" id="apellidoM" class="form-control" />
           </div>
         </div>
         <div class="row">
@@ -161,7 +161,7 @@
             <label for="CInstitucional" class="form-label"
               >CORREO ELECTRÓNICO INSTITUCIONAL</label
             >
-            <input type="text" id="curp" class="form-control" />
+            <input type="text" id="CInstitucional" class="form-control" />
           </div>
           <div class="col-md-4 co">
             <label for="CPersonal" class="form-label"
@@ -187,74 +187,74 @@
             <label for="estadoCivil" class="form-label"
               >SITUACIÓN PERSONAL / ESTADO CIVIL</label
             >
-            <div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox1"
-                  >SOLTERO (A)</label
-                >
+            <form class="form-check form-check-inline" >
+              
+                <label class="form-check-label" for="soltero"
+                  >SOLTERO (A)
                 <input
                   class="form-check-input"
                   type="radio"
-                  id="soltero"
-                  name="flexRadioDefault"
+                  value="soltero"
+                  name="SituPersonal"
                 />
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2"
-                  >CASADO (A)</label
+                </label
                 >
+              
+                <label class="form-check-label" for="casado"
+                  >CASADO (A)
                 <input
                   class="form-check-input"
                   type="radio"
-                  id="casado"
-                  name="flexRadioDefault"
+                  value="casado"
+                  name="SituPersonal"
                 />
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox3"
-                  >DIVORCIADO (A)</label
+                </label
                 >
+              
+                <label class="form-check-label" for="divorciado"
+                  >DIVORCIADO (A)
                 <input
                   class="form-check-input"
                   type="radio"
-                  id="divorciado"
-                  name="flexRadioDefault"
+                  value="divorciado"
+                  name="SituPersonal"
                 />
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox1"
-                  >VIUDO (A)</label
+                </label
                 >
+              
+                <label class="form-check-label" for="viudo"
+                  >VIUDO (A)
                 <input
                   class="form-check-input"
                   type="radio"
-                  id="viudo"
-                  name="flexRadioDefault"
+                  value="viudo"
+                  name="SituPersonal"
                 />
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2"
-                  >CONCUBINA / CONCUBINARIO / UNIÓN LIBRE</label
+                </label
                 >
+              
+                <label class="form-check-label" for="unionLibre"
+                  >CONCUBINA / CONCUBINARIO / UNIÓN LIBRE
                 <input
                   class="form-check-input"
                   type="radio"
-                  id="unionLibre"
-                  name="flexRadioDefault"
+                  value="unionLibre"
+                  name="SituPersonal"
                 />
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox3"
-                  >SOCIEDAD DE CONVIVENCIA</label
+                </label
                 >
+              
+                <label class="form-check-label" for="sConveniencia"
+                  >SOCIEDAD DE CONVIVENCIA
                 <input
                   class="form-check-input"
                   type="radio"
-                  id="sConveniencia"
-                  name="flexRadioDefault"
+                  value="sConveniencia"
+                  name="SituPersonal"
                 />
-              </div>
-            </div>
+                </label
+                >
+            </form>
           </div>
         </div>
         <div class="row">
@@ -269,15 +269,15 @@
                 >
                 <input
                   class="form-check-input"
-                  type="checkbox"
-                  id="sConyugal"
+                  type="radio"
+                  value="Sociedad Conyugal" name="regMatrimonial"
                 />
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label" for="sBienes"
                   >SEPARACIÓN DE BIENES</label
                 >
-                <input class="form-check-input" type="checkbox" id="sBienes" />
+                <input class="form-check-input" type="radio" value="Separacion de Bienes"  name="regMatrimonial"/>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label" for="otro"
@@ -299,10 +299,10 @@
           </div>
         </div>
         <div class="row">
-          <label for="observaciones" class="form-label"
+          <label for="Obs1" class="form-label"
             >ACLARACIONES / OBSERVACIONES</label
           >
-          <textarea id="observaciones" class="form-control" rows="3"></textarea>
+          <textarea id="Obs1" class="form-control" rows="3"></textarea>
         </div>
       </section>
       <section class="container-domicilio">
@@ -384,15 +384,192 @@
           </div>
         </div>
         <div class="row">
-            <label for="observaciones" class="form-label"
+            <label for="Obs2" class="form-label"
               >ACLARACIONES / OBSERVACIONES</label
             >
-            <textarea id="observaciones" class="form-control" rows="3"></textarea>
+            <textarea id="Obs2" class="form-control" rows="3"></textarea>
         </div>
       </section>
       <section class="container-escolaridad">
         <h4 class="container_titulo">Escolaridad</h4>
-        <h2>NO SE SI AGREGAR ESTO,PREGUNTAR</h2>
+        <div class="row">
+          <div class="col co">
+            <label for="nivel" class="form-label"
+              >Nivel</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="PRIMARIA"
+                  >PRIMARIA</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="PRIMARIA" name="EscNivel"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="SECUNDARIA"
+                  >SECUNDARIA </label
+                >
+                <input class="form-check-input" type="radio" value="SECUNDARIA"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="BACHILLERATO"
+                  >BACHILLERATO </label
+                >
+                <input class="form-control" type="radio" value="BACHILLERATO"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CComercial"
+                  >CARRERA TÉCNICA O COMERCIAL </label
+                >
+                <input class="form-control" type="radio" value="Carrera Tecnica o comercial"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="LICENCIATURA"
+                  >LICENCIATURA </label
+                >
+                <input class="form-control" type="radio" value="LICENCIATURA"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="ESPECIALIDAD"
+                  >ESPECIALIDAD</label
+                >
+                <input class="form-control" type="radio" value="ESPECIALIDAD"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="MAESTRÍA"
+                  >MAESTRÍA </label
+                >
+                <input class="form-control" type="radio" value="MAESTRÍA"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="DOCTORADO"
+                  >DOCTORADO</label
+                >
+                <input class="form-control" type="radio" value="DOCTORADO"  name="EscNivel"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <label for="intitucionEdu" class="form-label col-md-4 co"
+              >INSTITUCIÓN EDUCATIVA</label
+            >
+            <input type="text" id="intitucionEdu" class="form-control col-sm-8 co" />
+        </div>
+        <div class="row">
+            <label for="carreraC" class="form-label col-md-4 co"
+              >CARRERA O ÁREA DE CONOCIMIENTO</label
+            >
+            <input type="text" id="carreraC" class="form-control col-sm-8 co" />
+        </div>
+        <div class="row">
+          <div class="col co">
+            <label for="Estatus" class="form-label"
+              >Estatus</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CURSANDO"
+                  >CURSANDO</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="CURSANDO" name="Status"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="FINALIZADO"
+                  >FINALIZADO</label
+                >
+                <input class="form-check-input" type="radio" value="FINALIZADO"  name="Status"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="TRUNCO"
+                  >TRUNCO</label
+                >
+                <input class="form-control" type="radio" value="TRUNCO"  name="Status"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col co">
+            <label for="Doc" class="form-label"
+              >Documento Obtenido</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="BOLETA"
+                  >BOLETA</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="BOLETA" name="DocObtenido"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CERTIFICADO"
+                  >CERTIFICADO</label
+                >
+                <input class="form-check-input" type="radio" value="CERTIFICADO"  name="DocObtenido"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CONSTANCIA"
+                  >CONSTANCIA</label
+                >
+                <input class="form-control" type="radio" value="CONSTANCIA"  name="DocObtenido"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="TÍTULO"
+                  >TÍTULO</label
+                >
+                <input class="form-control" type="radio" value="TÍTULO"  name="DocObtenido"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <label for="fechaDoc" class="form-label col-md-4 co"
+              >FECHA DE OBTENCION DEL DOCUMENTO</label>
+            <input type="text" id="fechaDoc" class="form-control col-sm-8 co" />
+        </div>
+        <div class="row">
+          <div class="col co">
+            <label for="lugar" class="form-label"
+              >LUGAR DONDE SE UBICA LA INSTITUCIÓN EDUCATIVA</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="UMexico"
+                  >EN MÉXICO</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="Mexico" name="UbicaEducativa"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="UExtranjero"
+                  >En el Extranjero</label
+                >
+                <input class="form-check-input" type="radio" value="Extranjero"  name="UbicaEducativa"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="Obs3" class="form-label"
+            >ACLARACIONES / OBSERVACIONES</label
+          >
+          <textarea id="Obs3" class="form-control" rows="3"></textarea>
+      </div>
+        
       </section>
       <article><button class="btn btn-outline-dark" id="btnGuardar">GUARDAR</button></article>
 
@@ -403,6 +580,11 @@
     >
       <h2>¡Ten un gran día!</h2>
     </footer>
-    <script src="/public/js/infoPersonal.js"></script>
+    <script src="../../js/infoPersonal.js"></script>
   </body>
 </html>
+
+
+
+
+
