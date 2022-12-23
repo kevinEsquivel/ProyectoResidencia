@@ -71,8 +71,9 @@ async function fetchs(url, tipos) {
       }
 
       let _listGroupItem = document.createElement("div");
-      _listGroupItem.className = "row";
+      _listGroupItem.classList.add("row","shadow-lg","p-3");
       _listGroupItem.id = "r";
+      _listGroupItem.style.borderRadius="6px";
       contenedor.appendChild(_listGroupItem);
 
       let _nombreSeccion = document.createElement("div");

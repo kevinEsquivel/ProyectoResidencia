@@ -4,14 +4,15 @@
 @media only screen and (min-width: 1200px) {
   
   :root {
-    /*variables generales*/
-    --primary-color: #406c68;
-    --primary-2option: #355956;
-    --secondary-color: #88a3a0;
-    --option: #70928e;
-    --color-texto: #d4d5d9;
-    --fondo: #8c9b92;
-    --font-color-letter: #ffffff;
+    /*variables generales*/       /* #6c788e */
+    --primary-color: #6c788e;     /* #a6aec1 */
+    --primary-2option: #a6aec1 ;   /* #cfd5e1 */
+    --secondary-color: #ededf2;   /* #ededf2 */
+    --option: #cfd5e1 ;            /* #fcfdff */
+    --fondo: #fcfdff;
+    --color-texto: #272343;
+    --font-color-letter: #2e294b;
+    --color-Titulo-Nav:#ffffff;
     --font-size-title: 5vw;
     --font-size-title2: 2vw;
     --font-size-subtitle2: 1.7vw;
@@ -58,12 +59,14 @@
 @media only screen and (max-width: 1199px) and (min-width: 220px) {
   :root {
     /*variables generales*/
-    --primary-color: #406c68;
-    --primary-2option: #355956;
-    --secondary-color: #88a3a0;
-    --option: #70928e;
-    --color-texto: #d4d5d9;
-    --fondo: #8c9b92;
+    --primary-color: #6c788e;     /* #a6aec1 */
+    --primary-2option: #a6aec1 ;   /* #cfd5e1 */
+    --secondary-color: #ededf2;   /* #ededf2 */
+    --option: #cfd5e1 ;            /* #fcfdff */
+    --fondo: #fcfdff;
+    --color-texto: #272343;
+    --font-color-letter: #2e294b;
+    --color-Titulo-Nav:#ffffff;
     --font-size-title: 7vw;
     --font-size-title2: 3.5vw;
     --font-size-subtitle: 2vw;
@@ -72,7 +75,7 @@
     --font-family-Benne: Benne;
     --font-family-tittle: "Big Shoulders Inline Display", cursive;
     --font-family-tittle2: "Teko", sans-serif;
-    --font-color-letter: #ffffff;
+    
   }
 
   * {

@@ -12,15 +12,13 @@ const PersonaSchema= Schema({
     },
     curp:{
         type: String,
-        unique:true //no habra correos  iguales
+        
     },
     rfc:{ //el esquema tendra un nombre con los valores
         type: String,
-        unique:true //no habra correos  iguales
     },
     homoclave:{ //el esquema tendra un nombre con los valores
         type: String,
-        unique:true //no habra correos  iguales
     },
     correoInst:{ //el esquema tendra un nombre con los valores
         type: String
@@ -28,7 +26,7 @@ const PersonaSchema= Schema({
     },
     correoPer:{ //el esquema tendra un nombre con los valores
         type: String,
-        default:true
+        default:false
     },
     TelCasa:{ //el esquema tendra un nombre con los valores
         type: String,

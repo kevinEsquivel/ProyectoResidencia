@@ -1,15 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@400;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@500;600&display=swap");
+@import url('/public/css/root.css');
 @media only screen and (min-width: 1200px) {
   :root {
     /*variables generales*/
-    --primary-color: #406c68;
-    --primary-2option: #355956;
-    --secondary-color: #88a3a0;
-    --option: #70928e;
-    --color-texto: #d4d5d9;
-    --fondo: #8c9b92;
+    --primary-color: #6c788e; 
     --font-size-title: 5vw;
     --font-size-title2: 2vw;
     --font-size-subtitle: 1.5vw;
@@ -18,7 +14,7 @@
     --font-family-Benne: Benne;
     --font-family-tittle: "Big Shoulders Inline Display", cursive;
     --font-family-tittle2: "Teko", sans-serif;
-    --font-color-letter: #ffffff;
+    
   }
     /*------------------------------------------FOOTER------------------------------------------*/
     footer {
@@ -64,12 +60,7 @@
     /********************************NAV**************/
     :root {
       /*variables generales*/
-      --primary-color: #406c68;
-      --primary-2option: #355956;
-      --secondary-color: #88a3a0;
-      --option: #70928e;
-      --color-texto: #d4d5d9;
-      --fondo: #8c9b92;
+    
       --font-size-title: 7vw;
       --font-size-title2: 3.5vw;
       --font-size-subtitle: 2.5vw;
@@ -77,7 +68,7 @@
       --font-size-textchico: 1.2vw;
       --font-family-Benne: Benne;
       --font-family-tittle: "Big Shoulders Inline Text", cursive;
-      --font-color-letter: #ffffff;
+      
     }
   /*------------------------------------------FOOTER------------------------------------------*/
   footer {

@@ -14,6 +14,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    
   }
   main {
     grid-area: main;
@@ -34,13 +35,14 @@
     position: absolute !important;
     top: 0;
     left: 0;
+    
   }
   .nav-link {
-    color: var(--font-color-letter) !important;
+    color: var(--color-Titulo-Nav) !important;
   }
   .navbar-brand {
     font-size: var(--font-size-subtitle);
-    color: var(--font-color-letter) !important;
+    color: var(--color-Titulo-Nav) !important;
   }
   .nav-item .nav-link,
   .dropdown-menu {
@@ -63,7 +65,7 @@
     justify-content: center;
   }
   main .titulo h1 {
-    color: var(--font-color-letter);
+    color: var(--color-Titulo-Nav);
     font-family: var(--font-family-tittle);
     font-weight: 500;
     font-size: var(--font-size-title);
@@ -215,11 +217,14 @@
   }
 /*---------------------------------------------------------FORMATOS DE INTERES              */
 .interes{
+  margin-top: 5em;
+  margin-bottom: 2.5em;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  background-color: var(--option);
 }
 .formatos{
   display: flex;
@@ -268,7 +273,7 @@
   .contactanos .correos > input {
     width: 321px;
     height: 52px;
-    background: #8c9b92;
+    background: var(--fondo);
     border-radius: 5px;
   }
   .contactanos .correos .nombre,
@@ -308,7 +313,7 @@
   .direciones {
     width: 30em;
     height: 60em;
-    background: var(--primary-color);
+    background: var(--primary-2option);
     border-radius: 20px;
     display: grid;
     margin-right: -23em;

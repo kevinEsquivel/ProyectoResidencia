@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- jfPDF Libreria para imprimir como pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <!-- BOOTSTRAP -->
     <link
       rel="stylesheet"
@@ -24,9 +26,12 @@
       crossorigin="anonymous"
     ></script>
     <!------------------ CSS ----------->
-    <link rel="stylesheet" href="/public/css/declaracion/declaracion.css" />
+    <link
+      rel="stylesheet"
+      href="../../css/informacionPersonal/declaracion.css"
+    />
 
-    <title>Declaración</title>
+    <title>Declaracion</title>
   </head>
   <body>
     <header>
@@ -35,7 +40,7 @@
           <a class="navbar-brand p-3" href="../inicio.html">
             <img
               class="logoNayarit"
-              src="/public/assets/logoNayarit_Recortada.png"
+              src="../../assets/logoNayarit_Recortada.png"
               alt="logo de Nayarit"
             />
             TEEN
@@ -118,14 +123,471 @@
       </nav>
     </header>
     <main>
-      <h2>Declaración</h2>
+      <h2 class="titulo no-print">Declaracion</h2>
+      <p class="info no-print">
+        Selecionar Declaracion a llenar <br> Se guardara la informacion de la declaracion para futuras referencias
+      </p>
+      <section class="container-datosGenerales">
+        <h4 class="container_titulo">Datos Generales</h4>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="nombre" class="form-label">NOMBRE(S)</label>
+            <input type="text" id="nombre" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="Papellido" class="form-label">PRIMER APELLIDO</label>
+            <input type="text" id="apellidoP" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="Sapellido" class="form-label">SEGUNDO APELLIDO</label>
+            <input type="text" id="apellidoM" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="curp" class="form-label">CURP</label>
+            <input type="text" id="curp" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="rfc" class="form-label">RFC</label>
+            <input type="text" id="rfc" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="homoclave" class="form-label">HOMOCLAVE</label>
+            <input type="text" id="homoclave" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="CInstitucional" class="form-label"
+              >CORREO ELECTRÓNICO INSTITUCIONAL</label
+            >
+            <input type="text" id="CInstitucional" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="CPersonal" class="form-label"
+              >CORREO ELECTRÓNICO PERSONAL / ALTERNO</label
+            >
+            <input type="text" id="CPersonal" class="form-control" />
+          </div>
+          <div class="col-md-4 co">
+            <label for="numCasa" class="form-label"
+              >NÚMERO TELEFÓNICO DE CASA</label
+            >
+            <input type="text" id="numCasa" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 co">
+            <label for="numPersonal" class="form-label"
+              >NÚMERO CELULAR PERSONAL</label
+            >
+            <input type="text" id="numPersonal" class="form-control" />
+          </div>
+          <div class="col-md-8 co">
+            <label for="estadoCivil" class="form-label"
+              >SITUACIÓN PERSONAL / ESTADO CIVIL</label
+            >
+            <form class="form-check form-check-inline" >
+              
+                <label class="form-check-label" for="soltero"
+                  >SOLTERO (A)
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="soltero"
+                  name="SituPersonal"
+                />
+                </label
+                >
+              
+                <label class="form-check-label" for="casado"
+                  >CASADO (A)
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="casado"
+                  name="SituPersonal"
+                />
+                </label
+                >
+              
+                <label class="form-check-label" for="divorciado"
+                  >DIVORCIADO (A)
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="divorciado"
+                  name="SituPersonal"
+                />
+                </label
+                >
+              
+                <label class="form-check-label" for="viudo"
+                  >VIUDO (A)
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="viudo"
+                  name="SituPersonal"
+                />
+                </label
+                >
+              
+                <label class="form-check-label" for="unionLibre"
+                  >CONCUBINA / CONCUBINARIO / UNIÓN LIBRE
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="unionLibre"
+                  name="SituPersonal"
+                />
+                </label
+                >
+              
+                <label class="form-check-label" for="sConveniencia"
+                  >SOCIEDAD DE CONVIVENCIA
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="sConveniencia"
+                  name="SituPersonal"
+                />
+                </label
+                >
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 co">
+            <label for="regimenMatrimonial" class="form-label"
+              >RÉGIMEN MATRIMONIAL</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="sConyugal"
+                  >SOCIEDAD CONYUGAL</label
+                >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Sociedad Conyugal" name="regMatrimonial"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="sBienes"
+                  >SEPARACIÓN DE BIENES</label
+                >
+                <input class="form-check-input" type="checkbox" value="Separacion de Bienes"  name="regMatrimonial"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="otro"
+                  >OTRO / ESPECIFIQUE</label
+                >
+                <input class="form-control" type="text" id="otro" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 co">
+            <label for="paisNacimiento" class="form-label"
+              >PAÍS DE NACIMIENTO</label
+            >
+            <input type="text" id="paisNacimiento" class="form-control" />
+          </div>
+          <div class="col-md-3 co">
+            <label for="nacionalidad" class="form-label">NACIONALIDAD</label>
+            <input type="text" id="nacionalidad" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <label for="Obs1" class="form-label"
+            >ACLARACIONES / OBSERVACIONES</label
+          >
+          <textarea id="Obs1" class="form-control" rows="3"></textarea>
+        </div>
+      </section>
+      <section class="container-domicilio">
+        <h4 class="container_titulo">Domicilio</h4>
+        <div class="row">
+          <div class="col-md-6 co">
+            <label for="mexico" class="form-label">EN MÉXICO</label>
+            <div class="row">
+              <div class="col-md-4 co">
+                <label for="calle" class="form-label">calle</label>
+                <input type="text" id="calle" class="form-control" />
+              </div>
+              <div class="col-md-4 co">
+                <label for="numExt" class="form-label">NÚMERO EXTERIOR</label>
+                <input type="text" id="numExt" class="form-control" />
+              </div>
+              <div class="col-md-4 co">
+                <label for="numInt" class="form-label">NÚMERO INTERIOR</label>
+                <input type="text" id="numInt" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 co">
+                  <label for="colonia" class="form-label">COLONIA / LOCALIDAD</label>
+                  <input type="text" id="colonia" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="municipio" class="form-label">MUNICIPIO / ALCALDÍA</label>
+                  <input type="text" id="municipio" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="entFed" class="form-label">ENTIDAD FEDERATIVA</label>
+                  <input type="text" id="entFed" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col co">
+                  <label for="CP" class="form-label">CÓDIGO POSTAL</label>
+                  <input type="text" id="CP" class="form-control" />
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6 co">
+            <label for="extranjero" class="form-label">EN EL EXTRANJERO</label>
+            <div class="row">
+                <div class="col-md-4 co">
+                  <label for="calleExtranj" class="form-label">calle</label>
+                  <input type="text" id="calleExtranj" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="numExtExtranj" class="form-label">NÚMERO EXTERIOR</label>
+                  <input type="text" id="numExtExtranj" class="form-control" />
+                </div>
+                <div class="col-md-4 co">
+                  <label for="numIntExtranj" class="form-label">NÚMERO INTERIOR</label>
+                  <input type="text" id="numIntExtranj" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 co">
+                  <label for="coloniaExtranj" class="form-label">COLONIA / LOCALIDAD</label>
+                  <input type="text" id="coloniaExtranj" class="form-control" />
+                </div>
+                <div class="col-md-6 co">
+                  <label for="municipioExtranj" class="form-label">ESTADO / ALCALDÍA</label>
+                  <input type="text" id="municipioExtranj" class="form-control" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 co">
+                    <label for="pais" class="form-label">PAÍS</label>
+                    <input type="text" id="pais" class="form-control" />
+                  </div>
+                <div class="col-md-6 co">
+                  <label for="CPExtranj" class="form-label">CÓDIGO POSTAL</label>
+                  <input type="text" id="CPExtranj" class="form-control" />
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <label for="Obs2" class="form-label"
+              >ACLARACIONES / OBSERVACIONES</label
+            >
+            <textarea id="Obs2" class="form-control" rows="3"></textarea>
+        </div>
+      </section>
+      <section class="container-escolaridad">
+        <h4 class="container_titulo">Escolaridad</h4>
+        <div class="row">
+          <div class="col co">
+            <label for="nivel" class="form-label"
+              >Nivel</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="PRIMARIA"
+                  >PRIMARIA</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="PRIMARIA" name="EscNivel"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="SECUNDARIA"
+                  >SECUNDARIA </label
+                >
+                <input class="form-check-input" type="radio" value="SECUNDARIA"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="BACHILLERATO"
+                  >BACHILLERATO </label
+                >
+                <input class="form-control" type="radio" value="BACHILLERATO"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CComercial"
+                  >CARRERA TÉCNICA O COMERCIAL </label
+                >
+                <input class="form-control" type="radio" value="Carrera Tecnica o comercial"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="LICENCIATURA"
+                  >LICENCIATURA </label
+                >
+                <input class="form-control" type="radio" value="LICENCIATURA"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="ESPECIALIDAD"
+                  >ESPECIALIDAD</label
+                >
+                <input class="form-control" type="radio" value="ESPECIALIDAD"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="MAESTRÍA"
+                  >MAESTRÍA </label
+                >
+                <input class="form-control" type="radio" value="MAESTRÍA"  name="EscNivel"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="DOCTORADO"
+                  >DOCTORADO</label
+                >
+                <input class="form-control" type="radio" value="DOCTORADO"  name="EscNivel"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <label for="intitucionEdu" class="form-label col-md-4 co"
+              >INSTITUCIÓN EDUCATIVA</label
+            >
+            <input type="text" id="intitucionEdu" class="form-control col-sm-8" />
+        </div>
+        <div class="row">
+            <label for="carreraC" class="form-label col-md-4 co"
+              >CARRERA O ÁREA DE CONOCIMIENTO</label
+            >
+            <input type="text" id="carreraC" class="form-control col-sm-8" />
+        </div>
+        <div class="row">
+          <div class="col co">
+            <label for="Estatus" class="form-label"
+              >Estatus</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CURSANDO"
+                  >CURSANDO</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="CURSANDO" name="Status"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="FINALIZADO"
+                  >FINALIZADO</label
+                >
+                <input class="form-check-input" type="radio" value="FINALIZADO"  name="Status"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="TRUNCO"
+                  >TRUNCO</label
+                >
+                <input class="form-control" type="radio" value="TRUNCO"  name="Status"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col co">
+            <label for="Doc" class="form-label"
+              >Documento Obtenido</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="BOLETA"
+                  >BOLETA</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="BOLETA" name="DocObtenido"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CERTIFICADO"
+                  >CERTIFICADO</label
+                >
+                <input class="form-check-input" type="radio" value="CERTIFICADO"  name="DocObtenido"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="CONSTANCIA"
+                  >CONSTANCIA</label
+                >
+                <input class="form-control" type="radio" value="CONSTANCIA"  name="DocObtenido"/>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="TÍTULO"
+                  >TÍTULO</label
+                >
+                <input class="form-control" type="radio" value="TÍTULO"  name="DocObtenido"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <label for="fechaDoc" class="form-label col-md-4 co"
+              >FECHA DE OBTENCION DEL DOCUMENTO</label>
+            <input type="text" id="fechaDoc" class="form-control col-sm-8" />
+        </div>
+        <div class="row">
+          <div class="col co">
+            <label for="lugar" class="form-label"
+              >LUGAR DONDE SE UBICA LA INSTITUCIÓN EDUCATIVA</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="UMexico"
+                  >EN MÉXICO</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="Mexico" name="UbicaEducativa"
+                />
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="UExtranjero"
+                  >En el Extranjero</label
+                >
+                <input class="form-check-input" type="radio" value="Extranjero"  name="UbicaEducativa"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="Obs3" class="form-label"
+            >ACLARACIONES / OBSERVACIONES</label
+          >
+          <textarea id="Obs3" class="form-control" rows="3"></textarea>
+      </div>
+        
+      </section>
+
+      <article class=" no-print"><button class="btn btn-outline-dark" id="btnGuardar">Imprimir</button></article>
+
     </main>
     <footer
+    class="no-print"
       style="background-color: #406c68; height: 12em; margin-bottom: 0px"
       width="100"
     >
       <h2>¡Ten un gran día!</h2>
     </footer>
-    <script src="/js/PDF.js"></script>
+    <script src="../../js/Declaracion.js"></script>
   </body>
 </html>
+
+
+
+
+

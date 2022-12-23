@@ -147,8 +147,9 @@ document.getElementById("btnGuardar").addEventListener("click", async () => {
       if (x.errors) {
         return window.alert(x.errors[0].msg);
       }
-      alert("Guardando informacion")
-      return window.open("informacionPersonal.html", "_self");
+      alert("imprimir informacion")
+      // Crea una nueva instancia de jsPDF
+  window.print();
     })
     .catch((error) => {
       console.log("Esto es un error en Informacion Personal", error);

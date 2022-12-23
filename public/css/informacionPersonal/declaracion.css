@@ -1,5 +1,9 @@
 @import url("../root.css") all;
-
+@media print {
+  .no-print {
+    display: none;
+  }
+}
 @media only screen and (max-width: 1199px) and (min-width: 220px) {
     body {
       display: grid;
