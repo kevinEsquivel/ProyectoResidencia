@@ -1,8 +1,6 @@
 import { response, request } from "express";
 import Calendario from"../models/calendario.js";
 
-
-
 export const calendarioGet = async (req = request, res = response) => {
     const {id_user} = req.params;
   const calendarioU = await Calendario.findOne({ id_user });
