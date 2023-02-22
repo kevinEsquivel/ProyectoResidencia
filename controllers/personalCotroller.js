@@ -11,7 +11,7 @@ export const getPersonal = async (req = request, res = response) => {
     total,
   });
 };
-//*Obtener informacion de una persona
+
 export const getPersona = async (req = request, res = response) => {
   const { id } = req.params;
   const persona = await Persona.findOne({ id });

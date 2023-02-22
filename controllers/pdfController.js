@@ -1,6 +1,7 @@
 import { request, response } from "express";
 import { escape } from "querystring";
 import fs from "fs"
+import path from 'path'
 fs.promise;
 //*modelo Requerido
 import Pdf from "../models/pdf.js";
@@ -43,6 +44,7 @@ export const pdfPost = async (req = request, res = response) => {
   let { seccion, nombre } = req.params;
   let archivo = req.files.file;
   archivo.name = nombre;
+  console.log(__dirname);
   let uploadPath = `${__dirname}/../public/archivos/${seccion}/${archivo.name}`;
   //console.log(uploadPath);
   archivo.mv(uploadPath, (err) => {

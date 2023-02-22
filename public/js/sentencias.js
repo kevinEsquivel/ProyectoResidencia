@@ -35,13 +35,8 @@ btnBuscar.addEventListener("click", () => {
 
   if(mes[mes.selectedIndex].value !== '0') 
     s===''?s+= `mes=${mes[mes.selectedIndex].value}`:s+= `&mes=${mes[mes.selectedIndex].value}`
-
-
-
-  
 //!si S esta vacio que recarge la pagina mas fácil
   if(s==='') return window.location.reload();
-
   //*tipo=JIN&magistrado=Lic. Rubén Flores Portillo&año=2019&mes=9
    fetch(`http://localhost:8080/api/pdf/seccion/Sentencias?${s}`)
     .then(async res => {
